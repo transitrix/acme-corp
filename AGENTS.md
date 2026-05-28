@@ -259,8 +259,6 @@ Trivial changes (typo fixes inside a description string, README polish) may be c
 
 ## Reconciliation note
 
-This guide is assistant-neutral and reflects the zoned (`canon/` / `field/` / `codex/`) layout. One open item:
-
-- The **onboarding Skill** (`/transitrix-onboard`, a Claude Code skill) still scaffolds a flat, Claude-specific layout and references `CLAUDE.md`. It will be reconciled to this assistant-neutral, zoned shape in a follow-up.
+This guide is assistant-neutral and reflects the zoned (`canon/` / `field/` / `codex/`) layout. The onboarding Skill (`/transitrix-onboard`, a Claude Code skill) scaffolds the same shape — `AGENTS.md` as the agent guide, `transitrix.yaml` as the manifest, `canon/` + `field/` + `codex/` zones — by copying templates from its bundle.
 
 The agent treats this file as **provisional**. If it conflicts with the canon, the canon wins. If it conflicts with a later adopter-supplied policy, the adopter wins.
