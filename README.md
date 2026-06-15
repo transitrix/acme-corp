@@ -32,6 +32,20 @@ acme_corp/
 
 The three **zones** (`canon` / `field` / `codex`) are parallel, not stacked — see [`notations/CONTRACT.md`](../../notations/CONTRACT.md) §5. The `operations/` folder sits alongside the zones as a separate **operational layer**: it records how the team applying Transitrix runs itself (decisions and work items), not the enterprise being modelled. See [`method/team-operations.md`](../../method/team-operations.md) for the convention and [`operations/README.md`](operations/README.md) for the local rules.
 
+## 🗺 Notation coverage
+
+One model, every layer, every stakeholder.
+
+**Native notation** (Transitrix Studio or CLI) covers the business layers — Motivation through Business: Goals, FGA/FGCA, Capability Map, Process Map, BPMN, Process Blueprint, Scenarios, Compliance Impact.
+
+**Mermaid complementary views** (any Markdown preview, no extra tooling) extend coverage to the technical and strategic-planning layers:
+
+- [`canon/views/sequence/`](canon/views/sequence/) — application-layer interaction (Sequence)
+- [`canon/views/state/`](canon/views/state/) — application-managed object lifecycle (State)
+- [`canon/views/quadrant/`](canon/views/quadrant/) — strategic goal prioritisation (Quadrant)
+
+All Mermaid views are derived from the same element primitives in `canon/elements/` — no duplication.
+
 ## 🚀 Quick start
 
 ### 1. Create an element primitive

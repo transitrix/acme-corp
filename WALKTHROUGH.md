@@ -18,10 +18,12 @@
 Each beat links to where it lives in this repo.
 
 1. **Who they are — the as-is enterprise.**
-   Products, the system estate, and capabilities at their current maturity.
+   Products, the system estate, capabilities at their current maturity, and the
+   order-lifecycle state machine managed by the Order Management System.
    → [`canon/views/products/`](canon/views/products/) ·
      [`canon/views/applications/`](canon/views/applications/) ·
-     [`canon/views/capabilities/`](canon/views/capabilities/)
+     [`canon/views/capabilities/`](canon/views/capabilities/) ·
+     [`canon/views/state/`](canon/views/state/) (order lifecycle — Application layer, Mermaid)
 
 2. **The pressure — why they had to change.**
    External drivers (a GDPR enforcement wave, incoming NIS2) and the real obligations
@@ -31,8 +33,11 @@ Each beat links to where it lives in this repo.
      [`canon/views/coverage-metric/`](canon/views/coverage-metric/)
 
 3. **What they decided to become — the intent.**
-   The goal tree: compliance, resilience, growth.
-   → [`canon/views/goals/`](canon/views/goals/) · [`canon/views/fgca/`](canon/views/fgca/)
+   The goal tree: compliance, resilience, growth — and the portfolio quadrant that
+   shows which goals demand immediate action versus which shape the longer horizon.
+   → [`canon/views/goals/`](canon/views/goals/) ·
+     [`canon/views/fgca/`](canon/views/fgca/) ·
+     [`canon/views/quadrant/`](canon/views/quadrant/) (goal prioritisation — Strategy layer, Mermaid)
 
 4. **The transformation — how.**
    The changes, target capability maturity, alternative paths considered.
@@ -45,11 +50,13 @@ Each beat links to where it lives in this repo.
    → [`canon/views/activities/`](canon/views/activities/)
 
 6. **How it runs day-to-day.**
-   From the process landscape down to one detailed process, and a value-chain blueprint
-   with the obligations lane.
+   From the process landscape down to one detailed process, a value-chain blueprint
+   with the obligations lane, and the application-layer sequence showing how OMS and
+   CRM coordinate during a GDPR erasure sweep.
    → [`canon/views/processmap/`](canon/views/processmap/) ·
      [`canon/views/bpmn/`](canon/views/bpmn/) ·
-     [`canon/views/process-blueprint/`](canon/views/process-blueprint/)
+     [`canon/views/process-blueprint/`](canon/views/process-blueprint/) ·
+     [`canon/views/sequence/`](canon/views/sequence/) (erasure event — Application layer, Mermaid)
 
 7. **The proof — compliance, made legible.**
    Which obligations hit which products and processes, with each cell's status; the gaps
