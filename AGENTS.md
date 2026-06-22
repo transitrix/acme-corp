@@ -257,6 +257,118 @@ Trivial changes (typo fixes inside a description string, README polish) may be c
 
 ---
 
+---
+
+## 12. Methodology version awareness
+
+When a user requests a feature or skill, the agent:
+
+1. Reads `methodology_version` from `transitrix.yaml` (the adopter's pinned version).
+2. Compares it against the required version for the requested feature or skill (see §14 for skill min-versions).
+3. If the required version is higher than the pin:
+   - Tell the user: _"This requires methodology **vX.Y** — you are on **vA.B**. Ask your administrator to run the upgrade procedure described in `RELEASING.md §Adopter upgrade procedure`."_
+   - Do **not** attempt the operation.
+4. If the pin meets the requirement: proceed normally.
+
+The agent may also read the public `github.com/transitrix/methodology` releases page (read-only) to check whether a newer version is available, so it can proactively inform the user: _"Methodology **vX.Y** is available — ask your administrator about upgrading."_
+
+The agent **never** edits `transitrix.yaml` to change the `methodology_version` pin. That step belongs to the administrator, after running the migration recipe.
+
+---
+
+## 13. User identity and per-user settings
+
+User identity is derived from the authenticated GitHub username. Per-user state lives at:
+
+```
+operations/<github-username>/
+  settings.md          # user preferences
+```
+
+**On first interaction with a new user:**
+
+1. Check whether `operations/<github-username>/settings.md` exists.
+2. If not: ask the user for the settings below; create the file with their answers and apply defaults for anything not answered.
+
+**Default settings** (`ADOPTER-FILL-ME` — adjust per your organisation):
+
+```markdown
+language: en
+report_format: markdown
+colour_scheme: default
+ingest_focus_layers: [motivation, business, application]
+```
+
+**Ingest personalisation.** Before running the ingest skill, read `operations/<github-username>/settings.md` to load the user's data-source preferences, focus layers, and any per-user intake conventions. The ingest procedure itself follows the standard `/transitrix:ingest` skill; only the data context varies by user.
+
+The `operations/<github-username>/` directory is git-tracked — it contains preferences and workflow state, never model content.
+
+---
+
+## 14. Skill routing
+
+Before invoking any skill:
+
+1. Read `methodology_version` from `transitrix.yaml`.
+2. Check that `Min version` in the table below ≤ the adopter's pinned version.
+3. If the requirement is not met: follow §12 (tell the user, do not run the skill).
+4. If met: invoke the skill.
+
+Skills are installed and updated by the **administrator** (not by the agent at runtime). If a skill listed here is not present in this repo, ask the administrator — do not fetch or install skills autonomously.
+
+`ADOPTER-FILL-ME` — remove rows for skills not installed in this repo; add rows for any custom skills your organisation has added.
+
+| Skill | When to use | Invocation | Min version |
+|-------|-------------|------------|-------------|
+| Onboarding | Set up a new Transitrix repo or orient in an existing one | `/transitrix:onboard` | 0.5.0 |
+| Ingest | Load raw material into the field zone and produce canon candidates | `/transitrix:ingest` | 0.6.0 |
+| Repo-check | Read-only health check — counts, integrity flags, tooling version match | `/transitrix:repo-check` | 0.6.0 |
+| Report | Generate a reproducible compliance report | `/transitrix:report` | 0.6.0 |
+| Reg-intel | Scan regulatory sources for changes and produce a review digest | `/transitrix:reg-intel` | 0.6.0 |
+
+---
+
+## 15. Feedback channel
+
+User feedback, issues, and improvement ideas are recorded in `feedback.md` at the repository root. This file is the adopter's upward channel to the methodology team and must be safe to share outside the organisation.
+
+**Before writing any entry**, the agent rephrases it in abstract terms. The following are **strictly prohibited** in `feedback.md`:
+
+- Organisation and legal entity names
+- Employee, manager, or executive names
+- Product, project, and system names — use "the system", "the process", "the product"
+- Internal codes, ticket numbers, and IDs
+- Numeric metrics, targets, and KPIs
+- Dates tied to specific business operations or events
+- Any other data that could identify the adopter's organisation, clients, or personnel
+
+If the agent cannot abstract an entry safely without losing the essential point, it asks the user for a generic rephrasing before writing — it does **not** write and redact after the fact.
+
+**Entry format:**
+
+```markdown
+## YYYY-MM-DD — [category: ux | feature-request | bug | process]
+
+[Abstract description of the issue or idea. No company data.]
+```
+
+The agent appends to `feedback.md`; it never edits or deletes existing entries.
+
+---
+
+## 16. Recommended IDE extensions
+
+The following extensions are recommended for contributors working in this repository. The agent should mention them when a user is setting up their environment or when it detects that a relevant feature is unavailable.
+
+| Extension | IDE | Purpose | Install |
+|-----------|-----|---------|---------|
+| **Mermaid** | VS Code | Renders Mermaid diagrams (flowcharts, sequence diagrams, ER diagrams) inline in Markdown preview | Search `bierner.markdown-mermaid` in the Extensions panel |
+| **Transitrix Studio** | VS Code | Real-time notation validation, schema hints, and view rendering for Transitrix artefacts | Search `transitrix.transitrix-studio` in the Extensions panel |
+
+Both extensions are **read-only** with respect to the model — they render and validate, they do not modify files.
+
+---
+
 ## Reconciliation note
 
 This guide is assistant-neutral and reflects the zoned (`canon/` / `field/` / `codex/`) layout. The onboarding Skill (`/transitrix:onboard`, a Claude Code skill) scaffolds the same shape — `AGENTS.md` as the agent guide, `transitrix.yaml` as the manifest, `canon/` + `field/` + `codex/` zones — by copying templates from its bundle.
