@@ -42,7 +42,7 @@ The view then references the element by ID — it doesn't duplicate it.
 
 Two ways to link, depending on whether time matters ([`ELEMENT_PRIMITIVES.md`](../../notations/ELEMENT_PRIMITIVES.md) §3, [`elements/17-relations.md`](../../notations/elements/17-relations.md)):
 
-- **Inline cross-reference** — a typed-ID field: `owner_role: ROLE-…`, `goal.factors: [FACTOR-…]`, `activity.goals: [GOAL-…]`, `rule.applies_to: [PROCESS-…]`. Plural → array, singular → one ID ([`IDS_AND_REFERENCES.md`](../../notations/IDS_AND_REFERENCES.md) §5). Timeless within the host file. This covers most links.
+- **Inline cross-reference** — a typed-ID field: `owner_role: ROLE-…`, `goal.factors: [DRIVER-…]`, `activity.goals: [GOAL-…]`, `rule.applies_to: [PROCESS-…]`. Plural → array, singular → one ID ([`IDS_AND_REFERENCES.md`](../../notations/IDS_AND_REFERENCES.md) §5). Timeless within the host file. This covers most links.
 - **First-class time-aware relation (`REL`)** — a `canon/relations/REL-…yaml` file with its own `valid_from`/`valid_to`. Use it only for the links where history matters. The `type` enum is **closed**: `parent`, `goal_parent`, `activity_goal`, `unit_parent` ([`17-relations.md`](../../notations/elements/17-relations.md) §3). A re-parenting is two REL files (one ended, one new) — see `canon/relations/REL-CAP-V11-PARENT-*.yaml`.
 
 ## Step 5 — Validate

@@ -1,6 +1,6 @@
 # `canon/views/fga/`
 
-Factor → Goal → Activity chains. Simplified 3-layer variant of FGCA — used when the transformation step is implicit or trivial.
+Driver → Goal → Activity chains. Simplified 3-layer variant of FGCA — used when the transformation step is implicit or trivial.
 
 ## File convention
 
@@ -14,13 +14,13 @@ spec_version: "0.1"
 
 id: FGA-OPS-1
 name: "Q2 Operational Improvements"
-description: "Factor → Goal → Activity chain for support operations."
+description: "Driver → Goal → Activity chain for support operations."
 period: "2026-Q2"
 date: "2026-05-26"
 author: "Acme Ops"
 
 factors:
-  - id: FACTOR-COMP-1              # → canon/elements/01_motivation/factors/FACTOR-COMP-1.yaml
+  - id: DRIVER-COMP-1              # → canon/elements/01_motivation/factors/DRIVER-COMP-1.yaml
     name: "Support response time"  # neutral driver — the finding "8h and degrading" lives on ASSESSMENT-SUPPORT-RESPONSE-1
     type: internal                 # internal → no PESTLE category
     valid_from: "2026-05-26"       # CONTRACT.md §7 — required on every inline element
@@ -29,7 +29,7 @@ factors:
 goals:
   - id: GOAL-OPS-1
     name: "Restore P50 response time to under 2 hours by end of Q2"
-    factors: [FACTOR-COMP-1]
+    factors: [DRIVER-COMP-1]
     valid_from: "2026-05-26"
     valid_to: null
 

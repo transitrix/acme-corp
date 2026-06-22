@@ -9,7 +9,7 @@
 # `category: legal` per PESTLE — binding regulations / law.
 
 notation: driver
-id: FACTOR-EU-REG-1
+id: DRIVER-EU-REG-1
 name: "EU regulatory window for market entry"
 type: external
 category: legal

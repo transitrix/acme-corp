@@ -5,12 +5,12 @@
 # Neutral Driver — the standing internal force ("support response time" as a
 # performance dimension the organisation acts on), not a finding about it.
 # Findings about this driver's current state live on ASSESSMENT records that
-# assesses: FACTOR-COMP-1 — see ../assessments/ASSESSMENT-SUPPORT-RESPONSE-1.yaml
+# assesses: DRIVER-COMP-1 — see ../assessments/ASSESSMENT-SUPPORT-RESPONSE-1.yaml
 # for the worked "8h and degrading" finding.
 # No PESTLE category — PESTLE applies to external drivers only.
 
 notation: driver
-id: FACTOR-COMP-1
+id: DRIVER-COMP-1
 name: "Support response time"
 type: internal
 description: >

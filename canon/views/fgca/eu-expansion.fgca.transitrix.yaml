@@ -8,7 +8,7 @@ spec_version: "0.1"
 id: FGCA-EU-1
 name: "EU Expansion 2026 — compliance-driven"
 description: >
-  Factor → Goal → Change → Activity chain for EU market entry. The closing EU
+  Driver → Goal → Change → Activity chain for EU market entry. The closing EU
   regulatory window drives a market-presence goal; the required transformation is
   an EU-localised, GDPR-conformant platform; activities deliver it.
 period: "2026"
@@ -16,14 +16,14 @@ date: "2026-06-10"
 author: "Acme Strategy Office"
 
 factors:
-  - id: FACTOR-EU-REG-1
+  - id: DRIVER-EU-REG-1
     name: "EU regulatory window for market entry"
     type: external
     category: legal
     references_constraint: [CONSTRAINT-GDPR-RESIDENCY-1]
     valid_from: "2026-05-26"
     valid_to: null
-  - id: FACTOR-COMP-1
+  - id: DRIVER-COMP-1
     name: "Competitive pressure"
     type: external
     category: economic
@@ -33,7 +33,7 @@ factors:
 goals:
   - id: GOAL-EU-1
     name: "Launch in 3 EU markets"
-    factors: [FACTOR-EU-REG-1, FACTOR-COMP-1]
+    factors: [DRIVER-EU-REG-1, DRIVER-COMP-1]
     valid_from: "2026-05-26"
     valid_to: null
 

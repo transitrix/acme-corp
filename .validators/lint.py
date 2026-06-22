@@ -78,7 +78,7 @@ class TransitrixLinter:
 
         # Phase 2.5: ID grammar — catch malformed element/relation IDs at admission
         # time, not only indirectly via a cross-reference. Without this, an element
-        # admitted with a leading-zero terminal (FACTOR-CHURN-001) — or any other
+        # admitted with a leading-zero terminal (DRIVER-CHURN-001) — or any other
         # break of IDS_AND_REFERENCES.md §1 — passes silently as long as nothing
         # references it textually (the existing referential-integrity check only
         # matches strings, so a self-consistent malformed pair would slip through).
