@@ -23,7 +23,11 @@ Each beat links to where it lives in this repo.
    → [`canon/views/products/`](canon/views/products/) ·
      [`canon/views/applications/`](canon/views/applications/) ·
      [`canon/views/capabilities/`](canon/views/capabilities/) ·
-     [`canon/views/state/`](canon/views/state/) (order lifecycle — Application layer, Mermaid)
+     [`canon/views/state/`](canon/views/state/) (order lifecycle — Application layer, Mermaid) ·
+     [`canon/views/c4component/`](canon/views/c4component/) (application containers — Application layer, Mermaid) ·
+     [`canon/views/er/`](canon/views/er/) (domain entity model — Application layer, Mermaid) ·
+     [`canon/views/c4deployment/`](canon/views/c4deployment/) (deployment topology — Technology layer, Mermaid) ·
+     [`canon/views/c4infrastructure/`](canon/views/c4infrastructure/) (network zones — Technology layer, Mermaid)
 
 2. **The pressure — why they had to change.**
    External drivers (a GDPR enforcement wave, incoming NIS2) and the real obligations
@@ -47,7 +51,8 @@ Each beat links to where it lives in this repo.
 
 5. **The delivery — the work.**
    The readiness programme as a scheduled project: dependencies, critical path, milestones.
-   → [`canon/views/activities/`](canon/views/activities/)
+   → [`canon/views/activities/`](canon/views/activities/) ·
+     [`canon/views/timeline/`](canon/views/timeline/) (programme milestones — Implementation & Migration layer, Mermaid)
 
 6. **How it runs day-to-day.**
    From the process landscape down to one detailed process, a value-chain blueprint
@@ -56,12 +61,14 @@ Each beat links to where it lives in this repo.
    → [`canon/views/processmap/`](canon/views/processmap/) ·
      [`canon/views/bpmn/`](canon/views/bpmn/) ·
      [`canon/views/process-blueprint/`](canon/views/process-blueprint/) ·
-     [`canon/views/sequence/`](canon/views/sequence/) (erasure event — Application layer, Mermaid)
+     [`canon/views/sequence/`](canon/views/sequence/) (erasure event — Application layer, Mermaid) ·
+     [`canon/views/journey/`](canon/views/journey/) (customer order journey — Business layer, Mermaid)
 
 7. **The proof — compliance, made legible.**
    Which obligations hit which products and processes, with each cell's status; the gaps
    that got closed.
-   → [`canon/views/compliance-impact/`](canon/views/compliance-impact/)
+   → [`canon/views/compliance-impact/`](canon/views/compliance-impact/) ·
+     [`canon/views/sankey/`](canon/views/sankey/) (obligation volume by regulation and subject — Business layer, Mermaid)
 
 8. **The outcome — audit-ready and machine-runnable.**
    Coverage before → after, and the decisions log that records how the architecture was
@@ -78,7 +85,5 @@ Open any view file in **Transitrix Studio** (VS Code) for a live diagram, or ren
 
 ---
 
-<!-- TODO (comms/strategy): replace beat blurbs with the final success-story prose;
-     wire each beat to the specific view file(s) once the demo scenario content is
-     filled in (see methodology task ADPT-3 for the modelling gaps that complete the
-     compliance matrix in beats 6–7). Keep fictional + data-free; no client names. -->
+<!-- TODO (comms/strategy): replace beat blurbs with the final success-story prose.
+     Keep fictional + data-free; no client names. -->
