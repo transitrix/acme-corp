@@ -12,7 +12,7 @@ acme_corp/
 ├── AGENTS.md                    # assistant-neutral agent guide (canonical for all assistants)
 ├── canon/                       # validated model — the authoritative zone
 │   ├── elements/                # element primitives, one file per element, by ArchiMate layer
-│   │   ├── 01_motivation/       # FACTOR, GOAL, CONSTRAINT, REQUIREMENT
+│   │   ├── 01_motivation/       # DRIVER, GOAL, CONSTRAINT, REQUIREMENT
 │   │   ├── 02_business/         # CAPABILITY, PROCESS, PRODUCT, ROLE, UNIT, EMPLOYEE, RULE
 │   │   ├── 03_application/      # APPLICATION, INTEGRATION
 │   │   ├── 04_technology/       # (no registry element TYPE yet)
@@ -82,7 +82,7 @@ The canonical TYPE registry is [`notations/IDS_AND_REFERENCES.md`](../../notatio
 
 | Layer | TYPEs |
 |---|---|
-| **01_motivation** | `FACTOR`, `GOAL`, `CONSTRAINT`, `REQUIREMENT` |
+| **01_motivation** | `DRIVER`, `GOAL`, `CONSTRAINT`, `REQUIREMENT` |
 | **02_business** | `CAPABILITY` (V/H sub-grammar), `PROCESS`, `PRODUCT`, `ROLE`, `UNIT`, `EMPLOYEE`, `RULE` |
 | **03_application** | `APPLICATION`, `INTEGRATION` |
 | **04_technology** | *(no registry element TYPE yet)* |

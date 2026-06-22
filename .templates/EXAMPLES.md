@@ -6,7 +6,7 @@ Concrete, canon-valid examples of every element TYPE and view notation already l
 
 | Layer | TYPE | Example file |
 |---|---|---|
-| 01_motivation | `FACTOR` | `01_motivation/factors/FACTOR-EU-REG-1.yaml`, `FACTOR-COMP-1.yaml` |
+| 01_motivation | `DRIVER` | `01_motivation/factors/DRIVER-EU-REG-1.yaml`, `DRIVER-COMP-1.yaml` |
 | 01_motivation | `GOAL` | `01_motivation/goals/GOAL-REVENUE-1.yaml`, `GOAL-EU-1.yaml`, … |
 | 01_motivation | `CONSTRAINT` | `01_motivation/constraints/CONSTRAINT-GDPR-RESIDENCY-1.yaml` |
 | 01_motivation | `REQUIREMENT` | `01_motivation/requirements/REQUIREMENT-DATA-ERASURE-1.yaml`, … |

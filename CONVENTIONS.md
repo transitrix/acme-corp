@@ -16,7 +16,7 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 
 | TYPE | What it is | Layer folder |
 |---|---|---|
-| `FACTOR` | strategic driver (external / internal) | `01_motivation/factors/` |
+| `DRIVER` | strategic driver (external / internal) | `01_motivation/factors/` |
 | `GOAL` | strategic or tactical goal | `01_motivation/goals/` |
 | `CONSTRAINT` | design / operating constraint | `01_motivation/constraints/` |
 | `REQUIREMENT` | positive obligation | `01_motivation/requirements/` |
