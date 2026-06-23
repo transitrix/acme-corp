@@ -42,10 +42,10 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 |---|---|
 | `FGCA` | `*.fgca.transitrix.yaml` |
 | `FGA` | `*.fga.transitrix.yaml` |
-| `GOALS_TREE` | `*.goals.transitrix.yaml` |
+| `GOALS_TREE` | `*.dgca.transitrix.yaml` |
 | `CAPABILITY_MAP` | `*.capability-map.transitrix.yaml` |
 | `PROCESS_MAP` | `*.process-map.transitrix.yaml` |
-| `ACTIVITIES_NET` | `*.activities.transitrix.yaml` |
+| `ACTIVITIES_NET` | `*.dgca.transitrix.yaml` |
 | `PRODUCTS_CAT` | `*.products.transitrix.yaml` |
 | `APPLICATIONS_CAT` | `*.applications.transitrix.yaml` |
 | `SCENARIOS` | `*.scenarios.transitrix.yaml` |
@@ -79,7 +79,7 @@ Plain positive integers from `1`, **no leading zeros**: `GOAL-REV-1`, `ROLE-SALE
 
 ### File names
 
-Element primitives are named **`<ID>.yaml`** — the file name *is* the canonical ID (`GOAL-REVENUE-1.yaml`, `APPLICATION-OMS-1.yaml`). View documents are `<domain>.<short-name>.transitrix.yaml` (`strategy-2026.goals.transitrix.yaml`). No spaces; no underscores standing in for hyphens.
+Element primitives are named **`<ID>.yaml`** — the file name *is* the canonical ID (`GOAL-REVENUE-1.yaml`, `APPLICATION-OMS-1.yaml`). View documents are `<domain>.<ext>.transitrix.yaml` (`strategy-2026.dgca.transitrix.yaml`). No spaces; no underscores standing in for hyphens.
 
 ### Relation IDs
 

@@ -3,7 +3,7 @@
   Renders in VS Code with Markdown Preview Mermaid Support (bierner.markdown-mermaid).
 
   Derived from:
-    - canon/views/goals/eu-strategy.goals.transitrix.yaml
+    - canon/views/goals/eu-strategy.dgca.transitrix.yaml
         goal hierarchy: id, name, type (level 0/1/2), parent linkage.
         Y-axis (Strategic Importance): goal level — level 0 (Strategy) = highest;
           level 1 (Strategic Goal) = high; level 2 (Enabling Goal) = medium.
@@ -21,7 +21,7 @@ Strategy-layer view of the 2026 goal portfolio. Goals are positioned by
 strategic importance (derived from hierarchy level) and implementation urgency
 (derived from goal type and gate-condition status).
 
-Source: `eu-strategy.goals.transitrix.yaml`
+Source: `eu-strategy.dgca.transitrix.yaml`
 
 ```mermaid
 quadrantChart
@@ -49,4 +49,4 @@ quadrantChart
 | `GOAL-CUST-1` | 1 | Strategic Goal | Medium-horizon; high but not gate-critical |
 | `GOAL-OPS-1` | 1 | Strategic Goal | Ongoing operational; moderate urgency and importance |
 
-Goal hierarchy source: `eu-strategy.goals.transitrix.yaml`
+Goal hierarchy source: `eu-strategy.dgca.transitrix.yaml`

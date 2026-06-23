@@ -23,7 +23,7 @@ Read [`notations/README.md`](../../notations/README.md) for the notation index a
 
 ## Step 2 — Author your first view (a Goals tree)
 
-The Goals tree is the simplest starting point. The onboarding Skill copies a starter template (`templates/goals.goals.transitrix.yaml` from its bundle) into `canon/views/goals/<domain>.goals.transitrix.yaml`; in this repo a worked example already lives under [`canon/views/goals/`](canon/views/goals/). Keep the `notation: goals` / `spec_version:` header — it's required ([`CONTRACT.md`](../../notations/CONTRACT.md) §1). Fill the `FILL-ME` placeholders. A Goals tree is flat top-level arrays — `goal_types[]` + `goals[]`, hierarchy via `parent: GOAL-…` ([`notations/views/04-goals.md`](../../notations/views/04-goals.md)).
+The Goals tree is the simplest starting point. The onboarding Skill copies a starter template (`templates/goals.dgca.transitrix.yaml` from its bundle) into `canon/views/goals/<domain>.dgca.transitrix.yaml`; in this repo a worked example already lives under [`canon/views/goals/`](canon/views/goals/). Keep the `notation: goals` / `spec_version:` header — it's required ([`CONTRACT.md`](../../notations/CONTRACT.md) §1). Fill the `FILL-ME` placeholders. A Goals tree is flat top-level arrays — `goal_types[]` + `goals[]`, hierarchy via `parent: GOAL-…` ([`notations/views/04-goals.md`](../../notations/views/04-goals.md)).
 
 ## Step 3 — Create an element primitive
 
@@ -48,7 +48,7 @@ Two ways to link, depending on whether time matters ([`ELEMENT_PRIMITIVES.md`](.
 ## Step 5 — Validate
 
 - **Studio** previews and validates on save.
-- **CLI:** `npx @transitrix/cli validate canon/views/goals/strategy-2026.goals.transitrix.yaml`.
+- **CLI:** `npx @transitrix/cli validate canon/views/goals/strategy-2026.dgca.transitrix.yaml`.
 - The rules: the shared header (`HDR-001..004`, [`CONTRACT.md`](../../notations/CONTRACT.md) §2), lifecycle (`LIFECYCLE-001..004`, §7), element placement (`ELEM-001..005`, [`ELEMENT_PRIMITIVES.md`](../../notations/ELEMENT_PRIMITIVES.md) §9), plus each notation's own "Validation rules" table.
 
 ## Step 6 — Commit and open a PR

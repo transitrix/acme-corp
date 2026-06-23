@@ -4,7 +4,7 @@ Project schedule as an **Activity-on-Node** precedence network (PSND), with an o
 
 ## File convention
 
-`*.activities.transitrix.yaml`
+`*.dgca.transitrix.yaml`
 
 See [`notations/views/07-activities.md`](../../../../../notations/views/07-activities.md) for the full spec — including PSND semantics, the critical-path computation, and the Gantt projection contract.
 
@@ -64,5 +64,5 @@ All IDs follow the canonical `<TYPE>-[<middle>-]<INTEGER>` grammar from [`notati
 ## See also
 
 - [`notations/views/07-activities.md`](../../../../../notations/views/07-activities.md) — the notation spec
-- [`notations/examples/activities/platform-launch.activities.transitrix.yaml`](../../../../../notations/examples/activities/platform-launch.activities.transitrix.yaml) — worked example
+- [`notations/examples/activities/platform-launch.dgca.transitrix.yaml`](../../../../../notations/examples/activities/platform-launch.dgca.transitrix.yaml) — worked example
 - `method/methodology.md` §6 — notation kit
