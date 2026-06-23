@@ -73,7 +73,6 @@ process:
       to: GW-VERIFIED
     - from: GW-VERIFIED
       to: TASK-REJECT
-      condition: "identity not verified"
       default: true
     - from: TASK-REJECT
       to: EE-REJECTED
@@ -91,7 +90,6 @@ process:
       condition: "data present in 7-year archive (known gap)"
     - from: GW-ARCHIVE
       to: TASK-CONFIRM
-      condition: "active systems only"
       default: true
     - from: TASK-FLAG-GAP
       to: TASK-CONFIRM
