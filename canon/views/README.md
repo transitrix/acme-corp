@@ -8,14 +8,14 @@ See [`method/methodology.md` §6](../../../method/methodology.md) for the full n
 
 | Folder | Notation | File extension | What it holds |
 | --- | --- | --- | --- |
-| [`goals/`](goals/) | Goals tree | `*.goals.transitrix.yaml` | Hierarchical goals trees |
+| [`goals/`](goals/) | Goals tree | `*.dgca.transitrix.yaml` | Hierarchical goals trees |
 | [`capabilities/`](capabilities/) | Capabilities map | `*.capability-map.transitrix.yaml` | Capability hierarchies with maturity overlay |
 | [`processmap/`](processmap/) | Process landscape map | `*.process-map.transitrix.yaml` | Top-level process catalogues |
 | [`bpmn/`](bpmn/) | Process diagram (BPMN) | `*.bpmn.transitrix.yaml` | Detailed process flows |
 | [`fgca/`](fgca/) | FGCA chain | `*.fgca.transitrix.yaml` | Factor → Goal → Change → Activity |
 | [`fga/`](fga/) | FGA chain | `*.fga.transitrix.yaml` | Factor → Goal → Activity |
 | [`blocks/`](blocks/) | Nested block diagrams | `*.blocks.transitrix.yaml` | Recursive `block` tree rendered as nested containers |
-| [`activities/`](activities/) | Activity network | `*.activities.transitrix.yaml` | PSND (Activity-on-Node) with Gantt projection and critical path |
+| [`activities/`](activities/) | Activity network | `*.dgca.transitrix.yaml` | PSND (Activity-on-Node) with Gantt projection and critical path |
 | [`products/`](products/) | Products view | `*.products.transitrix.yaml` | Filtered views over Product elements |
 | [`applications/`](applications/) | Applications view | `*.applications.transitrix.yaml` | Filtered views over Application elements |
 | [`scenarios/`](scenarios/) | Scenarios | `*.scenarios.transitrix.yaml` | Alternative strategic development paths |
@@ -30,7 +30,7 @@ See [`method/methodology.md` §6](../../../method/methodology.md) for the full n
 File names use `kebab-case` or descriptive `[DOMAIN]-[CONTEXT]` prefixes. Examples:
 
 ```
-canon/views/goals/strategy-2026.goals.transitrix.yaml
+canon/views/goals/strategy-2026.dgca.transitrix.yaml
 canon/views/capabilities/customer-domain.capability-map.transitrix.yaml
 canon/views/bpmn/order-fulfillment.bpmn.transitrix.yaml
 canon/views/fgca/eu-expansion.fgca.transitrix.yaml

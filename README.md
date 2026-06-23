@@ -61,8 +61,8 @@ Every element file carries the common envelope — `notation:` header, identity,
 ### 2. Author a view
 
 ```bash
-cp .templates/goals.goals.transitrix.yaml \
-   canon/views/goals/strategy-2026.goals.transitrix.yaml
+cp .templates/goals.dgca.transitrix.yaml \
+   canon/views/goals/strategy-2026.dgca.transitrix.yaml
 # Fill the FILL-ME placeholders; keep the notation: / spec_version: header.
 ```
 
