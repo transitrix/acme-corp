@@ -1,18 +1,20 @@
-# `canon/views/fgca/`
+# `canon/views/dgca/`
 
 Driver → Goal → Change → Activity chains. Strategy-to-execution scaffold: drivers justify focus, goals set direction, changes define the transformation, activities deliver. Each layer references atomic elements stored elsewhere.
 
+Layer toggle: individual columns can be disabled via `view_config.layers`. The DGA variant (`layers.changes: off`) maps activities directly to goals without an intermediate change step.
+
 ## File convention
 
-`*.fgca.transitrix.yaml`
+`*.dgca.transitrix.yaml`
 
-## Skeleton
+## Skeleton — full DGCA (4 layers)
 
 ```yaml
-notation: fgca
+notation: dgca
 spec_version: "0.1"
 
-id: FGCA-EU-1
+id: DGCA-EU-1
 name: "EU Expansion 2026"
 description: "Driver → Goal → Change → Activity chain for EU market entry."
 period: "2026"
@@ -50,9 +52,41 @@ activities:
     valid_to: null
 ```
 
-`valid_from` / `valid_to` are required on every inline element per [`notations/CONTRACT.md`](../../../../../notations/CONTRACT.md) §7. The FGCA document itself does not carry a lifecycle field — it is a view, not an element.
+## Skeleton — DGA mode (Changes layer off)
+
+```yaml
+notation: dgca
+spec_version: "0.1"
+
+view_config:
+  layers:
+    changes: off          # Driver → Goal → Activity; changes[] may be omitted
+
+factors:
+  - id: DRIVER-1
+    name: "..."
+    type: external
+    valid_from: "2026-05-26"
+    valid_to: null
+
+goals:
+  - id: GOAL-1
+    name: "..."
+    factors: [DRIVER-1]
+    valid_from: "2026-05-26"
+    valid_to: null
+
+activities:
+  - id: ACTIVITY-1
+    name: "..."
+    goals: [GOAL-1]       # direct link — no changes[] needed
+    valid_from: "2026-05-26"
+    valid_to: null
+```
+
+`valid_from` / `valid_to` are required on every inline element per [`notations/CONTRACT.md`](../../../../../notations/CONTRACT.md) §7. The DGCA document itself does not carry a lifecycle field — it is a view, not an element.
 
 ## See also
 
-- `method/methodology.md` §6.2 — FGCA notation
-- `canon/views/fga/` — simplified 3-layer variant (no Changes layer)
+- `method/methodology.md` §6.2 — DGCA notation
+- `notations/views/02-dgca.md` — canonical spec
