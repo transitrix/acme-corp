@@ -1,11 +1,11 @@
-# FGCA chain — EU market entry under GDPR/NIS2.
-# Notation spec: notations/views/02-fgca.md. Inline elements carry CONTRACT.md §7
+# DGCA chain — EU market entry under GDPR/NIS2.
+# Notation spec: notations/views/02-dgca.md. Inline elements carry CONTRACT.md §7
 # lifecycle; the view itself does not.
 
-notation: fgca
+notation: dgca
 spec_version: "0.1"
 
-id: FGCA-EU-1
+id: DGCA-EU-1
 name: "EU Expansion 2026 — compliance-driven"
 description: >
   Driver → Goal → Change → Activity chain for EU market entry. The closing EU
