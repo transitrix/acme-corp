@@ -20,12 +20,12 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 | `GOAL` | strategic or tactical goal | `01_motivation/goals/` |
 | `CONSTRAINT` | design / operating constraint | `01_motivation/constraints/` |
 | `REQUIREMENT` | positive obligation | `01_motivation/requirements/` |
+| `ACTOR` | active-structure identity — `person`, `business_unit`, or `system` | `02_business/actors/` |
+| `STAKEHOLDER` | interest-holding actor (`internal` / `external`); references an `ACTOR` for identity | `01_motivation/stakeholders/` |
 | `CAPABILITY` | capability — V/H address, e.g. `CAPABILITY-V1.2` | `02_business/capabilities/` |
 | `PROCESS` | business process | `02_business/processes/` |
 | `PRODUCT` | product or service | `02_business/products/` |
 | `ROLE` | business role | `02_business/roles/` |
-| `UNIT` | organisational unit | `02_business/units/` |
-| `EMPLOYEE` | named employee | `02_business/employees/` |
 | `RULE` | business rule | `02_business/rules/` |
 | `APPLICATION` | application | `03_application/applications/` |
 | `INTEGRATION` | integration between applications | `03_application/integrations/` |
@@ -40,19 +40,18 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 
 | TYPE | Notation file |
 |---|---|
-| `FGCA` | `*.fgca.transitrix.yaml` |
-| `FGA` | `*.fga.transitrix.yaml` |
-| `GOALS_TREE` | `*.dgca.transitrix.yaml` |
+| `DGCA` | `*.dgca.transitrix.yaml` |
+| `GOALS_TREE` | `*.goals.transitrix.yaml` |
+| `ACTIVITIES_NET` | `*.activities.transitrix.yaml` |
 | `CAPABILITY_MAP` | `*.capability-map.transitrix.yaml` |
 | `PROCESS_MAP` | `*.process-map.transitrix.yaml` |
-| `ACTIVITIES_NET` | `*.dgca.transitrix.yaml` |
 | `PRODUCTS_CAT` | `*.products.transitrix.yaml` |
 | `APPLICATIONS_CAT` | `*.applications.transitrix.yaml` |
 | `SCENARIOS` | `*.scenarios.transitrix.yaml` |
 | `BLOCKS` | `*.blocks.transitrix.yaml` |
-| `ISSUES_CAT` | `*.issues.transitrix.yaml` |
 | `PROCESS_BLUEPRINT` | `*.process-blueprint.transitrix.yaml` |
 | `ACTION_CARD` | `*.action-card.transitrix.yaml` |
+| `COMPLIANCE_IMPACT` | `*.compliance-impact.transitrix.yaml` |
 
 #### Domain codes
 
