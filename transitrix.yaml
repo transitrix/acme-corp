@@ -1,6 +1,6 @@
 # Adopter manifest — schema defined in the methodology's notations/MANIFEST.md
 transitrix: 1
-methodology_version: "0.5.0"
+methodology_version: "0.7.0"
 notations:
   - bpmn
   - dgca
@@ -12,13 +12,15 @@ notations:
   - scenarios
   - applications
   - products
-  - issues
   - process-blueprint
   - codex
   - requirement
   - assertion
   - relation
+  - actor
+  - stakeholder
   - action-card
+  - compliance-impact
 zones: [canon, field, codex]
 coverage_profile: full           # see methodology notations/COVERAGE_PROFILES.md
 operating_parameters:            # org-wide operating defaults — see notations/MANIFEST.md §2
