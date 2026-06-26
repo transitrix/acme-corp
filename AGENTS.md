@@ -76,7 +76,7 @@ The canonical layout an adopter inherits from the `acme_corp` template:
 │   │   ├── 03_application/         # APPLICATION, SERVICE, INTERFACE, DATA_OBJECT
 │   │   └── 04_technology/          # NODE, ARTIFACT, DEVICE, …
 │   └── views/                      # one subfolder per notation (extensions in canon/views/README.md)
-│       ├── bpmn/   fgca/   fga/   goals/   capabilities/   processmap/
+│       ├── bpmn/   dgca/   fga/   goals/   capabilities/   processmap/
 │       ├── action/   blocks/   scenarios/
 │       └── applications/   products/   issues/   process-blueprint/
 ├── field/                          # raw inputs — interviews, surveys, observations, drafts
@@ -254,8 +254,6 @@ Every non-trivial change goes through PR review by the adopter:
 5. The adopter — or a reviewer the adopter designates — merges. The agent does **not** merge its own PRs, even when permissions allow it.
 
 Trivial changes (typo fixes inside a description string, README polish) may be committed directly to `main` if the adopter has explicitly opted into a direct-commit workflow. Default: PR every time.
-
----
 
 ---
 
