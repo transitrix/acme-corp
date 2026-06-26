@@ -1,12 +1,12 @@
-# Worked example — ACTIVITY element primitive (Work Package).
+# Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
 
-notation: activity
-id: ACTIVITY-LAUNCH-1
+notation: action
+id: ACTION-LAUNCH-1
 name: "Launch"
 duration_days: 5
 predecessors:
-  - ACTIVITY-BUILD-1
+  - ACTION-BUILD-1
 delivers_changes:
   - CHANGE-ONBOARD-1
 description: >

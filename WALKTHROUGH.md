@@ -51,7 +51,7 @@ Each beat links to where it lives in this repo.
 
 5. **The delivery — the work.**
    The readiness programme as a scheduled project: dependencies, critical path, milestones.
-   → [`canon/views/activities/`](canon/views/activities/) ·
+   → [`canon/views/action/`](canon/views/action/) ·
      [`canon/views/timeline/`](canon/views/timeline/) (programme milestones — Implementation & Migration layer, Mermaid)
 
 6. **How it runs day-to-day.**

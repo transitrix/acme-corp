@@ -16,7 +16,7 @@ acme_corp/
 │   │   ├── 02_business/         # CAPABILITY, PROCESS, PRODUCT, ROLE, UNIT, EMPLOYEE, RULE
 │   │   ├── 03_application/      # APPLICATION, INTEGRATION
 │   │   ├── 04_technology/       # (no registry element TYPE yet)
-│   │   └── 05_implementation/   # CHANGE, ACTIVITY
+│   │   └── 05_implementation/   # CHANGE, ACTION
 │   ├── relations/               # first-class time-aware relations (REL) — notations/elements/17-relations.md
 │   ├── assertions/              # compliance assertions (ASSERTION) — notations/elements/16-assertion.md
 │   └── views/                   # render-able view documents, one subfolder per notation
@@ -86,7 +86,7 @@ The canonical TYPE registry is [`notations/IDS_AND_REFERENCES.md`](../../notatio
 | **02_business** | `CAPABILITY` (V/H sub-grammar), `PROCESS`, `PRODUCT`, `ROLE`, `UNIT`, `EMPLOYEE`, `RULE` |
 | **03_application** | `APPLICATION`, `INTEGRATION` |
 | **04_technology** | *(no registry element TYPE yet)* |
-| **05_implementation** | `CHANGE`, `ACTIVITY` |
+| **05_implementation** | `CHANGE`, `ACTION` |
 
 Other registry TYPEs live outside the layered element tree: `REL` (`canon/relations/`), `ASSERTION` (`canon/assertions/`), codex artefacts (`LAW`/`REGULATION`/`POLICY`/`INTERNAL_STANDARD`, in `codex/`), and field artefacts (`INTERVIEW`/`SURVEY`/`OBSERVATION`/`DRAFT`, in `field/`).
 
@@ -95,7 +95,7 @@ Other registry TYPEs live outside the layered element tree: `REL` (`canon/relati
 Transitrix models links two ways (see [`ELEMENT_PRIMITIVES.md`](../../notations/ELEMENT_PRIMITIVES.md) §3 and [`elements/17-relations.md`](../../notations/elements/17-relations.md)):
 
 - **Inline cross-references** — a typed-ID field on an element or view entry (`owner_role: ROLE-…`, `goals: [GOAL-…]`, `applies_to: [PROCESS-…]`). Plural field → array, singular → one ID ([`IDS_AND_REFERENCES.md`](../../notations/IDS_AND_REFERENCES.md) §5). Timeless within the host file.
-- **First-class time-aware relations (`REL`)** — a `canon/relations/REL-…yaml` file with its own `valid_from`/`valid_to`, for links where the temporal dimension matters. The `type` enum is **closed**: `parent`, `goal_parent`, `activity_goal`, `unit_parent` ([`17-relations.md`](../../notations/elements/17-relations.md) §3). A re-parenting is two REL files (one ended, one new).
+- **First-class time-aware relations (`REL`)** — a `canon/relations/REL-…yaml` file with its own `valid_from`/`valid_to`, for links where the temporal dimension matters. The `type` enum is **closed**: `parent`, `goal_parent`, `action_goal`, `unit_parent` ([`17-relations.md`](../../notations/elements/17-relations.md) §3). A re-parenting is two REL files (one ended, one new).
 
 ## ✅ Validation model
 

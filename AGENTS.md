@@ -77,7 +77,7 @@ The canonical layout an adopter inherits from the `acme_corp` template:
 │   │   └── 04_technology/          # NODE, ARTIFACT, DEVICE, …
 │   └── views/                      # one subfolder per notation (extensions in canon/views/README.md)
 │       ├── bpmn/   fgca/   fga/   goals/   capabilities/   processmap/
-│       ├── activities/   blocks/   scenarios/
+│       ├── action/   blocks/   scenarios/
 │       └── applications/   products/   issues/   process-blueprint/
 ├── field/                          # raw inputs — interviews, surveys, observations, drafts
 └── codex/                          # external laws/regulations + internal policies/standards
@@ -121,7 +121,7 @@ The root `transitrix.yaml` pins which methodology release this repo conforms to 
 ```yaml
 transitrix: 1
 methodology_version: "0.5.0"
-notations: [fgca, goals, activities, issues, capability-map, codex]
+notations: [fgca, goals, action, issues, capability-map, codex]
 zones: [canon, field, codex]
 ```
 
@@ -154,7 +154,7 @@ Every typed element ID follows the canonical grammar in `notations/IDS_AND_REFER
 ```
 
 - **TYPE** — uppercase, letters / digits / underscore, starts with a letter (`DRIVER`, `GOAL`, `PROCESS_BLUEPRINT`, `BUSINESS_OBJECT`).
-- **Middle segments** — optional, notation-specific, for disambiguation (`GOAL-RETENTION-12`, `ACTIVITY-Q3-2026-7`).
+- **Middle segments** — optional, notation-specific, for disambiguation (`GOAL-RETENTION-12`, `ACTION-Q3-2026-7`).
 - **INTEGER** — terminal positive integer, **no leading zeros** (`-1`, not `-001`).
 - **Exception:** `CAPABILITY-V1.2`, `CAPABILITY-H1.2.3` — capabilities use V/H diagram addresses instead of plain integers (capped at three levels).
 
@@ -223,7 +223,7 @@ issues_catalogue:
       name: "Order-fulfilment SLA gap"
       status: open                          # open | in_progress | blocked | resolved | closed
       description: "p95 latency regressed after the new payment-routing release."
-      relates_to: [ACTIVITY-1, GOAL-1]
+      relates_to: [ACTION-1, GOAL-1]
       owner_role: ROLE-1
 ```
 

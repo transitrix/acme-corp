@@ -30,7 +30,7 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 | `APPLICATION` | application | `03_application/applications/` |
 | `INTEGRATION` | integration between applications | `03_application/integrations/` |
 | `CHANGE` | business transformation (BDN change layer) | `05_implementation/changes/` |
-| `ACTIVITY` | initiative / workstream | `05_implementation/activities/` |
+| `ACTION` | initiative / workstream | `05_implementation/actions/` |
 
 `SCENARIO`, `ISSUE` are **view-defined** (live inside their view document, not as standalone element files) — see [`ELEMENT_PRIMITIVES.md`](../../notations/ELEMENT_PRIMITIVES.md) §4.
 
@@ -52,11 +52,11 @@ Use exactly these prefixes; the abbreviated forms `ACT`, `CHG`, `FAC`, `CAP`, `S
 | `BLOCKS` | `*.blocks.transitrix.yaml` |
 | `ISSUES_CAT` | `*.issues.transitrix.yaml` |
 | `PROCESS_BLUEPRINT` | `*.process-blueprint.transitrix.yaml` |
-| `ACTIVITY_CARD` | `*.activity-card.transitrix.yaml` |
+| `ACTION_CARD` | `*.action-card.transitrix.yaml` |
 
 #### Domain codes
 
-Optional middle segments — short uppercase abbreviations (`ORD`, `PAY`, `USR`, `EU`, `OPS`, …): `GOAL-REVENUE-1`, `ACTIVITY-CRM-EU-1`, `PROCESS-ORD-FULFILL-1`.
+Optional middle segments — short uppercase abbreviations (`ORD`, `PAY`, `USR`, `EU`, `OPS`, …): `GOAL-REVENUE-1`, `ACTION-CRM-EU-1`, `PROCESS-ORD-FULFILL-1`.
 
 #### Sequence numbers
 
@@ -83,7 +83,7 @@ Element primitives are named **`<ID>.yaml`** — the file name *is* the canonica
 
 ### Relation IDs
 
-First-class relations are `REL-[<middle>-]<INTEGER>` ([`IDS_AND_REFERENCES.md`](../../notations/IDS_AND_REFERENCES.md) §1), one file per relation in `canon/relations/`. The *kind* of link lives in the file's `type` field (closed enum `parent` / `goal_parent` / `activity_goal` / `unit_parent`), not in the ID — though a readable convention encodes the endpoints in the middle segments: `REL-CAP-V11-PARENT-1`. See [`notations/elements/17-relations.md`](../../notations/elements/17-relations.md).
+First-class relations are `REL-[<middle>-]<INTEGER>` ([`IDS_AND_REFERENCES.md`](../../notations/IDS_AND_REFERENCES.md) §1), one file per relation in `canon/relations/`. The *kind* of link lives in the file's `type` field (closed enum `parent` / `goal_parent` / `action_goal` / `unit_parent`), not in the ID — though a readable convention encodes the endpoints in the middle segments: `REL-CAP-V11-PARENT-1`. See [`notations/elements/17-relations.md`](../../notations/elements/17-relations.md).
 
 ### Directory organisation
 

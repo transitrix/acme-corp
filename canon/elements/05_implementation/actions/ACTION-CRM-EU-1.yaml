@@ -1,10 +1,10 @@
-# Worked example — ACTIVITY element primitive (Work Package).
+# Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
 # ArchiMate Implementation & Migration layer (05_implementation).
 # Arranged by the FGCA view (canon/views/fgca/).
 
-notation: activity
-id: ACTIVITY-CRM-EU-1
+notation: action
+id: ACTION-CRM-EU-1
 name: "Implement EU-localised CRM rollout"
 delivers_changes:
   - CHANGE-EU-CRM-1

@@ -1,8 +1,8 @@
 # `canon/views/dgca/`
 
-Driver → Goal → Change → Activity chains. Strategy-to-execution scaffold: drivers justify focus, goals set direction, changes define the transformation, activities deliver. Each layer references atomic elements stored elsewhere.
+Driver → Goal → Change → Action chains. Strategy-to-execution scaffold: drivers justify focus, goals set direction, changes define the transformation, actions deliver. Each layer references atomic elements stored elsewhere.
 
-Layer toggle: individual columns can be disabled via `view_config.layers`. The DGA variant (`layers.changes: off`) maps activities directly to goals without an intermediate change step.
+Layer toggle: individual columns can be disabled via `view_config.layers`. The DGA variant (`layers.changes: off`) maps actions directly to goals without an intermediate change step.
 
 ## File convention
 
@@ -44,8 +44,8 @@ changes:
     valid_from: "2026-05-26"
     valid_to: null
 
-activities:
-  - id: ACTIVITY-CRM-EU-1
+actions:
+  - id: ACTION-CRM-EU-1
     name: "Implement EU-localised CRM rollout"
     changes: [CHANGE-EU-CRM-1]
     valid_from: "2026-05-26"
@@ -60,7 +60,7 @@ spec_version: "0.1"
 
 view_config:
   layers:
-    changes: off          # Driver → Goal → Activity; changes[] may be omitted
+    changes: off          # Driver → Goal → Action; changes[] may be omitted
 
 factors:
   - id: DRIVER-1
@@ -76,8 +76,8 @@ goals:
     valid_from: "2026-05-26"
     valid_to: null
 
-activities:
-  - id: ACTIVITY-1
+actions:
+  - id: ACTION-1
     name: "..."
     goals: [GOAL-1]       # direct link — no changes[] needed
     valid_from: "2026-05-26"
