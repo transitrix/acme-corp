@@ -7,7 +7,7 @@ notations:
   - goals
   - capability-map
   - process-map
-  - activities
+  - action
   - blocks
   - scenarios
   - applications
@@ -18,7 +18,7 @@ notations:
   - requirement
   - assertion
   - relation
-  - activity-card
+  - action-card
 zones: [canon, field, codex]
 coverage_profile: full           # see methodology notations/COVERAGE_PROFILES.md
 operating_parameters:            # org-wide operating defaults — see notations/MANIFEST.md §2

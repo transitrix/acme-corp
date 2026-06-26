@@ -1,14 +1,14 @@
 # Single-project narrative card for the GDPR remediation programme.
-# Notation spec: notations/views/18-activity-card.md. Binds to a project Activity
-# and adds narrative milestones; the motivation chain and child activities are
-# pulled by reference from the FGCA and Activities documents, not duplicated here.
+# Notation spec: notations/views/18-action-card.md. Binds to a project Action
+# and adds narrative milestones; the motivation chain and child actions are
+# pulled by reference from the FGCA and Action documents, not duplicated here.
 
-notation: activity-card
+notation: action-card
 spec_version: "0.1"
 
-activity_card:
-  id: ACTIVITY_CARD-GDPR-REMEDIATION-1
-  project: ACTIVITY-GDPR-REMEDIATION-1
+action_card:
+  id: ACTION_CARD-GDPR-REMEDIATION-1
+  project: ACTION-GDPR-REMEDIATION-1
 
   description: >
     Programme of work closing the EU data-protection gaps surfaced by the 2026

@@ -12,15 +12,15 @@ See [`method/methodology.md` §6](../../../method/methodology.md) for the full n
 | [`capabilities/`](capabilities/) | Capabilities map | `*.capability-map.transitrix.yaml` | Capability hierarchies with maturity overlay |
 | [`processmap/`](processmap/) | Process landscape map | `*.process-map.transitrix.yaml` | Top-level process catalogues |
 | [`bpmn/`](bpmn/) | Process diagram (BPMN) | `*.bpmn.transitrix.yaml` | Detailed process flows |
-| [`fgca/`](fgca/) | FGCA chain | `*.fgca.transitrix.yaml` | Factor → Goal → Change → Activity |
-| [`fga/`](fga/) | FGA chain | `*.fga.transitrix.yaml` | Factor → Goal → Activity |
+| [`fgca/`](fgca/) | FGCA chain | `*.fgca.transitrix.yaml` | Factor → Goal → Change → Action |
+| [`fga/`](fga/) | FGA chain | `*.fga.transitrix.yaml` | Factor → Goal → Action |
 | [`blocks/`](blocks/) | Nested block diagrams | `*.blocks.transitrix.yaml` | Recursive `block` tree rendered as nested containers |
-| [`activities/`](activities/) | Activity network | `*.dgca.transitrix.yaml` | PSND (Activity-on-Node) with Gantt projection and critical path |
+| [`action/`](action/) | Action network | `*.dgca.transitrix.yaml` | PSND (Action-on-Node) with Gantt projection and critical path |
 | [`products/`](products/) | Products view | `*.products.transitrix.yaml` | Filtered views over Product elements |
 | [`applications/`](applications/) | Applications view | `*.applications.transitrix.yaml` | Filtered views over Application elements |
 | [`scenarios/`](scenarios/) | Scenarios | `*.scenarios.transitrix.yaml` | Alternative strategic development paths |
 | [`process-blueprint/`](process-blueprint/) | Process Blueprint | `*.process-blueprint.transitrix.yaml` | Wide value-chain blueprint with stage aspects |
-| [`activity-card/`](activity-card/) | Activity card | `*.activity-card.transitrix.yaml` | Single-project narrative card with milestones |
+| [`action-card/`](action-card/) | Action card | `*.action-card.transitrix.yaml` | Single-project narrative card with milestones |
 | [`compliance-impact/`](compliance-impact/) | Compliance impact | `*.compliance-impact.transitrix.yaml` | Obligation × subject matrix with status |
 | [`coverage-metric/`](coverage-metric/) | Coverage metric | `*.coverage-metric.transitrix.yaml` | Assertion-coverage breakdown per regime |
 | [`issues/`](issues/) | Issues register | `*.issues.transitrix.yaml` | Issue register with parent/child nesting |

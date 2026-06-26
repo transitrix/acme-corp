@@ -49,18 +49,18 @@ changes:
     valid_from: "2026-05-26"
     valid_to: null
 
-activities:
-  - id: ACTIVITY-CRM-EU-1
+actions:
+  - id: ACTION-CRM-EU-1
     name: "Implement EU-localised CRM rollout"
     changes: [CHANGE-EU-CRM-1]
     valid_from: "2026-05-26"
     valid_to: null
-  - id: ACTIVITY-BUILD-1
+  - id: ACTION-BUILD-1
     name: "Build & test EU compliance controls"
     changes: [CHANGE-EU-CRM-1, CHANGE-ONBOARD-1]
     valid_from: "2026-05-26"
     valid_to: null
-  - id: ACTIVITY-LAUNCH-1
+  - id: ACTION-LAUNCH-1
     name: "Launch in EU markets"
     changes: [CHANGE-EU-CRM-1]
     valid_from: "2026-05-26"

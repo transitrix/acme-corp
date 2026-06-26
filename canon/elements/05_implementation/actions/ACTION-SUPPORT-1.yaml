@@ -1,9 +1,9 @@
-# Worked example — ACTIVITY element primitive (Work Package).
+# Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
 # Arranged by the FGA view (canon/views/fga/).
 
-notation: activity
-id: ACTIVITY-SUPPORT-1
+notation: action
+id: ACTION-SUPPORT-1
 name: "Add second-shift coverage in EU timezone"
 goals:
   - GOAL-OPS-1
