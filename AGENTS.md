@@ -279,27 +279,30 @@ The agent **never** edits `transitrix.yaml` to change the `methodology_version` 
 User identity is derived from the authenticated GitHub username. Per-user state lives at:
 
 ```
-operations/<github-username>/
-  settings.md          # user preferences
+operations/users/<github-username>/
+  settings.md          # user preferences (YAML frontmatter)
 ```
 
 **On first interaction with a new user:**
 
-1. Check whether `operations/<github-username>/settings.md` exists.
-2. If not: ask the user for the settings below; create the file with their answers and apply defaults for anything not answered.
+1. Check whether `operations/users/<github-username>/settings.md` exists.
+2. If not: ask the user for the settings below; create the file from `.templates/operations/settings-template.md` with their answers and apply defaults for anything not answered.
 
 **Default settings** (`ADOPTER-FILL-ME` — adjust per your organisation):
 
-```markdown
+```yaml
+---
+github_username: firstname.lastname
 language: en
 report_format: markdown
 colour_scheme: default
 ingest_focus_layers: [motivation, business, application]
+---
 ```
 
-**Ingest personalisation.** Before running the ingest skill, read `operations/<github-username>/settings.md` to load the user's data-source preferences, focus layers, and any per-user intake conventions. The ingest procedure itself follows the standard `/transitrix:ingest` skill; only the data context varies by user.
+**Ingest personalisation.** Before running the ingest skill, read `operations/users/<github-username>/settings.md` to load the user's data-source preferences, focus layers, and any per-user intake conventions. The ingest procedure itself follows the standard `/transitrix:ingest` skill; only the data context varies by user.
 
-The `operations/<github-username>/` directory is git-tracked — it contains preferences and workflow state, never model content.
+The `operations/users/<github-username>/` directory is git-tracked — it contains preferences and workflow state, never model content.
 
 ---
 
