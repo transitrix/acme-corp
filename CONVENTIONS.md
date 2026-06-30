@@ -144,7 +144,7 @@ Before committing:
 - [ ] Cross-references resolve to a defined element of the correct TYPE.
 - [ ] Dates are quoted ISO 8601.
 - [ ] Descriptions explain "what" and "why".
-- [ ] Validates in Studio / `npx @transitrix/cli validate <file>`.
+- [ ] Validates in Studio / `npx @transitrix/cli validate <file>` (Windows PowerShell: use `npx.cmd`).
 
 ## Common mistakes
 
