@@ -9,7 +9,7 @@ The fastest path for a brand-new repo is the **onboarding Skill** (`/transitrix:
 - Git.
 - VS Code with **Transitrix Studio** — live diagram preview + inline validation as you edit (recommended).
 - Basic YAML.
-- *Optional:* `npx @transitrix/cli validate <file>` for command-line validation.
+- *Optional:* `npx @transitrix/cli validate <file>` for command-line validation. On Windows PowerShell with a restricted execution policy, use `npx.cmd` instead of `npx` — see Step 5.
 
 ## Step 1 — Understand the layout
 
@@ -48,7 +48,8 @@ Two ways to link, depending on whether time matters ([`ELEMENT_PRIMITIVES.md`](.
 ## Step 5 — Validate
 
 - **Studio** previews and validates on save.
-- **CLI:** `npx @transitrix/cli validate canon/views/goals/strategy-2026.dgca.transitrix.yaml`.
+- **CLI:** `npx @transitrix/cli validate canon/views/goals/strategy-2026.dgca.transitrix.yaml`. All canonical `*.<short-name>.transitrix.yaml` extensions are accepted without `--ext`; pass `--ext <notation-name>` only for a non-canonical extension outside the built-in registry.
+- **On Windows PowerShell** with a restricted execution policy (the default on many workstations), invoke as `npx.cmd @transitrix/cli validate <file>` — the unsuffixed `npx` resolves to a `.ps1` wrapper that the policy refuses to launch. From `cmd.exe`, WSL, or a shell on macOS/Linux, plain `npx` is fine.
 - The rules: the shared header (`HDR-001..004`, [`CONTRACT.md`](../../notations/CONTRACT.md) §2), lifecycle (`LIFECYCLE-001..004`, §7), element placement (`ELEM-001..005`, [`ELEMENT_PRIMITIVES.md`](../../notations/ELEMENT_PRIMITIVES.md) §9), plus each notation's own "Validation rules" table.
 
 ## Step 6 — Commit and open a PR
