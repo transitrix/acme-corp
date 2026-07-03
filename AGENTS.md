@@ -169,7 +169,7 @@ Deprecated three-letter abbreviations (`ACT`, `CHG`, `FAC`, `CAP`, `SCN`) — do
 Every notation file is validated before commit. Two sanctioned paths:
 
 - **Transitrix Studio (VS Code extension)** — install from the Marketplace (`transitrix.transitrix-studio`). The extension validates on save and shows error annotations in the editor.
-- **Transitrix CLI** — `npx @transitrix/cli validate path/to/your.fgca.transitrix.yaml`. Use in CI or when working without VS Code.
+- **Transitrix CLI** — `npx @transitrix/cli validate path/to/your.fgca.transitrix.yaml`. Use in CI or when working without VS Code. All canonical `*.transitrix.yaml` notation extensions are accepted without `--ext`; pass `--ext <notation-name>` only for a non-canonical extension outside the built-in registry. On Windows PowerShell with a restricted execution policy, invoke as `npx.cmd @transitrix/cli validate <file>` — plain `npx` resolves to a `.ps1` wrapper that the policy refuses to launch.
 
 The agent does **not** commit files with `error`-level validation findings. `warning`-level findings are surfaced to the adopter and committed only with explicit acknowledgement. The agent does not auto-suppress validation rules.
 
