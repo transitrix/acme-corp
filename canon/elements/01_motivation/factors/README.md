@@ -14,7 +14,7 @@ TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../../notations/I
 
 Defined in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../../notations/ELEMENT_PRIMITIVES.md) §7.1 (per-TYPE fields) over the common envelope §3:
 
-- Identity + factor fields: `notation: factor`, `id`, `name`, optional `type` (`external` | `internal`), optional `category` (PESTLE — external only: `political` | `economic` | `social` | `technological` | `legal` | `environmental`), `description`, `references_constraint: [CONSTRAINT-…]`.
+- Identity + factor fields: `notation: driver`, `id`, `name`, optional `type` (`external` | `internal`), optional `category` (PESTLE — external only: `political` | `economic` | `social` | `technological` | `legal` | `environmental`), `description`, `references_constraint: [CONSTRAINT-…]`.
 - Admission record per [`CONTRACT.md`](../../../../../../notations/CONTRACT.md) §6: `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks`.
 - Primitive lifecycle per [`CONTRACT.md`](../../../../../../notations/CONTRACT.md) §7: `valid_from`, `valid_to`.
 
