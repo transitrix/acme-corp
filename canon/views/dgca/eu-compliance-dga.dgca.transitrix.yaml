@@ -18,7 +18,7 @@ view_config:
     changes: off          # DGA mode — Driver → Goal → Activity
 
 factors:
-  - id: FACTOR-EU-REG-1
+  - id: DRIVER-EU-REG-1
     name: "EU regulatory window for market entry"
     type: external
     category: legal
@@ -29,7 +29,7 @@ factors:
 goals:
   - id: GOAL-EU-1
     name: "Launch in 3 EU markets under full GDPR/NIS2 compliance"
-    factors: [FACTOR-EU-REG-1]
+    factors: [DRIVER-EU-REG-1]
     valid_from: "2026-05-26"
     valid_to: null
 
