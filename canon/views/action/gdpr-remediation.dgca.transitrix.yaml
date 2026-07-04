@@ -27,6 +27,9 @@ version: "0.2"
 date: "2026-07-03"
 author: "Acme Compliance Office"
 
+project:
+  start_date: "2026-03-01"
+
 actions:
   # ---- Initiative (top of WBS) -------------------------------------------
   # No duration / dates — rolls up from all children.
