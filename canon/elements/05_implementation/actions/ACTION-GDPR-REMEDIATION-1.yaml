@@ -1,0 +1,18 @@
+notation: action
+id: ACTION-GDPR-REMEDIATION-1
+name: "GDPR Remediation 2026"
+type: Programme
+parent: ACTION-EU-COMPLIANCE-1
+goals: [GOAL-EU-1]
+owner: ROLE-DPO-1
+
+zone: canon
+admitted_at: "2026-03-01"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-03-01"
+valid_to: null

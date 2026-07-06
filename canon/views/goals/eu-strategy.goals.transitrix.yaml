@@ -1,0 +1,23 @@
+# Goals tree — 2026 EU-expansion plan. Pure projection over standalone GOAL elements.
+# Notation spec: notations/views/04-goals.md (v2.0, pure projection).
+# Migrated from inline format by migration-1.0-to-2.0.
+
+notation: goals
+spec_version: "0.1"
+methodology_version: "2.0.0"
+
+id: GOALS-STRATEGY-2026
+name: "Acme Corp — Strategy 2026 Goals Tree"
+generated_at: "2026-07-06"
+description: "Goal hierarchy for the 2026 EU-expansion plan, including the regulatory-compliance branch."
+period: "2026"
+author: "Acme Strategy Office"
+
+view_config:
+  goal_types:
+    - { name: "Strategy",       level: 0 }
+    - { name: "Strategic Goal", level: 1 }
+    - { name: "Enabling Goal",  level: 2 }
+  display:
+    depth: null
+    collapsed: []

@@ -1,0 +1,21 @@
+notation: goal
+id: GOAL-EU-COMPLIANCE-1
+name: "Achieve full GDPR & NIS2 compliance"
+type: "Enabling Goal"
+level: 2
+parent: GOAL-EU-1
+description: >
+  Satisfy all GDPR and NIS2 obligations applicable to EU-resident customers
+  before go-live: data-subject rights, breach reporting, and data residency.
+  Gate condition for the EU launch.
+
+zone: canon
+admitted_at: "2026-05-26"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-05-26"
+valid_to: null

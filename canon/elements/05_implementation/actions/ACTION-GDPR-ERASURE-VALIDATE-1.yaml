@@ -1,0 +1,21 @@
+notation: action
+id: ACTION-GDPR-ERASURE-VALIDATE-1
+name: "Validate erasure pipeline end-to-end"
+type: Task
+parent: ACTION-GDPR-ERASURE-PIPELINE-1
+duration: 10
+start_date: "2026-07-10"
+predecessors: [ACTION-GDPR-ERASURE-ARCHIVE-1]
+goals: [GOAL-EU-1]
+owner: ROLE-TECH-1
+
+zone: canon
+admitted_at: "2026-06-10"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-06-10"
+valid_to: null

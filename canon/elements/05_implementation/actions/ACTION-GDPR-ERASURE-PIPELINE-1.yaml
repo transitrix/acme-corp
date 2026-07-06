@@ -1,0 +1,20 @@
+notation: action
+id: ACTION-GDPR-ERASURE-PIPELINE-1
+name: "Extend erasure pipeline to cold-storage archive"
+type: Project
+parent: ACTION-GDPR-REMEDIATION-1
+predecessors: [ACTION-GDPR-GAP-1]
+goals: [GOAL-EU-1]
+delivers_changes: [CHANGE-EU-CRM-1]
+owner: ROLE-TECH-1
+
+zone: canon
+admitted_at: "2026-05-26"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-05-26"
+valid_to: null
