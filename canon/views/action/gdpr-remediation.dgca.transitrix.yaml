@@ -66,7 +66,7 @@ actions:
     valid_from: "2026-05-26"
     valid_to: null
 
-  # Phase with Task children below — omits duration / dates per ACT-017.
+  # Phase with Task children below — omits duration / dates per validation rule 017.
   - id: ACTION-GDPR-ERASURE-PIPELINE-1
     name: "Extend erasure pipeline to cold-storage archive"
     type: Project
