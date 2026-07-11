@@ -363,10 +363,13 @@ The following extensions are recommended for contributors working in this reposi
 
 | Extension | IDE | Purpose | Install |
 |-----------|-----|---------|---------|
-| **Mermaid** | VS Code | Renders Mermaid diagrams (flowcharts, sequence diagrams, ER diagrams) inline in Markdown preview | Search `bierner.markdown-mermaid` in the Extensions panel |
 | **Transitrix Studio** | VS Code | Real-time notation validation, schema hints, and view rendering for Transitrix artefacts | Search `transitrix.transitrix-studio` in the Extensions panel |
+| **PlantUML** | VS Code | Renders `.puml` diagrams in `diagrams/` with live preview (`Alt+D`) | Search `jebbs.plantuml` in the Extensions panel |
+| **Mermaid** | VS Code | Renders Mermaid diagrams inline in Markdown preview | Search `bierner.markdown-mermaid` in the Extensions panel |
 
-Both extensions are **read-only** with respect to the model — they render and validate, they do not modify files.
+All three extensions are **read-only** with respect to the model — they render and validate, they do not modify files.
+
+VS Code workspace recommendations are listed in `.vscode/extensions.json`; VS Code prompts to install them when you open the repo. For setup details and the pinned-toolchain configuration, see `DIAGRAMS.md`.
 
 ---
 
