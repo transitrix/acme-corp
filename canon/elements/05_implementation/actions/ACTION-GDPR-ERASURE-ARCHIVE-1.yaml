@@ -1,0 +1,22 @@
+notation: action
+id: ACTION-GDPR-ERASURE-ARCHIVE-1
+name: "Extend archive storage erasure path"
+type: Task
+parent: ACTION-GDPR-ERASURE-PIPELINE-1
+duration: 20
+start_date: "2026-06-15"
+predecessors: [ACTION-GDPR-GAP-1]
+goals: [GOAL-EU-1]
+delivers_changes: [CHANGE-EU-CRM-1]
+owner: ROLE-TECH-1
+
+zone: canon
+admitted_at: "2026-06-10"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-06-10"
+valid_to: null
