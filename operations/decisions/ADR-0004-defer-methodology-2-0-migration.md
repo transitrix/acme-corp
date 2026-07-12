@@ -1,12 +1,12 @@
 ---
 id: ADR-0004
 title: "Defer methodology 2.0.0 migration until an official release"
-status: proposed
+status: accepted
 date: "2026-07-06"
 author: agent
 source: ad-hoc
 relates_to: []
-superseded_by: null
+superseded_by: ADR-0005
 ---
 
 ## Context
@@ -39,3 +39,15 @@ Keep #29 as a **draft** reference branch only. Track the follow-up work in
 - A new ADR will be required to ratify the `methodology_version` pin change when
   the migration actually runs (superseding the effective scope of ADR-0003 for
   version-pin purposes).
+
+## Resolution — 2026-07-12
+
+Methodology [v2.0.0](https://github.com/transitrix/methodology/releases/tag/v2.0.0)
+released on `main`. #29 was rebased, its conflicts resolved (`main` had independently
+authored `ACTION-EU-COMPLIANCE-1`/`ACTION-GDPR-REMEDIATION-1` since this branch
+diverged — kept `main`'s richer versions; regenerated `eu-strategy.goals.transitrix.yaml`
+against `main`'s current inline data rather than the stale 07-06 draft), validated
+clean (`migrations/1.0-to-2.0/validate.mjs`), and merged. The deferral this ADR
+called for ran its full course. See [ADR-0005](ADR-0005-pin-methodology-2-0-0.md)
+for the pin ratification and [WI-0002](../work-items/WI-0002-methodology-2-0-view-purity-migration.md)
+for the closed-out checklist.
