@@ -6,13 +6,7 @@ This repository uses [PlantUML](https://plantuml.com) for supplementary architec
 
 ## 1. Install the extension
 
-**VS Code:** install `jebbs.plantuml` (PlantUML by jebbs — the canonical choice; do not use random alternatives).
-
-```
-code --install-extension jebbs.plantuml
-```
-
-Open any `.puml` file and press `Alt+D` to open the preview pane.
+**VS Code:** Transitrix Studio renders `.puml` files natively — no separate PlantUML extension needed. If you have followed `GETTING_STARTED.md`, Studio (`transitrix.transitrix-studio`) is already installed. Open any `.puml` file and run **Transitrix: Preview PlantUML** from the Command Palette (`Ctrl+Shift+P` → `transitrixStudio.previewPuml`).
 
 **JetBrains (IntelliJ IDEA, PyCharm, …):** install "PlantUML Integration" by Eugene Steinberg from the JetBrains Marketplace (`com.github.eightpillow.plantuml`).
 
@@ -44,7 +38,9 @@ The theme file (`diagrams/transitrix-theme.puml`) does two things:
 
 ## 3. Pinned toolchain (deterministic rendering)
 
-The `jebbs.plantuml` extension uses your local Java + PlantUML JAR. To pin the version:
+**VS Code:** Transitrix Studio bundles the PlantUML engine internally (no JAR, no Java, no Graphviz). Nothing to configure.
+
+**JetBrains:** the PlantUML Integration plugin uses your local Java + PlantUML JAR. To pin the version:
 
 1. Download the pinned JAR:
    ```
@@ -52,19 +48,9 @@ The `jebbs.plantuml` extension uses your local Java + PlantUML JAR. To pin the v
    ```
    Save it to `.plantuml/plantuml.jar` (gitignored; each contributor downloads once).
 
-2. Add to your personal `.vscode/settings.json` (not committed — already in `.gitignore`):
-   ```json
-   {
-     "plantuml.render": "Local",
-     "plantuml.jar": "${workspaceFolder}/.plantuml/plantuml.jar",
-     "plantuml.diagramsRoot": "diagrams",
-     "plantuml.exportOutDir": ".plantuml-out"
-   }
-   ```
+2. In Settings → Other Settings → PlantUML, set the PlantUML JAR path to `.plantuml/plantuml.jar` and Graphviz to "no external tool" (Smetana layout is active via `!pragma layout smetana` in the theme file, making Graphviz unnecessary).
 
 3. **Java:** JDK or JRE 11+ must be on your `PATH`. `java -version` should succeed.
-
-**JetBrains equivalent:** in Settings → Other Settings → PlantUML, set the PlantUML JAR path to the same `.plantuml/plantuml.jar` and Graphviz to "no external tool" (Smetana layout is active via the `!pragma layout smetana` in the theme file, making Graphviz unnecessary).
 
 ---
 
