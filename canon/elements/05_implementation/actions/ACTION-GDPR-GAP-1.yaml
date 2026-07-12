@@ -1,0 +1,21 @@
+notation: action
+id: ACTION-GDPR-GAP-1
+name: "GDPR & NIS2 gap assessment"
+type: Project
+parent: ACTION-GDPR-REMEDIATION-1
+duration: 15
+start_date: "2026-03-01"
+predecessors: []
+goals: [GOAL-EU-1]
+owner: ROLE-DPO-1
+
+zone: canon
+admitted_at: "2026-05-26"
+admitted_by: "migration-1.0-to-2.0"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-05-26"
+valid_to: null

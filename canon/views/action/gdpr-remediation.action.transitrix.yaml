@@ -1,0 +1,37 @@
+# Action Schedule — GDPR remediation programme. Pure projection over standalone ACTION elements.
+# Notation spec: notations/views/07-action.md (v2.0, pure projection).
+# Migrated from inline format by migration-1.0-to-2.0.
+#
+# WBS hierarchy (modelled in standalone ACTION element files):
+#   Initiative: ACTION-EU-COMPLIANCE-1
+#     Programme: ACTION-GDPR-REMEDIATION-1
+#       Project: ACTION-GDPR-GAP-1
+#       Project: ACTION-GDPR-ERASURE-PIPELINE-1
+#         Task: ACTION-GDPR-ERASURE-ARCHIVE-1
+#         Task: ACTION-GDPR-ERASURE-VALIDATE-1
+#       Project: ACTION-GDPR-DSR-WORKFLOW-1
+#       Project: ACTION-GDPR-CONSENT-1
+#       Project: ACTION-GDPR-AUDIT-1
+
+notation: action
+spec_version: "0.1"
+methodology_version: "2.0.0"
+
+id: ACTION_SCHED-GDPR-REMEDIATION-1
+name: "GDPR Remediation Programme 2026"
+generated_at: "2026-07-06"
+description: |
+  Critical path for closing the EU data-protection gaps surfaced by the 2026
+  gap assessment — including the cold-storage archive erasure gap that holds
+  ASSERTION-ECOMM-GDPR-ERASURE-1 in a non_compliant state.
+
+view_config:
+  scope:
+    root_action: ACTION-EU-COMPLIANCE-1
+    valid_at: null
+  schedule:
+    start_date: "2026-03-01"
+  display:
+    view: both
+    depth: null
+    collapsed: []
