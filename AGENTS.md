@@ -13,10 +13,10 @@ This repository ships with a **recommended set of specialised roles**. Pick the 
 | Role | File | Use when… |
 |---|---|---|
 | **Analyst** | [`ANALYST.md`](ANALYST.md) | Answering questions *about Acme Corp* — who owns X, what capabilities support goal Y, what breaks if app Z changes. Read-only; business language; cited retrieval from `canon/`. Requires the `canon` MCP server (`.mcp.json`). |
-| **Modeler** | This file (`AGENTS.md`) | Authoring or editing model files — creating elements, views, relations; validating files; running the onboarding or ingest skill. |
+| **Modeler** | [`MODELER.md`](MODELER.md) | Authoring or editing model files — creating elements, views, relations; validating files; selecting the right notation before writing. |
 | **Validator** *(coming)* | `VALIDATOR.md` | Reviewing a change before it lands — checking structure, relations, required fields, blast radius. |
 
-**Routing rule:** if the request is a question about the organisation → use the Analyst. If it involves writing or changing any file → use the Modeler (this guide). When in doubt, start with the Analyst; it will redirect you if the task requires writing.
+**Routing rule:** if the request is a question about Acme Corp → use the Analyst. If it involves writing or changing any file → use the Modeler. When in doubt, start with the Analyst; it will redirect you if the task requires writing. The canonical Modeler protocol (including mandatory notation selection) is in `MODELER.md`; this file (`AGENTS.md`) is the comprehensive repository reference.
 
 ## Using this guide with your assistant
 
