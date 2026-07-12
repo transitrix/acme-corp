@@ -4,6 +4,22 @@
 
 This file tells **any AI coding assistant** — Claude Code, Cursor, GitHub Copilot, Windsurf, Gemini CLI, or another — operating inside an **adopter's** Transitrix repository how to behave. It is intentionally tool-neutral. It does **not** apply to assistants working on the methodology canon itself — that's a different repository with its own agent guide.
 
+---
+
+## Role split — choosing the right agent
+
+This repository ships with a **recommended set of specialised roles**. Pick the role that matches your task:
+
+| Role | File | Use when… |
+|---|---|---|
+| **Analyst** | [`ANALYST.md`](ANALYST.md) | Answering questions *about Acme Corp* — who owns X, what capabilities support goal Y, what breaks if app Z changes. Read-only; business language; cited retrieval from `canon/`. Requires the `canon` MCP server (`.mcp.json`). |
+| **Modeler** | [`MODELER.md`](MODELER.md) | Authoring or editing model files — creating elements, views, relations; validating files; selecting the right notation before writing. |
+| **Validator** | [`VALIDATOR.md`](VALIDATOR.md) | Reviewing a change before it lands — checking structure, relations, required fields, blast radius. Invoke before every commit or PR that touches `canon/`. |
+
+**Routing rule:** if the request is a question about Acme Corp → use the Analyst. If it involves writing or changing any file → use the Modeler. Before committing or opening a PR → run the Validator. When in doubt, start with the Analyst; it will redirect you if the task requires writing. The canonical Modeler protocol (including mandatory notation selection) is in `MODELER.md`; this file (`AGENTS.md`) is the comprehensive repository reference.
+
+---
+
 ## Using this guide with your assistant
 
 `AGENTS.md` is the single, canonical, assistant-neutral guide for this repository — there is one source of truth, regardless of which assistant you use. Point your assistant at it:
@@ -76,7 +92,7 @@ The canonical layout an adopter inherits from the `acme_corp` template:
 │   │   ├── 03_application/         # APPLICATION, SERVICE, INTERFACE, DATA_OBJECT
 │   │   └── 04_technology/          # NODE, ARTIFACT, DEVICE, …
 │   └── views/                      # one subfolder per notation (extensions in canon/views/README.md)
-│       ├── bpmn/   dgca/   fga/   goals/   capabilities/   processmap/
+│       ├── bpmn/   dgca/   goals/   action/   capabilities/   processmap/
 │       ├── action/   blocks/   scenarios/
 │       └── applications/   products/   issues/   process-blueprint/
 ├── field/                          # raw inputs — interviews, surveys, observations, drafts
@@ -139,9 +155,9 @@ spec_version: "0.1"         # accepted; will become required at notation v1.0
 
 The file extension is always `*.<short-name>.transitrix.yaml`. The validator rejects extension/content mismatch (rule `HDR-003`).
 
-Naming convention for view files: `<DOMAIN>.<short-name>.transitrix.yaml`, where `<DOMAIN>` is a short kebab-case or upper-snake-case label for the area (e.g. `order-fulfilment.bpmn.transitrix.yaml`, `RETENTION-2026.fgca.transitrix.yaml`). One canonical instance per notation per domain.
+Naming convention for view files: `<DOMAIN>.<short-name>.transitrix.yaml`, where `<DOMAIN>` is a short kebab-case or upper-snake-case label for the area (e.g. `order-fulfilment.bpmn.transitrix.yaml`, `EU-EXPANSION-2026.dgca.transitrix.yaml`). One canonical instance per notation per domain.
 
-The agent never strips the `notation:` and `spec_version:` headers, and never introduces alias extensions (`*.bpmn.yaml`, `*.fgca.yml`) — they fail validation.
+The agent never strips the `notation:` and `spec_version:` headers, and never introduces alias extensions (`*.bpmn.yaml`, `*.dgca.yml`, `*.fgca.transitrix.yaml`) — they fail validation.
 
 ---
 
@@ -169,11 +185,11 @@ Deprecated three-letter abbreviations (`ACT`, `CHG`, `FAC`, `CAP`, `SCN`) — do
 Every notation file is validated before commit. Two sanctioned paths:
 
 - **Transitrix Studio (VS Code extension)** — install from the Marketplace (`transitrix.transitrix-studio`). The extension validates on save and shows error annotations in the editor.
-- **Transitrix CLI** — `npx @transitrix/cli validate path/to/your.fgca.transitrix.yaml`. Use in CI or when working without VS Code. All canonical `*.transitrix.yaml` notation extensions are accepted without `--ext`; pass `--ext <notation-name>` only for a non-canonical extension outside the built-in registry. On Windows PowerShell with a restricted execution policy, invoke as `npx.cmd @transitrix/cli validate <file>` — plain `npx` resolves to a `.ps1` wrapper that the policy refuses to launch.
+- **Transitrix CLI** — `npx @transitrix/cli validate path/to/your.dgca.transitrix.yaml`. Use in CI or when working without VS Code. All canonical `*.transitrix.yaml` notation extensions are accepted without `--ext`; pass `--ext <notation-name>` only for a non-canonical extension outside the built-in registry. On Windows PowerShell with a restricted execution policy, invoke as `npx.cmd @transitrix/cli validate <file>` — plain `npx` resolves to a `.ps1` wrapper that the policy refuses to launch.
 
 The agent does **not** commit files with `error`-level validation findings. `warning`-level findings are surfaced to the adopter and committed only with explicit acknowledgement. The agent does not auto-suppress validation rules.
 
-Every notation spec carries its own validation-codes table (e.g. `FGCA-001..015`, `GOALS-001..013`, `BL-001..009`, `ISS-001..006`). When surfacing a validation error to the adopter, the agent includes the canonical code so the rule is traceable to the spec.
+Every notation spec carries its own validation-codes table (e.g. `DGCA-001..015`, `GOALS-001..013`, `ACT-001..020`, `BL-001..009`, `ISS-001..006`). When surfacing a validation error to the adopter, the agent includes the canonical code so the rule is traceable to the spec.
 
 ---
 
@@ -236,7 +252,7 @@ The agent reads, edits, and validates this file the same way as any other notati
 - Does **not** edit files under the methodology canon at `transitrix/methodology` from inside this repo.
 - Does **not** invent new notations, new TYPE prefixes, or new validation rules. Those decisions happen upstream.
 - Does **not** change the canonical repository layout — `canon/views/<notation>/`, `canon/elements/<NN>_<layer>/`, `.templates/` — without an explicit adopter decision recorded in the PR.
-- Does **not** strip the `notation:` / `spec_version:` headers, rename canonical extensions, or rewrite files into alias formats (`*.bpmn.yaml`, `*.fgca.yml`).
+- Does **not** strip the `notation:` / `spec_version:` headers, rename canonical extensions, or rewrite files into alias formats (`*.bpmn.yaml`, `*.dgca.yml`, retired `*.fgca.transitrix.yaml`).
 - Does **not** auto-merge PRs. All PRs go through the gating in §11.
 - Does **not** push to `main` directly. Use a feature branch + PR every time.
 - Does **not** run destructive operations (`git push --force`, `git reset --hard`, deleting branches that aren't local-only) without an explicit instruction from the adopter.
@@ -363,10 +379,13 @@ The following extensions are recommended for contributors working in this reposi
 
 | Extension | IDE | Purpose | Install |
 |-----------|-----|---------|---------|
-| **Mermaid** | VS Code | Renders Mermaid diagrams (flowcharts, sequence diagrams, ER diagrams) inline in Markdown preview | Search `bierner.markdown-mermaid` in the Extensions panel |
 | **Transitrix Studio** | VS Code | Real-time notation validation, schema hints, and view rendering for Transitrix artefacts | Search `transitrix.transitrix-studio` in the Extensions panel |
+| **PlantUML** | VS Code | Renders `.puml` diagrams in `diagrams/` with live preview (`Alt+D`) | Search `jebbs.plantuml` in the Extensions panel |
+| **Mermaid** | VS Code | Renders Mermaid diagrams inline in Markdown preview | Search `bierner.markdown-mermaid` in the Extensions panel |
 
-Both extensions are **read-only** with respect to the model — they render and validate, they do not modify files.
+All three extensions are **read-only** with respect to the model — they render and validate, they do not modify files.
+
+VS Code workspace recommendations are listed in `.vscode/extensions.json`; VS Code prompts to install them when you open the repo. For setup details and the pinned-toolchain configuration, see `DIAGRAMS.md`.
 
 ---
 
