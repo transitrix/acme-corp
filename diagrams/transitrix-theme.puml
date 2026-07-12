@@ -1,0 +1,119 @@
+' Transitrix PlantUML theme
+' Source: brand/transitrix_brand.md §"Diagram color roles" (decided 2026-07-09)
+'
+' Usage — add at the top of every .puml file in this repo:
+'   !include transitrix-theme.puml
+'
+' Color contract (three orthogonal channels, never mix):
+'   Structure (petrol family)
+'     #004d67  borders, edges, connectors — the brand anchor
+'     #b3c8cf  petrol-tint-deep  — top / high-hierarchy node fills
+'     #ccd8dc  petrol-tint-mid   — mid-level node fills
+'     #e8f2f5  petrol-tint-light — default / leaf-level node fills
+'     #f4f9fb  petrol-tint-wash  — large-area backgrounds (packages, frames)
+'   Emphasis — author-assigned attention (brand namespace):
+'     #ffaf00  Amber — normal emphasis ("noted")
+'     #ff4d00  Orange — focus / active / high emphasis (use sparingly)
+'   Status — functional states (SEPARATE namespace; never mix with brand):
+'     #1f7a3f  success  |  #a76b00  warning  |  #b3261e  error  |  #3b6cb3  info
+'
+' Rules:
+'   - Shadowing off on every element.
+'   - Stroke weight uniform across all nodes, edges, states (emphasis = colour, not weight).
+'   - Smetana layout (pure-Java; no Graphviz dependency) is enforced by this file.
+
+!pragma layout smetana
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "Segoe UI, Arial, sans-serif"
+skinparam defaultFontSize 12
+skinparam defaultFontColor #1a1a1a
+skinparam ArrowThickness 1
+skinparam BorderThickness 1
+
+skinparam BorderColor #004d67
+skinparam ArrowColor #004d67
+skinparam LineColor #004d67
+
+' --- Sequence diagrams ---
+skinparam SequenceLifeLineBorderColor #004d67
+skinparam SequenceArrowColor #004d67
+skinparam SequenceActorBorderColor #004d67
+skinparam SequenceActorBackgroundColor #e8f2f5
+skinparam SequenceActorFontColor #1a1a1a
+skinparam SequenceParticipantBorderColor #004d67
+skinparam SequenceParticipantBackgroundColor #e8f2f5
+skinparam SequenceParticipantFontColor #1a1a1a
+skinparam SequenceGroupBorderColor #004d67
+skinparam SequenceGroupBodyBackgroundColor #f4f9fb
+skinparam SequenceDividerBackgroundColor #ccd8dc
+skinparam SequenceDividerBorderColor #004d67
+skinparam SequenceMessageAlignment center
+
+' --- Class diagrams ---
+skinparam ClassBorderColor #004d67
+skinparam ClassBackgroundColor #e8f2f5
+skinparam ClassFontColor #1a1a1a
+skinparam ClassHeaderBackgroundColor #004d67
+skinparam ClassHeaderFontColor #ffffff
+skinparam ClassStereotypeFontColor #5a5a5a
+skinparam ClassArrowColor #004d67
+
+' --- Component diagrams ---
+skinparam ComponentBorderColor #004d67
+skinparam ComponentBackgroundColor #e8f2f5
+skinparam ComponentFontColor #1a1a1a
+skinparam ComponentArrowColor #004d67
+skinparam InterfaceBorderColor #004d67
+skinparam InterfaceBackgroundColor #ccd8dc
+
+' --- Use case diagrams ---
+skinparam UsecaseBorderColor #004d67
+skinparam UsecaseBackgroundColor #e8f2f5
+skinparam UsecaseFontColor #1a1a1a
+skinparam ActorBorderColor #004d67
+skinparam ActorBackgroundColor #e8f2f5
+skinparam ActorFontColor #1a1a1a
+
+' --- Activity diagrams ---
+skinparam ActivityBorderColor #004d67
+skinparam ActivityBackgroundColor #e8f2f5
+skinparam ActivityFontColor #1a1a1a
+skinparam ActivityArrowColor #004d67
+skinparam ActivityStartColor #004d67
+skinparam ActivityEndColor #004d67
+skinparam ActivityDiamondBorderColor #004d67
+skinparam ActivityDiamondBackgroundColor #ccd8dc
+skinparam ActivityBarColor #004d67
+
+' --- State diagrams ---
+skinparam StateBorderColor #004d67
+skinparam StateBackgroundColor #e8f2f5
+skinparam StateFontColor #1a1a1a
+skinparam StateArrowColor #004d67
+skinparam StateStartColor #004d67
+skinparam StateEndColor #004d67
+
+' --- Package / namespace / rectangle ---
+skinparam PackageBorderColor #004d67
+skinparam PackageBackgroundColor #f4f9fb
+skinparam PackageFontColor #1a1a1a
+skinparam RectangleBorderColor #004d67
+skinparam RectangleBackgroundColor #f4f9fb
+skinparam NamespaceBorderColor #004d67
+skinparam NamespaceBackgroundColor #f4f9fb
+
+' --- Deployment / infrastructure ---
+skinparam NodeBorderColor #004d67
+skinparam NodeBackgroundColor #e8f2f5
+skinparam NodeFontColor #1a1a1a
+skinparam DatabaseBorderColor #004d67
+skinparam DatabaseBackgroundColor #e8f2f5
+skinparam CloudBorderColor #004d67
+skinparam CloudBackgroundColor #f4f9fb
+
+' --- Notes ---
+skinparam NoteBackgroundColor #fff8e1
+skinparam NoteBorderColor #ffaf00
+skinparam NoteFontColor #1a1a1a
