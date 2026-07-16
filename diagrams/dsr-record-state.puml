@@ -1,0 +1,36 @@
+' PlantUML example — Implementation layer: object lifecycle of a single
+' data-subject-request (DSR) record in the DPO's DSR register.
+'
+' Derived from:
+'   - canon/views/bpmn/data-subject-erasure.bpmn.transitrix.yaml
+'       SE-REQUEST, TASK-VERIFY-IDENTITY, GW-VERIFIED, TASK-REJECT,
+'       TASK-LOG-REQUEST, GW-ARCHIVE, TASK-FLAG-GAP, TASK-CONFIRM,
+'       TASK-RECORD-CLOSURE, EE-CLOSED.
+'   - canon/elements/02_business/processes/PROCESS-DSR-HANDLE-1.yaml
+'       "fulfil data-subject rights requests ... within the GDPR statutory window."
+'
+' Not a duplicate of canon/views/state/order-lifecycle.state.md: that Mermaid
+' view is the Order entity's lifecycle. This is a different entity (the DSR
+' record itself) — object-state detail the BPMN task flow doesn't expose
+' directly, same complementary pattern as the order-lifecycle view uses
+' relative to PROCESS-ORD-FULFILL-1.
+
+!include transitrix-theme.puml
+@startuml DSR record — state model
+
+[*] --> Received : erasure request received (SE-REQUEST)
+Received --> IdentityCheck : verify data-subject identity (TASK-VERIFY-IDENTITY)
+IdentityCheck --> Rejected : not verified (GW-VERIFIED, default)
+IdentityCheck --> Logged : verified (TASK-LOG-REQUEST)
+Rejected --> [*]
+
+Logged --> Locating : locate personal data (TASK-LOCATE)
+Locating --> Erasing : erase from active systems (TASK-ERASE-ACTIVE)
+Erasing --> ArchiveException : data in cold-storage archive (GW-ARCHIVE)
+Erasing --> Confirmed : no archive exposure (GW-ARCHIVE, default)
+ArchiveException --> Confirmed : exception flagged (TASK-FLAG-GAP)
+
+Confirmed --> Closed : record completion within 30-day window (TASK-RECORD-CLOSURE)
+Closed --> [*]
+
+@enduml

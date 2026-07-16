@@ -1,0 +1,61 @@
+' PlantUML example — Implementation layer: domain class model behind the
+' Order entity, including behaviour (operations), not just relationships.
+'
+' Derived from:
+'   - canon/elements/02_business/products/PRODUCT-ECOMM-1.yaml
+'       type: digital_product; capabilities: [CAPABILITY-V1, CAPABILITY-V2].
+'   - canon/elements/02_business/capabilities/CAPABILITY-V1.yaml — "Order Management"
+'   - canon/views/state/order-lifecycle.state.md
+'       states: Received, Validating, Picking, BackorderHold, Shipped, Closed.
+'
+' Not a duplicate of canon/views/er/domain-entities.er.md: that Mermaid ER
+' diagram shows entity attributes and relationships (data shape). This class
+' diagram adds operations/behaviour (validate(), cancel(), ship()) — detail
+' an ER diagram does not carry by convention.
+
+!include transitrix-theme.puml
+@startuml Order domain — class model
+
+class Customer #e8f2f5 {
+  +id: string
+  +consentStatus: string
+  +placeOrder(): Order
+}
+
+class Order #ccd8dc {
+  +id: string
+  +status: string
+  +validate(): bool
+  +cancel(): void
+  +ship(): void
+}
+
+class OrderLine #e8f2f5 {
+  +productId: string
+  +quantity: int
+}
+
+class Product #e8f2f5 {
+  +id: string
+  +type: string
+  +domain: string
+}
+
+class Capability #b3c8cf {
+  +id: string
+  +name: string
+}
+
+Customer "1" -- "0..*" Order : places
+Order "1" *-- "1..*" OrderLine : contains
+OrderLine "0..*" --> "1" Product : references
+Product "1" -- "1..*" Capability : realised by
+
+note right of Order
+  status values follow
+  canon/views/state/order-lifecycle.state.md:
+  Received | Validating | Picking |
+  BackorderHold | Shipped | Closed
+end note
+
+@enduml

@@ -1,0 +1,40 @@
+' PlantUML example — Implementation layer: internal steps behind a single
+' BPMN task, TASK-ERASE-ACTIVE, from the GDPR erasure process.
+'
+' Derived from:
+'   - canon/views/bpmn/data-subject-erasure.bpmn.transitrix.yaml
+'       TASK-LOCATE "Locate personal data across systems"
+'       TASK-ERASE-ACTIVE "Erase from active OMS & CRM"
+'       GW-ARCHIVE "Personal data in cold-storage archive?"
+'       TASK-FLAG-GAP "Flag archive exception for manual review"
+'
+' Not a duplicate of the BPMN view: the BPMN shows the business task flow
+' across lanes (Support / DPO / Ops) at task granularity. This activity
+' diagram decomposes one of those tasks (TASK-LOCATE -> TASK-ERASE-ACTIVE)
+' into the engineering steps OMS actually performs — detail below what a
+' business-process lane is meant to carry.
+
+!include transitrix-theme.puml
+@startuml Erasure sweep — implementation detail
+
+start
+:Query active orders for data-subject ID;
+:Query CRM contact record for data-subject ID;
+note right: TASK-LOCATE
+
+partition "TASK-ERASE-ACTIVE" #f4f9fb {
+  :Soft-delete PII fields on active orders (OMS DB);
+  :Soft-delete contact PII fields (CRM, via REST outbound);
+  :Propagate erasure event OMS -> CRM;
+}
+
+if (Personal data in cold-storage archive?) then (yes)
+  :Flag archive exception for manual review;
+  note right: TASK-FLAG-GAP — known gap, see NOTATIONS_AUDIT / ASSERTION-ECOMM-GDPR-ERASURE-1
+else (no)
+endif
+
+:Join erasure path (GW-CONFIRM-JOIN);
+stop
+
+@enduml

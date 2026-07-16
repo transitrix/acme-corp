@@ -1,0 +1,44 @@
+' PlantUML example — Technology layer: physical/execution deployment of the
+' EU portfolio applications.
+'
+' Derived from:
+'   - canon/views/applications/eu-portfolio.applications.transitrix.yaml
+'       APPLICATION-OMS-1: vendor "Internal" -> self-hosted node.
+'       APPLICATION-CRM-1: vendor "Salesforce" -> external SaaS cloud node.
+'   - canon/elements/04_technology/equipment/EQUIPMENT-SCANNER-1.yaml
+'       "Handheld barcode scanner used in the warehouse."
+'
+' Not a duplicate of canon/views/c4infrastructure/network-zones.md: that
+' Mermaid flowchart shows network *zones* and traffic crossing them. This
+' UML deployment diagram shows formal deployment semantics instead — nodes,
+' artifacts, and execution environments — detail the flowchart form doesn't
+' carry (e.g. what artifact runs where, not just which zone talks to which).
+
+!include transitrix-theme.puml
+@startuml EU portfolio — deployment
+
+node "Customer browser" as Browser #e8f2f5
+
+node "Acme Corp datacenter (Internal)" as DC #f4f9fb {
+  node "App server" as AppSrv #e8f2f5 {
+    artifact "APPLICATION-OMS-1" as OMS #ccd8dc
+  }
+  database "Active-order DB" as DB #e8f2f5
+}
+
+cloud "Salesforce Cloud (SaaS)" as SFCloud #f4f9fb {
+  node "Salesforce platform" as SFNode #e8f2f5 {
+    artifact "APPLICATION-CRM-1" as CRM #ccd8dc
+  }
+}
+
+node "Warehouse LAN (on-premise)" as WH #f4f9fb {
+  artifact "EQUIPMENT-SCANNER-1\n(Barcode scanner)" as Scanner #e8f2f5
+}
+
+Browser --> AppSrv : HTTPS
+AppSrv --> DB : reads/writes
+AppSrv --> SFNode : REST outbound (order & erasure events)
+Scanner --> AppSrv : scan events (pick & pack)
+
+@enduml

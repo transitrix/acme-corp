@@ -1,0 +1,37 @@
+' PlantUML example — Implementation layer: internal component breakdown of
+' APPLICATION-OMS-1 and its interface to APPLICATION-CRM-1.
+'
+' Derived from:
+'   - canon/views/applications/eu-portfolio.applications.transitrix.yaml
+'       APPLICATION-OMS-1 -> APPLICATION-CRM-1, outbound REST, "Propagates order
+'       and erasure events to CRM".
+'   - canon/elements/02_business/processes/PROCESS-ORD-FULFILL-1.yaml
+'       STEP-ORD-FULFILL-2 "Validate Order", STEP-ORD-FULFILL-4 "Pick and Pack".
+'
+' Not a duplicate of canon/views/c4component/application-containers.c4.md:
+' that Mermaid C4 view stops at container level (APPLICATION-OMS-1 as one box).
+' This diagram opens the container up into its internal components — detail
+' one level below what C4Container is meant to show.
+
+!include transitrix-theme.puml
+@startuml OMS — component decomposition
+
+package "APPLICATION-OMS-1 (Order Management System)" #f4f9fb {
+  [Order Intake] as Intake #e8f2f5
+  [Order Validation] as Validation #e8f2f5
+  [Fulfilment Engine] as Fulfilment #e8f2f5
+  [Event Publisher] as Publisher #e8f2f5
+  database "Active-order DB" as DB #e8f2f5
+}
+
+interface "REST outbound" as CRMApi
+
+Intake --> Validation : new order
+Validation --> DB : persist
+Validation --> Fulfilment : validated order (STEP-ORD-FULFILL-2)
+Fulfilment --> DB : update status (STEP-ORD-FULFILL-4)
+Fulfilment --> Publisher : order / erasure event
+Publisher --> CRMApi
+CRMApi --> [APPLICATION-CRM-1\n(CRM System)] #ccd8dc
+
+@enduml
