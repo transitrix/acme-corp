@@ -1,13 +1,16 @@
 # Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
 # ArchiMate Implementation & Migration layer (05_implementation).
-# Arranged by the FGCA view (canon/views/fgca/).
+# Arranged by the DGCA view (canon/views/dgca/) — full mode via delivers_changes,
+# DGA mode (changes layer off) via the direct goals link below.
 
 notation: action
 id: ACTION-CRM-EU-1
 name: "Implement EU-localised CRM rollout"
 delivers_changes:
   - CHANGE-EU-CRM-1
+goals:
+  - GOAL-EU-1
 description: >
   Workstream that delivers the EU-localised CRM change in the EU-expansion
   chain.
