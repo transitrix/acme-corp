@@ -1,0 +1,33 @@
+' PlantUML example — Implementation layer: internal service call sequence for
+' order placement inside APPLICATION-OMS-1.
+'
+' Derived from:
+'   - canon/elements/03_application/applications/APPLICATION-OMS-1.yaml
+'       "Core system for order lifecycle management" — single application boundary.
+'   - canon/elements/02_business/processes/PROCESS-ORD-FULFILL-1.yaml
+'       STEP-ORD-FULFILL-1 (startEvent) / STEP-ORD-FULFILL-2 ("Validate Order").
+'
+' Not a duplicate of canon/views/sequence/order-erasure-interaction.sequence.md:
+' that Mermaid view shows OMS <-> CRM at the application-integration level (who
+' talks to whom). This diagram opens up APPLICATION-OMS-1 itself and shows the
+' internal service calls behind STEP-ORD-FULFILL-1/2 — detail no Transitrix
+' notation captures, since elements model applications as a single boundary.
+
+!include transitrix-theme.puml
+@startuml Order placement — OMS internal sequence
+
+actor Customer #e8f2f5
+participant "Order Service" as OS #e8f2f5
+participant "Payment Service" as PS #e8f2f5
+participant "Inventory Service" as IS #e8f2f5
+
+note over Customer,IS: Inside APPLICATION-OMS-1 — STEP-ORD-FULFILL-1 / STEP-ORD-FULFILL-2
+
+Customer -> OS : Place order
+OS -> PS : Authorise payment
+PS --> OS : Payment authorised
+OS -> IS : Reserve stock
+IS --> OS : Stock reserved
+OS --> Customer : Order confirmed (Received)
+
+@enduml
