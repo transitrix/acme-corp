@@ -1,16 +1,18 @@
 # Worked example — CHANGE element primitive (BDN Gap).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.3 + envelope §3.
-# Referenced from the activities view via `delivers_changes: [CHANGE-ONBOARD-1]`.
+# Referenced from the action view via `delivers_changes: [CHANGE-ONBOARD-1]`.
 
 notation: change
 id: CHANGE-ONBOARD-1
 name: "Rework the customer onboarding journey"
 goals:
   - GOAL-CUST-1
+  - GOAL-EU-1
 description: >
   The delta needed to improve the onboarding experience — a reworked
   onboarding journey delivered by the discovery → design → build → launch
-  activity network.
+  activity network. Serves both the customer-experience goal and, via its
+  GDPR-consent-capture angle, the EU-expansion goal.
 
 # Admission record (CONTRACT.md §6)
 zone: canon

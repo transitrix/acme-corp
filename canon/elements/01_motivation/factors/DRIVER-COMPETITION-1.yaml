@@ -1,0 +1,31 @@
+# Worked example — DRIVER element primitive (external driver, PESTLE: economic).
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.1 + envelope §3.
+# Definition home for this driver; referenced inline from the DGCA view
+# (canon/views/dgca/eu-expansion.dgca.transitrix.yaml), which was its
+# authoring surface until promotion.
+#
+# Neutral Driver — the standing external competitive force, not a finding
+# about it. Dated findings about this driver's current state would live on
+# ASSESSMENT records that assesses this DRIVER; none exist yet.
+
+notation: driver
+id: DRIVER-COMPETITION-1
+name: "Competitive pressure"
+type: external
+category: economic
+description: >
+  Standing external driver — competitor activity in the target EU markets
+  that pressures the organisation's market-entry timeline.
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-16"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-05-26"
+valid_to: null
