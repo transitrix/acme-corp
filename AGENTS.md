@@ -12,11 +12,12 @@ This repository ships with a **recommended set of specialised roles**. Pick the 
 
 | Role | File | Use when… |
 |---|---|---|
-| **Analyst** | [`ANALYST.md`](ANALYST.md) | Answering questions *about Acme Corp* — who owns X, what capabilities support goal Y, what breaks if app Z changes. Read-only; business language; cited retrieval from `canon/`. Requires the `canon` MCP server (`.mcp.json`). |
+| **Ingest** | [`INGEST.md`](INGEST.md) | Turning raw material — interviews, policies, spreadsheets, notes — into `field` artefacts and canon candidates, at scale. Source in → candidate elements → through the human review gate; never writes admitted canon. |
 | **Modeler** | [`MODELER.md`](MODELER.md) | Authoring or editing model files — creating elements, views, relations; validating files; selecting the right notation before writing. |
+| **Analyst** | [`ANALYST.md`](ANALYST.md) | Answering questions *about Acme Corp* — who owns X, what capabilities support goal Y, what breaks if app Z changes. Read-only; business language; cited retrieval from `canon/`. Requires the `canon` MCP server (`.mcp.json`). |
 | **Validator** | [`VALIDATOR.md`](VALIDATOR.md) | Reviewing a change before it lands — checking structure, relations, required fields, blast radius. Invoke before every commit or PR that touches `canon/`. |
 
-**Routing rule:** if the request is a question about Acme Corp → use the Analyst. If it involves writing or changing any file → use the Modeler. Before committing or opening a PR → run the Validator. When in doubt, start with the Analyst; it will redirect you if the task requires writing. The canonical Modeler protocol (including mandatory notation selection) is in `MODELER.md`; this file (`AGENTS.md`) is the comprehensive repository reference.
+**Routing rule:** if the request is turning raw material into candidate elements → use Ingest. If it's a question about Acme Corp → use the Analyst. If it involves writing or changing any file → use the Modeler. Before committing or opening a PR → run the Validator. When in doubt, start with the Analyst; it will redirect you if the task requires writing. The canonical Modeler protocol (including mandatory notation selection) is in `MODELER.md`; this file (`AGENTS.md`) is the comprehensive repository reference.
 
 ---
 
