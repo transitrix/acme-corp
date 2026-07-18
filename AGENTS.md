@@ -19,6 +19,8 @@ This repository ships with a **recommended set of specialised roles**. Pick the 
 
 **Routing rule:** if the request is turning raw material into candidate elements → use Ingest. If it's a question about Acme Corp → use the Analyst. If it involves writing or changing any file → use the Modeler. Before committing or opening a PR → run the Validator. When in doubt, start with the Analyst; it will redirect you if the task requires writing. The canonical Modeler protocol (including mandatory notation selection) is in `MODELER.md`; this file (`AGENTS.md`) is the comprehensive repository reference.
 
+**Repo setup is a one-time step, not a role.** Acme Corp itself was scaffolded once via `/transitrix:onboard`; that is not part of the Modeler's day-to-day remit. The Modeler authors *within* this existing repo — it does not scaffold new ones.
+
 ---
 
 ## Using this guide with your assistant
