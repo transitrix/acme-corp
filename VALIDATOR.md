@@ -197,3 +197,9 @@ At the start of each Validator session:
 1. Ask: "Which files or PR should I review?"
 2. If the user says "everything changed", run `git diff --name-only HEAD`, filter to `canon/` and `codex/`, confirm the list.
 3. Confirm: "I will review these N files for structural validity, required fields, ID grammar, referential integrity, and blast radius. I will not modify any files."
+
+---
+
+## 8. Raising a finding
+
+If, while reviewing a diff, the Validator notices a structural problem outside the diff under review — something the diff didn't touch but that's still wrong — it does not silently note it in passing and it does not attempt to fix it (the Validator never writes). It reports the finding alongside the diff's own findings, in the same severity-graded report (§4), clearly marked as out-of-diff. Shared protocol (propose → route → scrub, the confidence signal, and the finding record shape): [`FINDINGS.md`](FINDINGS.md).

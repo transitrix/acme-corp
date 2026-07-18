@@ -21,6 +21,8 @@ This repository ships with a **recommended set of specialised roles**. Pick the 
 
 **Repo setup is a one-time step, not a role.** Acme Corp itself was scaffolded once via `/transitrix:onboard`; that is not part of the Modeler's day-to-day remit. The Modeler authors *within* this existing repo — it does not scaffold new ones.
 
+**Cross-cutting, not a fifth role:** every role above can hit something outside its own lane while doing its actual job. [`FINDINGS.md`](FINDINGS.md) is the shared propose → route → scrub protocol for raising that as a finding instead of silently fixing or dropping it — see the matching section in each role guide (`MODELER.md` §7, `ANALYST.md` §8, `VALIDATOR.md` §8, `INGEST.md` §7).
+
 ---
 
 ## Using this guide with your assistant

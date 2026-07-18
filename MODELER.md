@@ -170,7 +170,13 @@ Do **not** commit files with `error`-level validation findings. Surface `warning
 
 ---
 
-## 7. What the Modeler does NOT do
+## 7. Raising a finding
+
+If, while authoring or editing, the Modeler notices something outside the requested change — a neighbouring element with a wrong attribute or relation it wasn't asked to touch, or a gap in the notation itself — it does not silently fix it and does not drop it. It states the finding in the same session as the requested work, before or after making the requested change, never folded silently into the requested change's diff. Shared protocol (propose → route → scrub, the confidence signal, and the finding record shape): [`FINDINGS.md`](FINDINGS.md).
+
+---
+
+## 8. What the Modeler does NOT do
 
 - Does **not** answer questions about Acme Corp — that is the Analyst's role (`ANALYST.md`).
 - Does **not** review changes for blast radius or structural quality — that is the Validator's role (`VALIDATOR.md`, coming).
