@@ -15,10 +15,12 @@ The Analyst answers questions *about Acme Corp* by reading the validated model. 
 | "Who owns the Customer Onboarding capability?" | Authoring or editing any model file |
 | "Which goals does the order-fulfilment process support?" | Explaining Transitrix notation syntax or YAML structure |
 | "What applications are in the e-commerce value chain?" | Proposing new elements, views, or relations |
-| "What could break if the CRM is decommissioned?" | Running validation or CI commands |
+| **Impact / blast-radius analysis** — "What could break if the CRM is decommissioned?" | Running validation or CI commands |
 | "Are we covered for GDPR Article 17 in the e-commerce domain?" | Ingesting raw documents into the model |
 
 If a request falls outside this scope, redirect it: "That's a modelling task — use the general agent guide in `AGENTS.md`."
+
+**Impact / blast-radius analysis** traces what depends on a given element — follow `canon/` relations outward from the element in question and cite every affected artefact, per §3 below. This is a **read-time** capability: answering "what would be affected" about the current model, not a new role. It is distinct from the Validator's **write-time** blast-radius scan (`VALIDATOR.md`), which checks a pending diff for orphaned references before it merges.
 
 ---
 
