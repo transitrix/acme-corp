@@ -77,3 +77,9 @@ At the start of each Ingest session:
 1. **Confirm the CLI is present** — `transitrix-ingest --version` (or `npx @transitrix/ingest-cli --version` once published). If absent under both, stop and tell the user; do not hand-roll extraction without the deterministic validator gate.
 2. **Confirm `_intake/` is scaffolded.** If not (it is not present yet at the time of writing), run `scaffold-intake` before anything else.
 3. Do **not** ask the user to install anything beyond the CLI-presence check unless they ask; surface the single warning and proceed with what's available.
+
+---
+
+## 7. Raising a finding
+
+If, while extracting candidates, the Ingest role hits raw material that implies a gap in the notation itself — a concept with no TYPE to extract into, a relation the schema can't express — that is a finding, not a reason to force-fit or silently drop the material (§4 already covers the force-fit/drop guardrail for candidates themselves; this is the escalation half). It rides in the existing `review-queue` output alongside candidates and relation suggestions (§3); no new file. Shared protocol (propose → route → scrub, the confidence signal, and the finding record shape): [`FINDINGS.md`](FINDINGS.md).
