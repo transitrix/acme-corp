@@ -1,0 +1,60 @@
+name: Public-surface hygiene
+
+# acme-corp is a demo/reference adopter repo and legitimately SHIPS its own
+# CLAUDE.md / AGENTS.md publicly (adopter demo content) - unlike most repos in
+# this family, it does NOT get a filename-ban or gitignore treatment for
+# these files.
+#
+# Instead: a full-tree content scan of every committed CLAUDE.md / AGENTS.md
+# against an internal-ops marker regex (private-repo refs, agent-role/roster
+# names, containment vocabulary), so if one of these files is ever edited to
+# include real internal-ops content later, CI catches it. Full-tree (not
+# diff-only) so a pre-existing file that later gains internal content is
+# still caught even if the triggering PR doesn't touch it directly.
+#
+# The marker regex is read from the HYGIENE_INTERNAL_MARKERS repository
+# secret so the patterns never appear in this workflow file, the git
+# history, or the Actions logs. Matches case-insensitively. Generic error
+# message only - never echoes the matched line or the marker regex, only the
+# file path.
+#
+# Skips cleanly (safe no-op) when the secret is unavailable (e.g. not yet
+# configured, or a fork PR) so the check does not fail the build before the
+# secret is set.
+
+on:
+  pull_request:
+
+jobs:
+  check-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan public agent-docs for internal-ops markers
+        shell: bash
+        env:
+          MARKERS: ${{ secrets.HYGIENE_INTERNAL_MARKERS }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${MARKERS:-}" ]; then
+            echo "HYGIENE_INTERNAL_MARKERS secret not available (unset, or a fork PR) - skipping."
+            exit 0
+          fi
+
+          fail=0
+
+          while IFS= read -r f; do
+            if grep -qiE "$MARKERS" "$f"; then
+              echo "::error file=$f::internal-ops content in a public agent-doc"
+              fail=1
+            fi
+          done < <(git ls-files | grep -iE '(^|/)(CLAUDE|AGENTS)\.md$')
+
+          if [ "${fail:-0}" = "1" ]; then
+            echo "Neutralize the matched content and re-push. The matched terms are deliberately not printed; refer to the file path above."
+            exit 1
+          fi
+          echo "OK - no internal-ops markers found in tracked CLAUDE.md / AGENTS.md files."
