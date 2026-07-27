@@ -9,7 +9,7 @@ description: >
   every system holding personal data of EU residents.
 severity: high
 derived_from:
-  - LAW-GDPR-1
+  - REGULATION-GDPR-1
 deadline: "2025-12-31"   # past due — supervisory authority pre-audit commitment
 
 # Admission record (CONTRACT.md §6)

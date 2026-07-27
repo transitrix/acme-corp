@@ -9,7 +9,7 @@ description: >
   controller without hindrance.
 severity: medium
 derived_from:
-  - LAW-GDPR-1
+  - REGULATION-GDPR-1
 
 # Admission record (CONTRACT.md §6)
 zone: canon

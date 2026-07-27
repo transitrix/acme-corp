@@ -21,7 +21,7 @@ author: "Acme Compliance Office"
 view_config:
   goals:
     filter: ids
-    ids: [GOAL-EU-1]
+    ids: [GOAL-EU-1, GOAL-CUST-1]
   factors:
     surface: derived
   actions:

@@ -1,7 +1,7 @@
-# Codex entry — EU law. Schema: notations/CONTRACT.md §6 + notations/elements/14-codex.md.
+# Codex entry — EU regulation. Schema: notations/CONTRACT.md §6 + notations/elements/14-codex.md.
 
 notation: codex
-id: LAW-GDPR-1
+id: REGULATION-GDPR-1
 name: "General Data Protection Regulation (EU) 2016/679"
 type: REGULATION
 description: >

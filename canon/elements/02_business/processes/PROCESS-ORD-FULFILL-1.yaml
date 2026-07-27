@@ -31,24 +31,13 @@ flow:
     - id: STEP-ORD-FULFILL-1
       type: startEvent
       performed_by: ROLE-SALES-1
-    - id: STEP-ORD-FULFILL-2
-      type: userTask
-      name: "Validate Order"
-      performed_by: ROLE-SALES-1
-      supported_by_application: APPLICATION-OMS-1
+    - { id: STEP-ORD-FULFILL-2 }          # promoted → ../steps/STEP-ORD-FULFILL-2.yaml
     - id: STEP-ORD-FULFILL-3
       type: exclusiveGateway
       name: "In stock?"
       performed_by: ROLE-OPS-1
-    - id: STEP-ORD-FULFILL-4
-      type: task
-      name: "Pick and Pack"
-      performed_by: ROLE-OPS-1
-      supported_by_application: APPLICATION-OMS-1
-    - id: STEP-ORD-FULFILL-5
-      type: task
-      name: "Ship Order"
-      performed_by: ROLE-OPS-1
+    - { id: STEP-ORD-FULFILL-4 }          # promoted → ../steps/STEP-ORD-FULFILL-4.yaml
+    - { id: STEP-ORD-FULFILL-5 }          # promoted → ../steps/STEP-ORD-FULFILL-5.yaml
     - id: STEP-ORD-FULFILL-6
       type: userTask
       name: "Notify Customer of Backorder"

@@ -11,7 +11,7 @@ status: active
 applies_to:
   - APPLICATION-OMS-1
   - APPLICATION-CRM-1
-  - PROCESS-ORDER-FULFILMENT-1
+  - PROCESS-ORD-FULFILL-1
 
 source: "GDPR (Regulation (EU) 2016/679) Art. 44–49"
 owner_role: ROLE-DPO-1

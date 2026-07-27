@@ -8,7 +8,7 @@ about: REQUIREMENT-GDPR-CONSENT-1
 subject: PRODUCT-ECOMM-1
 
 realised_via:
-  - STAGE-1    # Receive order — consent captured at checkout
+  - STEP-ORD-FULFILL-2    # Validate Order — consent captured at checkout
 
 status: partial
 

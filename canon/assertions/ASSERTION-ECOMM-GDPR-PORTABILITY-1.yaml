@@ -8,7 +8,7 @@ about: REQUIREMENT-GDPR-PORTABILITY-1
 subject: PRODUCT-ECOMM-1
 
 realised_via:
-  - STAGE-5    # Confirm delivery & close — export available post-order
+  - PROCESS-DSR-HANDLE-1    # self-service export runs through data-subject request handling
 
 status: compliant
 

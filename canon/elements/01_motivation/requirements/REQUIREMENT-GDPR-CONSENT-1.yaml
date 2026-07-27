@@ -9,7 +9,7 @@ description: >
   available at any time without detriment.
 severity: high
 derived_from:
-  - LAW-GDPR-1
+  - REGULATION-GDPR-1
 deadline: "2026-09-30"
 
 # Admission record (CONTRACT.md §6)

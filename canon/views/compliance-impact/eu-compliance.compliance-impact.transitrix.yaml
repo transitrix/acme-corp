@@ -23,7 +23,7 @@ view:
   obligations:
     filter:
       derived_from_codex:
-        - LAW-GDPR-1
+        - REGULATION-GDPR-1
         - LAW-NIS2-1
 
   order_rows_by: id

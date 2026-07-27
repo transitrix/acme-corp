@@ -8,9 +8,9 @@ about: REQUIREMENT-GDPR-DATA-ERASURE-1
 subject: PRODUCT-ECOMM-1
 
 realised_via:
-  - STAGE-1    # Receive order — personal data captured
-  - STAGE-3    # Pick & pack — personal data read from CRM
-  - STAGE-4    # Ship — personal data transmitted to carrier
+  - STEP-ORD-FULFILL-2    # Validate Order — personal data captured
+  - STEP-ORD-FULFILL-4    # Pick and Pack — personal data read from CRM
+  - STEP-ORD-FULFILL-5    # Ship Order — personal data transmitted to carrier
 
 status: non_compliant
 

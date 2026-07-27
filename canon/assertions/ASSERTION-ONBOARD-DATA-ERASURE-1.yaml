@@ -10,7 +10,7 @@ subject: PROCESS-CUST-ONBOARD-1                        # PROCESS TYPE; the custo
 
 realised_via:
   - CAPABILITY-V2                                       # Customer Relationship Management
-  - PROCESS-USER-DATA-PURGE-1                           # same downstream purge — but not yet wired into onboarding rollback
+  - PROCESS-DSR-HANDLE-1                           # same downstream purge — but not yet wired into onboarding rollback
 
 status: partial
 

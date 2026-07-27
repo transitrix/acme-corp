@@ -1,0 +1,26 @@
+# Promoted STEP — first cross-document reference came from the compliance layer.
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.20 + envelope §3.
+# Promoted because ASSERTION-ECOMM-GDPR-ERASURE-1 and ASSERTION-ECOMM-NIS2-INCIDENT-1
+# name this step in realised_via (ASSERT-009): personal data is transmitted to the
+# carrier here — the data-in-transit exposure window.
+
+notation: step
+id: STEP-ORD-FULFILL-5
+name: "Ship Order"
+type: task
+process: PROCESS-ORD-FULFILL-1
+
+performed_by: ROLE-OPS-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7) — inherits the home process's valid_from
+valid_from: "2026-05-26"
+valid_to: null

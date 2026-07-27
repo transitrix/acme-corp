@@ -39,3 +39,17 @@ products_catalogue:
       processes: ["PROCESS-CS-RESOLVE-1", "PROCESS-DSR-HANDLE-1"]
       valid_from: "2026-05-26"
       valid_to: null
+
+    - product_id: PRODUCT-MOBILE-1
+      name: "Mobile Shopping App"
+      type: "digital_product"
+      domain: "Digital"
+      owner_role: ROLE-PROD-1
+      status: "Active"
+      maturity: 2
+      description: "iOS/Android shopping channel; shares the customer record with the storefront."
+      capabilities: ["CAPABILITY-V2"]
+      processes: ["PROCESS-DSR-HANDLE-1"]
+      supporting_apps: ["APPLICATION-CRM-1"]
+      valid_from: "2026-05-26"
+      valid_to: null

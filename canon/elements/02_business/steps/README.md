@@ -6,7 +6,9 @@ Promoted process-flow **step** elements. A step is a single node (task / event /
 
 A step's definition home is its `PROCESS` element, where it is authored inline in `flow.steps[]` and carries no admission record of its own (the PROCESS carries it). A step is **addressable** by its `STEP-…` id but is **not** materialised as a file here until it is *promoted* — which happens only when a **second document first references it**: a step-level `CHANGE`, a `RULE.applies_to`, an `ACTION` realising it, or an `ASSERTION` (`subject` / `realised_via`).
 
-**This org has no promoted steps yet.** Every flow step remains canonical-by-containment inside its process (e.g. `STEP-ORD-FULFILL-1…7` live in [`../processes/PROCESS-ORD-FULFILL-1.yaml`](../processes/PROCESS-ORD-FULFILL-1.yaml)); no second document references a step. This README documents the shape and the mechanical promotion for when that first cross-reference appears.
+**Three steps are promoted here.** `STEP-ORD-FULFILL-2` (Validate Order), `STEP-ORD-FULFILL-4` (Pick and Pack) and `STEP-ORD-FULFILL-5` (Ship Order) were promoted when the compliance layer first referenced them: the GDPR consent / erasure and NIS2 incident assertions name them in `realised_via` to localise an obligation to the exact task that bears it (`ASSERT-009`). Their entries in [`../processes/PROCESS-ORD-FULFILL-1.yaml`](../processes/PROCESS-ORD-FULFILL-1.yaml) are now references (`{ id: STEP-… }`); the flow edges stay process-owned.
+
+Every other flow step remains canonical-by-containment inside its process, because no second document references it.
 
 TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`STEP`), §4 (uniqueness scope). Full schema + promotion mechanic: [`notations/ELEMENT_PRIMITIVES.md`](../../../../../../notations/ELEMENT_PRIMITIVES.md) §7.20.
 

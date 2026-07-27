@@ -3,7 +3,11 @@
 notation: codex
 id: LAW-NIS2-1
 name: "NIS2 Directive (EU) 2022/2555"
-type: DIRECTIVE
+# TYPE is the registered codex enum (notations/elements/14-codex.md §2), not the
+# instrument's EU-law form. A directive binds member states and reaches Acme
+# through national transposition, so it is carried as LAW; the directive-specific
+# date is kept below as `transposition_deadline`.
+type: LAW
 description: >
   EU directive on measures for a high common level of cybersecurity across the
   Union. Requires essential and important entities to adopt risk-management

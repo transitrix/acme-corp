@@ -10,14 +10,14 @@ subject: PRODUCT-MOBILE-1                              # PRODUCT TYPE; resolves 
 
 realised_via:
   - CAPABILITY-V2                                       # Customer Relationship Management capability
-  - PROCESS-USER-DATA-PURGE-1                           # operational purge workflow
+  - PROCESS-DSR-HANDLE-1                           # operational purge workflow
   - INTERNAL_STANDARD-coding-conventions-1              # development discipline that bakes erasure into the codebase
 
 status: compliant
 
 evidence:
   - kind: canonical_ref
-    ref: PROCESS-USER-DATA-PURGE-1                      # the documented purge process is itself the artefact-of-record
+    ref: PROCESS-DSR-HANDLE-1                      # the documented purge process is itself the artefact-of-record
   - kind: external_doc
     title: "Q1 2026 data-erasure SLA report — Acme Mobile"
     url: "https://internal.acme.example/reports/2026-Q1-mobile-erasure-sla.pdf"

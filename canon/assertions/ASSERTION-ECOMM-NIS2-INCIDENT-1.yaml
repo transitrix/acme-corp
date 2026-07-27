@@ -8,8 +8,8 @@ about: REQUIREMENT-NIS2-INCIDENT-1
 subject: PRODUCT-ECOMM-1
 
 realised_via:
-  - STAGE-1    # Receive order — customer data ingestion point
-  - STAGE-4    # Ship — carrier handover; data-in-transit exposure window
+  - STEP-ORD-FULFILL-2    # Validate Order — customer data ingestion point
+  - STEP-ORD-FULFILL-5    # Ship Order — carrier handover; data-in-transit exposure window
 
 status: under_review
 

@@ -1,0 +1,27 @@
+# Promoted STEP — first cross-document reference came from the compliance layer.
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.20 + envelope §3.
+# Promoted because ASSERTION-ECOMM-GDPR-CONSENT-1, ASSERTION-ECOMM-GDPR-ERASURE-1
+# and ASSERTION-ECOMM-NIS2-INCIDENT-1 name this step in realised_via (ASSERT-009):
+# it is where customer personal data and marketing consent enter the order flow.
+
+notation: step
+id: STEP-ORD-FULFILL-2
+name: "Validate Order"
+type: userTask
+process: PROCESS-ORD-FULFILL-1
+
+performed_by: ROLE-SALES-1
+supported_by_application: APPLICATION-OMS-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7) — inherits the home process's valid_from
+valid_from: "2026-05-26"
+valid_to: null
