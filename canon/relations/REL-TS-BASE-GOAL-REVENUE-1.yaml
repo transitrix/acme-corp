@@ -1,0 +1,31 @@
+# Worked example — target_state_satisfies_goal REL (TARGET_STATE → GOAL).
+# Schema: notations/elements/17-relations.md §2-3.
+# The baseline plateau (today's live operations) partially satisfies the
+# root revenue-growth strategy: current order management, fulfilment, and
+# CRM already generate revenue, but the "triple revenue" ambition is not yet
+# reached — hence degree: partial, not full.
+
+notation: relation
+id: REL-TS-BASE-GOAL-REVENUE-1
+type: target_state_satisfies_goal
+from: TARGET_STATE-BASE-1
+to: GOAL-REVENUE-1
+
+# Per-relation attribute (target_state_satisfies_goal).
+# Closed vocabulary: `partial` | `full`. Optional; default `full` when omitted.
+degree: partial
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7) — within both endpoints' windows (REL-003).
+# GOAL-REVENUE-1 and TARGET_STATE-BASE-1 both took effect 2026-05-26, so the
+# satisfaction cannot predate that date.
+valid_from: "2026-05-26"
+valid_to: null
