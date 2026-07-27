@@ -1,7 +1,4 @@
-# Worked example — PROCESS element primitive (supporting the unmodelled-need
-# task, epic vkgeorgia/strategy#798). Minimal scaffold demonstrating notation
-# selection for a genuine, previously-absent business need — see the
-# "Deliberately unmodelled, now scaffolded" note in this folder's README.md.
+# Worked example — PROCESS element primitive.
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.5 + envelope §3.
 
 notation: process
