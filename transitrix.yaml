@@ -21,6 +21,11 @@ notations:
   - stakeholder
   - action-card
   - compliance-impact
+  - coverage-metric
+  - verification                 # engineering V&V record — canon/verifications/
+  - hazard                       # ISO 14971 risk chain — canon/elements/01_motivation/hazards/
+  - risk-control                 #   … and /risk-controls/
+  - design-controls-trace-matrix # report-config view over both chains
 zones: [canon, field, codex]
 coverage_profile: full           # see methodology notations/COVERAGE_PROFILES.md
 operating_parameters:            # org-wide operating defaults — see notations/MANIFEST.md §2

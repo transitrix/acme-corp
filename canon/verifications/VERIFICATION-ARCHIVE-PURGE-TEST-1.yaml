@@ -1,0 +1,47 @@
+# Worked example — VERIFICATION element primitive.
+# Schema: notations/elements/27-verification.md §2 + envelope §3.
+# An honest `fail`: the protocol ran, the archive path did not clear. This is
+# the V&V half of the same gap ASSERTION-ECOMM-GDPR-ERASURE-1 records on the
+# compliance half — the two catalogues are independent and agree here.
+
+notation: verification
+id: VERIFICATION-ARCHIVE-PURGE-TEST-1
+verifies: REQUIREMENT-GDPR-DATA-ERASURE-1
+method: test                    # test | analysis | inspection | demonstration
+protocol: >
+  Seed 20 synthetic customers with orders older than the archive cut-over,
+  submit a verified erasure request for each, then query the active database,
+  the CRM and the cold-storage archive 30 days later. Acceptance criterion:
+  zero personal-data fields for the subject remain in any of the three stores,
+  with fiscal totals preserved in the archive.
+result: >
+  Active database and CRM cleared for 20/20 subjects within the window
+  (median 4.1 days). The cold-storage archive retained the full customer
+  record for 20/20 — the archive sweep specified by RISK_CONTROL-ARCHIVE-PURGE-1
+  is not deployed to production, so the acceptance criterion is not met.
+outcome: fail                   # pass | fail | inconclusive | not_yet_run
+
+evidence:
+  - kind: note
+    text: >
+      Run under the Q2 2026 remediation programme test plan. Re-run is gated
+      on the archive sweep reaching production; tracked as part of the GDPR
+      remediation action.
+  - kind: canonical_ref
+    ref: ACTION-GDPR-ERASURE-PIPELINE-1
+
+performed_at: "2026-07-10"
+performed_by: ROLE-TECH-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-07-10"
+valid_to: null

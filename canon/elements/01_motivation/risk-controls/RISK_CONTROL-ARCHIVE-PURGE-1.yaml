@@ -1,0 +1,33 @@
+# Worked example — RISK_CONTROL element primitive.
+# Schema: notations/elements/28-hazard-risk-control.md §3 + envelope §3.
+# `satisfies` is the join back into the REQUIREMENT/VERIFICATION spine: the
+# control is realised as an existing design requirement, not a parallel one.
+
+notation: risk-control
+id: RISK_CONTROL-ARCHIVE-PURGE-1
+name: "Erasure sweep extended to the cold-storage archive"
+description: >
+  The erasure pipeline is extended with an archive sweep: on a verified
+  erasure request, archived order records for the subject are located by
+  customer key and their personal-data fields are overwritten, leaving the
+  fiscal totals required by the 7-year retention obligation intact. Runs on
+  the same 30-day clock as the active-system purge.
+
+mitigates:
+  - HAZARD-ARCHIVE-RETENTION-1
+control_type: protective_measure   # inherent_safety_by_design | protective_measure | information_for_safety
+satisfies: REQUIREMENT-GDPR-DATA-ERASURE-1
+residual_risk: alarp               # acceptable | alarp | unacceptable — the sweep is specified, not yet in production
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-06-15"
+valid_to: null

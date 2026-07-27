@@ -1,0 +1,41 @@
+# Worked example — VERIFICATION element primitive.
+# Schema: notations/elements/27-verification.md §2 + envelope §3.
+# The passing counterpart to VERIFICATION-ARCHIVE-PURGE-TEST-1 — same spine,
+# a requirement whose V&V chain closes.
+
+notation: verification
+id: VERIFICATION-PORTABILITY-EXPORT-TEST-1
+verifies: REQUIREMENT-GDPR-PORTABILITY-1
+method: test
+protocol: >
+  For 15 synthetic accounts of varying order history, request the self-service
+  export from account settings and inspect the delivered archive. Acceptance
+  criteria: export delivered within the 30-day statutory deadline; contents
+  cover order history, profile and consent records; both JSON and CSV parse
+  against their published schemas.
+result: >
+  15/15 exports delivered within 72 hours (median 4 minutes for accounts under
+  200 orders). Schema validation passed for both formats on all runs; consent
+  records present and complete in every export.
+outcome: pass
+
+evidence:
+  - kind: external_doc
+    title: "Q1 2026 portability export verification — run log"
+    url: "https://internal.acme.example/reports/2026-Q1-portability-verification.pdf"
+
+performed_at: "2026-05-18"
+performed_by: ROLE-TECH-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-05-18"
+valid_to: null
