@@ -1,0 +1,67 @@
+# Detailed BPMN flow for PROCESS-RETURNS-1 — customer-initiated returns & refunds.
+# Derived projection of PROCESS-RETURNS-1's `flow:` (the source of truth); this
+# view exists because a presentation-scale rendering was needed — see
+# canon/elements/02_business/processes/README.md.
+# Compiled to BPMN 2.0 XML by Transitrix Studio. Node ids are file-local labels
+# (POOL-/LANE-/SE-/TASK-/GW-/EE-) per IDS_AND_REFERENCES.md §3.3 — not canonical
+# elements, so this file bears no primitive lifecycle.
+
+notation: bpmn
+spec_version: "0.1"
+
+process:
+  id: PROCESS-RETURNS-1
+  name: "Returns & Refunds Processing"
+  pools:
+    - id: POOL-RETURNS
+      name: "Customer Returns Handling"
+      lanes:
+        - id: LANE-CS
+          name: "Customer Support Lead"
+          performed_by_role: ROLE-CS-1
+          elements:
+            - id: SE-REQUEST
+              type: startEvent
+              name: "Return requested"
+            - id: TASK-LOG
+              type: userTask
+              name: "Log Return Request"
+              supported_by_application: APPLICATION-OMS-1
+            - id: GW-ELIGIBLE
+              type: exclusiveGateway
+              name: "Eligible for return?"
+            - id: TASK-REJECT
+              type: userTask
+              name: "Reject Return & Notify Customer"
+        - id: LANE-OPS
+          name: "Operations Lead"
+          performed_by_role: ROLE-OPS-1
+          elements:
+            - id: TASK-INSPECT
+              type: task
+              name: "Inspect & Restock Item"
+              supported_by_application: APPLICATION-OMS-1
+            - id: TASK-REFUND
+              type: task
+              name: "Issue Refund"
+              supported_by_application: APPLICATION-OMS-1
+            - id: EE-CLOSED
+              type: endEvent
+              name: "Return closed"
+  flows:
+    - from: SE-REQUEST
+      to: TASK-LOG
+    - from: TASK-LOG
+      to: GW-ELIGIBLE
+    - from: GW-ELIGIBLE
+      to: TASK-INSPECT
+      condition: "eligible"
+    - from: GW-ELIGIBLE
+      to: TASK-REJECT
+      default: true
+    - from: TASK-INSPECT
+      to: TASK-REFUND
+    - from: TASK-REFUND
+      to: EE-CLOSED
+    - from: TASK-REJECT
+      to: EE-CLOSED
