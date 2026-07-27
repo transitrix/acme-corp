@@ -22,6 +22,7 @@ Defined in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../../notations/ELEME
 | File | Notes |
 |---|---|
 | `TARGET_STATE-EU-LIVE-1.yaml` | EU operations live in three markets — composition spans existing capabilities, onboarding and fulfilment processes, and the CRM and OMS applications. Reaches `GOAL-EU-1` via a separate `REL`. |
+| `TARGET_STATE-BASE-1.yaml` | `type: base` — the baseline plateau (today, not a destination): all currently-live capabilities, processes, and applications. Partially satisfies `GOAL-REVENUE-1` via `REL-TS-BASE-GOAL-REVENUE-1.yaml`. Lets impact/retirement analysis trace an `APPLICATION` up through this composition to the standing goals it serves right now — see `ELEMENT_PRIMITIVES.md` §7.17. |
 
 ## See also
 
