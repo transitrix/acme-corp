@@ -23,6 +23,13 @@ Defined in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../../notations/ELEME
 | `PROCESS-CUST-ONBOARD-1.yaml` | Operating — realises `CAPABILITY-V2` |
 | `PROCESS-CS-RESOLVE-1.yaml` | Supporting |
 | `PROCESS-STRAT-PLAN-1.yaml` | Management |
+| `PROCESS-RETURNS-1.yaml` | Operating — realises `CAPABILITY-V1`, owned by `ROLE-OPS-1` |
+
+## Deliberately unmodelled, now scaffolded — Returns & Refunds
+
+Until this addition, `PROCESS-ORD-FULFILL-1` covered the forward order-to-cash path only (intake through shipment / backorder notice) with no reverse-logistics counterpart — a customer-initiated return or refund had no process to attach to anywhere in `canon/`, despite `PRODUCT-ECOMM-1` being a live storefront that necessarily generates returns. This was a genuine coverage gap, not staged: nothing in the model asserted a returns process existed.
+
+**Notation recommendation.** Per `MODELER.md` §2's ladder, a single process's participants and flow are the definition home of a `PROCESS` element (`ELEMENT_PRIMITIVES.md` §7.5) — the same notation as every process already in this folder — not a `.bpmn.transitrix.yaml` view, which is a *derived projection* of that element's `flow` and not itself the source ([`views/01-bpmn.md`](../../../../../../notations/views/01-bpmn.md)). Three of the four pre-existing processes in this folder (`ORD-FULFILL`, `CUST-ONBOARD`, `CS-RESOLVE`) have no BPMN projection at all, so `PROCESS-RETURNS-1.yaml` follows that same majority pattern: a minimal but structurally complete `PROCESS` element (participants + a short flow), with a BPMN rendering left for if/when a presentation-scale diagram is actually needed.
 
 ## See also
 

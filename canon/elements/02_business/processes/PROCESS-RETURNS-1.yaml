@@ -1,0 +1,78 @@
+# Worked example — PROCESS element primitive (supporting the unmodelled-need
+# task, epic vkgeorgia/strategy#798). Minimal scaffold demonstrating notation
+# selection for a genuine, previously-absent business need — see the
+# "Deliberately unmodelled, now scaffolded" note in this folder's README.md.
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.5 + envelope §3.
+
+notation: process
+id: PROCESS-RETURNS-1
+name: "Returns & Refunds Processing"
+owner_role: ROLE-OPS-1
+capability: CAPABILITY-V1
+description: >
+  Handle a customer-initiated return of a shipped order: intake and
+  eligibility check, receipt and inspection of the returned item, and
+  issuance of a refund. The reverse-logistics counterpart to
+  PROCESS-ORD-FULFILL-1, which ends at shipment with no return path back.
+
+# Participants — the lanes, in rendered top-to-bottom order. Each references a
+# canonical active-structure element (ROLE-… / ACTOR-…); the lane caption is
+# derived from that element's `name`. All references resolve in canon.
+participants:
+  - ROLE-CS-1
+  - ROLE-OPS-1
+
+# Flow — minimal scaffold, sufficient to regenerate a BPMN diagram if one is
+# ever needed (ELEMENT_PRIMITIVES.md §7.5); not fully populated by design.
+flow:
+  steps:
+    - id: STEP-RETURNS-1
+      type: startEvent
+      performed_by: ROLE-CS-1
+    - id: STEP-RETURNS-2
+      type: userTask
+      name: "Log Return Request"
+      performed_by: ROLE-CS-1
+      supported_by_application: APPLICATION-OMS-1
+    - id: STEP-RETURNS-3
+      type: exclusiveGateway
+      name: "Eligible for return?"
+      performed_by: ROLE-CS-1
+    - id: STEP-RETURNS-4
+      type: task
+      name: "Inspect & Restock Item"
+      performed_by: ROLE-OPS-1
+      supported_by_application: APPLICATION-OMS-1
+    - id: STEP-RETURNS-5
+      type: task
+      name: "Issue Refund"
+      performed_by: ROLE-OPS-1
+      supported_by_application: APPLICATION-OMS-1
+    - id: STEP-RETURNS-6
+      type: userTask
+      name: "Reject Return & Notify Customer"
+      performed_by: ROLE-CS-1
+    - id: STEP-RETURNS-7
+      type: endEvent
+      performed_by: ROLE-OPS-1
+  sequence:
+    - { from: STEP-RETURNS-1, to: STEP-RETURNS-2 }
+    - { from: STEP-RETURNS-2, to: STEP-RETURNS-3 }
+    - { from: STEP-RETURNS-3, to: STEP-RETURNS-4, condition: 'eligible' }
+    - { from: STEP-RETURNS-3, to: STEP-RETURNS-6, default: true }
+    - { from: STEP-RETURNS-4, to: STEP-RETURNS-5 }
+    - { from: STEP-RETURNS-5, to: STEP-RETURNS-7 }
+    - { from: STEP-RETURNS-6, to: STEP-RETURNS-7 }
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-27"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-05-26"
+valid_to: null
