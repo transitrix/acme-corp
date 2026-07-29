@@ -17,8 +17,8 @@ protocol: >
 result: >
   Active database and CRM cleared for 20/20 subjects within the window
   (median 4.1 days). The cold-storage archive retained the full customer
-  record for 20/20 — the archive sweep specified by RISK_CONTROL-ARCHIVE-PURGE-1
-  is not deployed to production, so the acceptance criterion is not met.
+  record for 20/20 — the specified archive sweep is not deployed to
+  production, so the acceptance criterion is not met.
 outcome: fail                   # pass | fail | inconclusive | not_yet_run
 
 evidence:
