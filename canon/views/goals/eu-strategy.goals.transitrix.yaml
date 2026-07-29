@@ -4,7 +4,7 @@
 
 notation: goals
 spec_version: "0.1"
-methodology_version: "2.1.0"
+methodology_version: "3.0.0"
 
 id: GOALS-STRATEGY-2026
 name: "Acme Corp — Strategy 2026 Goals Tree"

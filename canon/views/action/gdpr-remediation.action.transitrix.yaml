@@ -15,7 +15,7 @@
 
 notation: action
 spec_version: "0.1"
-methodology_version: "2.1.0"
+methodology_version: "3.0.0"
 
 id: ACTION_SCHED-GDPR-REMEDIATION-1
 name: "GDPR Remediation Programme 2026"
