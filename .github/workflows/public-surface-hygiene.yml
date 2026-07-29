@@ -26,6 +26,61 @@ on:
   pull_request:
 
 jobs:
+  hub-pointer-scan:
+    runs-on: ubuntu-latest
+    name: Hub-pointer scan (diff + full tree)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan tracked files and the PR diff
+        env:
+          HUB: ${{ secrets.HYGIENE_HUB_SLUG }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          # A public repository never points at the private hub. The slug lives
+          # only in the secret, so this file does not name it and its own diff
+          # cannot trip the scan. Matched text is never printed - path only.
+          #
+          # Two passes, because they catch different things: the diff pass fails
+          # the change under review, and the full-tree pass catches whatever
+          # landed before this guard existed, which the diff can never see.
+          if [ -z "${HUB:-}" ]; then
+            echo "slug not configured; scanning the cross-ref form only."
+            PATTERN='strategy#[0-9]'
+          else
+            PATTERN="${HUB}|strategy#[0-9]"
+          fi
+
+          fail=0
+          while IFS= read -r f; do
+            [ -f "$f" ] || continue
+            case "$f" in .github/workflows/public-surface-hygiene.yml) continue ;; esac
+            if grep -Iqi -E "$PATTERN" "$f" 2>/dev/null; then
+              echo "::error file=$f::Private-hub pointer in a tracked file. Reference the hub as HUB-<number>."
+              fail=1
+            fi
+          done < <(git ls-files)
+
+          if [ -n "${BASE_SHA:-}" ] && [ -n "${HEAD_SHA:-}" ]; then
+            if git diff "$BASE_SHA" "$HEAD_SHA" -- . ':(exclude).github/workflows/public-surface-hygiene.yml' \
+                 | grep -E '^\+[^+]' | grep -Eqi "$PATTERN"; then
+              echo "::error::Private-hub pointer in an added diff line."
+              fail=1
+            fi
+          fi
+
+          if [ "$fail" -ne 0 ]; then
+            echo "::error::public-surface-hygiene: hub-pointer scan failed. Matched terms are deliberately not printed."
+            exit 1
+          fi
+          echo "public-surface-hygiene: hub-pointer scan clean."
+
   check-hygiene:
     runs-on: ubuntu-latest
     steps:
