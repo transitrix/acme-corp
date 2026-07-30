@@ -16,6 +16,8 @@ description: >
   standard via derived_from.
 
 severity: medium
+level: software         # binds the specific log-storage component's retention configuration
+kind: quality           # retention duration is a non-functional attribute, not new behaviour
 # derived_from: absent — purely internal obligation
 
 # Admission record (CONTRACT.md §6)
