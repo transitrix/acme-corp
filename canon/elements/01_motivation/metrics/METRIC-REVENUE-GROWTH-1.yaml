@@ -1,0 +1,35 @@
+# Worked example — METRIC element primitive.
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.26 + envelope §3.
+#
+# Managed indicator, distinct from COVERAGE_METRIC (a report-config view
+# with no canonical content of its own). Tracks whether the root revenue
+# goal is moving in the intended direction.
+
+notation: metric
+id: METRIC-REVENUE-GROWTH-1
+name: "Year-over-year revenue growth rate"
+description: >
+  Annual revenue growth against the prior year, tracked quarterly. The
+  lead indicator for whether the "triple revenue in 3 years" strategic
+  goal is on pace.
+
+measures:
+  - GOAL-REVENUE-1
+
+unit: percent
+target: 45
+direction_of_good: higher_is_better
+owner_role: ROLE-EXEC-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-30"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-07-30"
+valid_to: null
