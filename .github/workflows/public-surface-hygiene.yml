@@ -74,11 +74,9 @@ jobs:
               fail=1
             fi
 
-            # Commit-message pass. This surface was scanned by nothing until
-            # 2026-07-30, and it holds the most: a message is written once, lands
-            # in the default branch, and no later pass over files or PR metadata
-            # can see it. Only BASE..HEAD is read, so a change is judged on what
-            # it adds and existing history is not re-litigated on every run.
+            # Commit-message pass. A message lands in the default branch and no
+            # pass over files or PR metadata can reach it afterwards. Only
+            # BASE..HEAD is read, so a change is judged on what it adds.
             if git log --format=%B "$BASE_SHA..$HEAD_SHA" 2>/dev/null | grep -Eqi "$PATTERN"; then
               echo "::error::Private-hub pointer in a commit message."
               fail=1
@@ -101,40 +99,34 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Two rules, on two different surfaces.
+          # A work-item reference does not go on a public surface: not in
+          # committed content, not in a PR title, not in a PR body, not in a
+          # commit message. It lives in the hub issue, which already links to the
+          # pull request.
           #
-          # 1. COMMITTED CONTENT carries no reference to a work item at all -
-          # neither the neutral `HUB-<number>` form nor a bare hash-number.
-          # (Commit messages are read too, and were scanned by nothing before
-          # 2026-07-30 - the sweeps that cleaned files and PR metadata never
-          # looked at one.) The
-          # evidence for the stronger rule is the sweep that produced it: of
-          # roughly 110 such references across the two repositories that had
-          # them, not one carried information a reader could use. The prose
-          # beside them already said what the code does and why; the number was
-          # decoration that only a maintainer with private access could resolve,
-          # and it aged badly the moment a work item was renumbered or closed.
-          # What a line needs is the REASON, and a durable reason is a decision -
-          # cited by name and date, which is stable and resolvable by anyone.
+          # Two operative reasons, both about how the text reads later:
           #
-          # 2. NOR IN PR METADATA, NOR IN A COMMIT MESSAGE. A carve-out briefly
-          # allowed a citation in a PR title or body on the theory that a pull
-          # request is transient. It is not: this repository squashes with
-          # COMMIT_OR_PR_TITLE and merges with PR_TITLE, so a PR title BECOMES a
-          # commit subject on the default branch. A rule that depends on a
-          # per-repository merge setting also breaks quietly the day the setting
-          # differs. The reference lives in the hub issue, which already links to
-          # the pull request - the one place that can resolve it.
+          # - A number is not a reason. What a line needs is why it is the way it
+          #   is, and the durable form for that is a decision cited by name and
+          #   date - resolvable by any reader, and stable when a work item is
+          #   renumbered or closed.
+          # - PR metadata is committed content with a delay. This repository
+          #   squashes with COMMIT_OR_PR_TITLE and merges with PR_TITLE, so a PR
+          #   title becomes a commit subject on the default branch. Commit
+          #   messages are read for the same reason, over BASE..HEAD only.
           #
-          # A reference to this repository's own issue or PR is untouched by
-          # either rule: a plain hash-number, and the `closes` / `fixes`
-          # auto-close keywords, mean what they say.
+          # A reference to this repository's own issue or PR is untouched: a
+          # plain hash-number, and the `closes` / `fixes` auto-close keywords,
+          # mean what they say. Only work-item forms match: the `HUB-` prefix, or
+          # a hash-number dressed as task / epic / hub work. The bare
+          # hash-number is the worst form - it auto-links to the item of that
+          # number in THIS repository, so it renders as a working link to
+          # something unrelated.
           #
-          # These patterns name nothing confidential, so they live here in the
-          # open and the matched token IS printed. A contributor who cannot see
-          # why the build failed routes around the rule. This file is excluded
-          # from its own scan; that exclusion is also the escape hatch for a doc
-          # that must legitimately show the form.
+          # These patterns name nothing confidential, so the matched token is
+          # printed - a contributor has to be able to see what tripped. This file
+          # is excluded from its own scan, which doubles as the escape hatch for
+          # a doc that must legitimately show the form.
           WORKITEM='(\bHUB-[0-9]+|\b(task|epic|hub)s?[[:space:]:]+#[0-9]+)'
           SELF='.github/workflows/public-surface-hygiene.yml'
 
