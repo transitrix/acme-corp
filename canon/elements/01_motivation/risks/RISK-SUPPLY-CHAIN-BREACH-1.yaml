@@ -1,0 +1,39 @@
+# Worked example — RISK element primitive.
+# Schema: notations/ELEMENT_PRIMITIVES.md §7.26 + envelope §3.
+#
+# Projected event, distinct from ASSESSMENT (a dated finding about the
+# present state of a DRIVER). Threatens the EU regulatory driver; treated
+# by the NIS2 supply-chain requirement that already exists in this catalogue.
+
+notation: risk
+id: RISK-SUPPLY-CHAIN-BREACH-1
+name: "Critical supplier suffers a security breach affecting the order-management system"
+description: >
+  A critical third-party supplier integrated with the order-management
+  system suffers a security breach, exposing customer data and putting the
+  organisation's NIS2 supply-chain compliance posture at risk before
+  contractual security controls can be verified.
+
+likelihood: medium
+impact: high
+residual: medium
+owner_role: ROLE-TECH-1
+
+threatens:
+  - DRIVER-EU-REG-1
+
+treated_by:
+  - REQUIREMENT-NIS2-SUPPLY-CHAIN-1
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-07-30"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-07-30"
+valid_to: null
