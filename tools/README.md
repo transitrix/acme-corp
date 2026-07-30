@@ -1,25 +1,3 @@
-# tools/ — internal tooling
+# tools/
 
-Scripts in this directory are **internal team tooling** — not part of the published acme-corp
-example and not intended for end users.
-
-## dsm-demo-seed.sql
-
-Populates a running [DSM](https://github.com/transitrix/transitrix-dsm) instance with the
-acme-corp DGCA chain (Driver → Goal → Change → Action) for demo and development purposes.
-
-**When to use:** after starting DSM locally or on a dev instance, to load meaningful example
-data that mirrors the acme-corp canon.
-
-**How:**
-
-```bash
-psql "$DATABASE_DSN" -f tools/dsm-demo-seed.sql
-```
-
-Requires DSM schema already applied and at least one organization + active scenario present.
-The script is idempotent — safe to re-run.
-
-**Future direction:** this seed will be generated from the acme-corp YAML notations directly
-once the DSM text-repo ingest pipeline (T9 serializer) is in place. Until then the SQL is
-maintained by hand alongside the canon YAML.
+`dsm-demo-seed.sql` moved out of this adopter repository — it's DSM demo/dev tooling, not something Acme Corp itself would hold. Staged (not yet a permanent home) at [`integration/dsm-demo-seed/`](https://github.com/transitrix/methodology/tree/main/integration/dsm-demo-seed) in `transitrix/methodology`.
