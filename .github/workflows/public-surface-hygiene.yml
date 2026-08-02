@@ -50,11 +50,19 @@ jobs:
           # Two passes, because they catch different things: the diff pass fails
           # the change under review, and the full-tree pass catches whatever
           # landed before this guard existed, which the diff can never see.
+          # The cross-ref form also catches the unpunctuated spelling (e.g.
+          # "strategy task 217", "strategy issue 217") alongside the
+          # punctuated "strategy#217" - the qualifying word "strategy" is the
+          # discriminator, so ordinary prose ("our strategy", "task 3 of the
+          # pipeline") stays clear. Kept in its own variable, independent of
+          # the HUB slug secret, so it can be self-tested deterministically.
+          STRATEGYREF='strategy#[0-9]|strategy[[:space:]]+(task|epic|issue)s?[[:space:]]*#?[0-9]+'
+
           if [ -z "${HUB:-}" ]; then
             echo "slug not configured; scanning the cross-ref form only."
-            PATTERN='strategy#[0-9]'
+            PATTERN="$STRATEGYREF"
           else
-            PATTERN="${HUB}|strategy#[0-9]"
+            PATTERN="${HUB}|${STRATEGYREF}"
           fi
 
           fail=0
@@ -80,6 +88,45 @@ jobs:
             exit 1
           fi
           echo "public-surface-hygiene: hub-pointer scan clean."
+
+      - name: Self-test - strategy cross-reference guard
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Exercises the actual live STRATEGYREF pattern from the step above
+          # (by extracting it from this file) so a future edit can't silently
+          # narrow or broaden the guard without CI catching it. Independent of
+          # the HYGIENE_HUB_SLUG secret - this only tests the text-form part.
+          STRATEGYREF="$(grep -E "^[[:space:]]*STRATEGYREF='" .github/workflows/public-surface-hygiene.yml \
+            | sed -E "s/^[[:space:]]*STRATEGYREF='(.*)'\$/\1/")"
+          [ -n "$STRATEGYREF" ] || { echo "::error::could not extract STRATEGYREF pattern from the workflow file for self-test"; exit 1; }
+
+          fail=0
+          check() {
+            local expect="$1" input="$2" got=no-match
+            printf '%s\n' "$input" | grep -qiE "$STRATEGYREF" && got=match
+            if [ "$got" != "$expect" ]; then
+              echo "::error::self-test failed for '$input' - expected $expect, got $got"
+              fail=1
+            fi
+          }
+
+          # Positive - must be flagged.
+          check match "strategy#217"
+          check match "strategy task 217"
+          check match "strategy issue 217"
+          check match "strategy epic 391"
+
+          # Negative - must NOT be flagged.
+          check no-match "task 3 of the pipeline"
+          check no-match "closes #12"
+          check no-match "our strategy session"
+
+          if [ "$fail" -ne 0 ]; then
+            exit 1
+          fi
+          echo "OK - strategy cross-reference guard self-test passed (4 positive, 3 negative)."
 
   check-hygiene:
     runs-on: ubuntu-latest
