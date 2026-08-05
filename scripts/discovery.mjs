@@ -197,7 +197,7 @@ async function main() {
       entry.pin = pin;
       entry.status = shaStatus(pin, head);
 
-      const adrs = await findAdrs(dest, c.decisions_path);
+      const adrs = c.decisions_path ? await findAdrs(dest, c.decisions_path) : [];
       const stale = [];
       for (const abs of adrs) {
         const text = await readFile(abs, 'utf8');
