@@ -19,4 +19,3 @@ consumers:
     role: demo-consumer
     pin_file: acme-corp-source.yaml
     pin_key: acme_corp_version
-    decisions_path: docs/decisions
