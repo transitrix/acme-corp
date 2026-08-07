@@ -8,6 +8,8 @@ description: >
   must be as easy as giving consent — a single click or equivalent mechanism,
   available at any time without detriment.
 severity: high
+level: stakeholder     # stakeholder-language obligation, not yet decomposed to a system/software tier
+kind: functional       # the withdrawal mechanism is a capability the org must provide
 derived_from:
   - REGULATION-GDPR-1
 deadline: "2026-09-30"

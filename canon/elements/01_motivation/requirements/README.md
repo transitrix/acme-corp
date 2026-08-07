@@ -20,7 +20,7 @@ Examples: `REQUIREMENT-DATA-ERASURE-1.yaml`, `REQUIREMENT-1.yaml`.
 
 Defined in [`notations/elements/15-requirement.md`](../../../../../../notations/elements/15-requirement.md) §2. Every requirement carries:
 
-- The requirement-specific fields: `notation: requirement`, `id`, `name`, `description`, optional `severity` / `derived_from`.
+- The requirement-specific fields: `notation: requirement`, `id`, `name`, `description`, optional `severity` / `level` / `kind` / `derived_from`.
 - The admission record per [`notations/CONTRACT.md`](../../../../../../notations/CONTRACT.md) §6: `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks`.
 - The primitive lifecycle per [`notations/CONTRACT.md`](../../../../../../notations/CONTRACT.md) §7: `valid_from`, `valid_to`.
 
@@ -28,8 +28,11 @@ Defined in [`notations/elements/15-requirement.md`](../../../../../../notations/
 
 | File | Source | Notes |
 |---|---|---|
-| `REQUIREMENT-DATA-ERASURE-1.yaml` | external — `LAW-PERSONAL-DATA-2017-1` | demonstrates a requirement derived from a codex external `LAW` |
-| `REQUIREMENT-AUDIT-LOG-RETENTION-1.yaml` | none (`derived_from` absent) | demonstrates an internal-only requirement with no codex source; intentionally has no assertion targeting it, surfacing the planned `REQ-COVERAGE-001` warning |
+| `REQUIREMENT-DATA-ERASURE-1.yaml` | external — `LAW-PERSONAL-DATA-2017-1` | demonstrates a requirement derived from a codex external `LAW`; `level: system`, `kind: functional` |
+| `REQUIREMENT-AUDIT-LOG-RETENTION-1.yaml` | none (`derived_from` absent) | demonstrates an internal-only requirement with no codex source; intentionally has no assertion targeting it, surfacing the planned `REQ-COVERAGE-001` warning; `level: software`, `kind: quality` |
+| `REQUIREMENT-GDPR-CONSENT-1.yaml` | external — `REGULATION-GDPR-1` | `level: stakeholder`, `kind: functional` |
+
+Together the three demonstrate all three `level` values (`stakeholder` / `system` / `software`, [`notations/elements/15-requirement.md`](../../../../../../notations/elements/15-requirement.md) §2.5) and both `kind` values (`functional` / `quality`, §2.6).
 
 ## See also
 

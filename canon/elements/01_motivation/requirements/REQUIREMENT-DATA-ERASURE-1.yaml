@@ -12,6 +12,8 @@ description: >
   personal data of natural persons resident in Georgia.
 
 severity: high
+level: system          # the erasure obligation binds the system(s) storing the data, not a specific software component
+kind: functional       # erasing data on request is a behaviour, not a quality attribute
 derived_from:
   - LAW-PERSONAL-DATA-2017-1     # codex/external/ge/
 
