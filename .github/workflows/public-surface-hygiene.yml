@@ -83,6 +83,15 @@ jobs:
               echo "::error::Private-hub pointer in an added diff line."
               fail=1
             fi
+
+            # Commit messages are scanned too: a message is written once,
+            # lands in the default branch, and no later pass over files or
+            # diff lines can see it. Only BASE_SHA..HEAD_SHA is read, so
+            # existing history is not re-litigated on every run.
+            if git log --format=%B "$BASE_SHA..$HEAD_SHA" 2>/dev/null | grep -Eqi "$PATTERN"; then
+              echo "::error::Private-hub pointer in a commit message."
+              fail=1
+            fi
           fi
 
           if [ "$fail" -ne 0 ]; then
