@@ -21,9 +21,15 @@ name: Public-surface hygiene
 # Skips cleanly (safe no-op) when the secret is unavailable (e.g. not yet
 # configured, or a fork PR) so the check does not fail the build before the
 # secret is set.
+#
+# Runs on push to main as well as on pull requests, so a direct push bypasses
+# nothing the PR path would have caught. On a push event the diff range is
+# github.event.before..github.event.after rather than the PR's base/head.
 
 on:
   pull_request:
+  push:
+    branches: [main]
 
 jobs:
   hub-pointer-scan:
@@ -38,8 +44,8 @@ jobs:
       - name: Scan tracked files and the PR diff
         env:
           HUB: ${{ secrets.HYGIENE_HUB_SLUG }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event_name == 'push' && github.event.before || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event_name == 'push' && github.event.after || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
 
@@ -75,6 +81,15 @@ jobs:
             if git diff "$BASE_SHA" "$HEAD_SHA" -- . ':(exclude).github/workflows/public-surface-hygiene.yml' \
                  | grep -E '^\+[^+]' | grep -Eqi "$PATTERN"; then
               echo "::error::Private-hub pointer in an added diff line."
+              fail=1
+            fi
+
+            # Commit messages are scanned too: a message is written once,
+            # lands in the default branch, and no later pass over files or
+            # diff lines can see it. Only BASE_SHA..HEAD_SHA is read, so
+            # existing history is not re-litigated on every run.
+            if git log --format=%B "$BASE_SHA..$HEAD_SHA" 2>/dev/null | grep -Eqi "$PATTERN"; then
+              echo "::error::Private-hub pointer in a commit message."
               fail=1
             fi
           fi
