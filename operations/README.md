@@ -50,7 +50,7 @@ Feedback Records do **not** carry `relates_to:` — the shape is anonymised by d
 
 ## Local flow
 
-- **Opening an ADR.** Open a PR with `status: proposed`. Discussion lives on the PR. On merge the status flips to `accepted`. Owner: Valerii (sole maintainer of `acme_corp` today).
+- **Opening an ADR.** Open a PR with `status: proposed`. Discussion lives on the PR. **Merging the PR does not accept the record** — an `author: agent` record does not become `accepted` by being merged (`method/08-governance.md` §2, §2.1; `method/07-decisions.md` §4). Ratification is a separate act, in one of two forms: Valerii (sole maintainer of `acme_corp` today) flips `proposed → accepted` on this record in a further reviewed change, or — where a standing grant already covers this class of change — the record cites the grant it was landed under and needs no separate acceptance, because the grant's ratification is the acceptance.
 - **Superseding an ADR.** Open a new ADR; in the same PR set the old ADR's `status: superseded` and `superseded_by:`. The old body is otherwise untouched.
 - **Opening a Work Item.** Anyone on the team may open a WI with `status: proposed` or `status: in_progress`. Update the status as the work moves. On completion set `status: done` (outcome recorded in body) or `status: closed` (won't do / withdrawn).
 - **Writing a Feedback entry.** Append a checklist line to `feedback.md`'s `## Register` plus its block below, following the scrub discipline in `FINDINGS.md` §2 step 3 — no model content, no element IDs, no organisation-identifying detail. Update `status`/`upstream` in place as the entry moves; the checkbox flips to `[x]` at `closed` or `wont-fix`.
