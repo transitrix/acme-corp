@@ -1,0 +1,40 @@
+# Worked example — assertion closing the PRINCIPLE → REQUIREMENT → ASSERTION chain
+# introduced with methodology 3.7.0's PRINCIPLE codex TYPE.
+# Schema: notations/elements/16-assertion.md §2.
+# Demo note: partial — support tooling gates marketing use for new tickets but has
+# not backfilled the opt-in gate onto data collected before this requirement existed.
+
+notation: assertion
+id: ASSERTION-SUPPORT-MARKETING-OPTIN-1
+about: REQUIREMENT-MARKETING-PROFILING-OPTIN-1
+subject: PRODUCT-SUPPORT-1
+
+realised_via: []
+
+status: partial
+
+evidence:
+  - kind: note
+    text: >
+      New support tickets are excluded from the marketing-segmentation feed
+      by default; a customer must separately opt in from account settings
+      before support interaction data is used for profiling. PARTIAL GAP:
+      tickets created before this gate shipped were not backfilled and
+      remain in the segmentation feed pending a cleanup pass.
+
+assessed_at: "2026-08-23"
+assessed_by: ROLE-DPO-1
+next_review_at: "2026-11-23"
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-08-23"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-08-23"
+valid_to: null
