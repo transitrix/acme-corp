@@ -1,0 +1,34 @@
+# Worked example — REQUIREMENT derived from an internal PRINCIPLE (methodology 3.7.0).
+# Schema: notations/elements/15-requirement.md §2.
+# Operationalises PRINCIPLE-customer-data-purpose-limitation-1 (codex/internal/) as a
+# checkable duty. Assertion(s) about this requirement live in canon/assertions/.
+
+notation: requirement
+id: REQUIREMENT-MARKETING-PROFILING-OPTIN-1
+name: "Separate opt-in before using support or order data for marketing profiling"
+description: >
+  Before customer support or order data is used to build a marketing
+  profile or targeting segment, the organisation must obtain the
+  customer's separate, explicit opt-in — distinct from the consent or
+  account terms under which the data was originally collected. Applies to
+  every product that stores customer order or support interaction data.
+
+severity: medium
+level: system          # binds the systems that draw on support/order data for marketing use, not one component
+kind: functional       # gating marketing use on a separate opt-in is a behaviour, not a quality attribute
+origin: legislative     # internally imposed, formally adopted rule — see 15-requirement.md §2.1
+derived_from:
+  - PRINCIPLE-customer-data-purpose-limitation-1     # codex/internal/
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-08-23"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-08-23"
+valid_to: null

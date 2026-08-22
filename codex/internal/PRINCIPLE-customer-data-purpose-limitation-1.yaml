@@ -1,0 +1,25 @@
+# Codex internal artefact — issued by the org to itself. Schema: notations/elements/14-codex.md §4.1
+# + admission record (CONTRACT.md §6). Worked example — PRINCIPLE TYPE (methodology 3.7.0).
+id: PRINCIPLE-customer-data-purpose-limitation-1
+name: "Customer Data Purpose Limitation"
+type: PRINCIPLE
+zone: codex
+admitted_at: "2026-08-23"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  source_authority: "Data Protection Officer"
+
+# PRINCIPLE-specific frontmatter (14-codex.md §4.1)
+statement: "The organisation uses customer order and support data only for the purpose it was collected, and does not repurpose it for marketing profiling without the customer's separate, explicit opt-in."
+rationale: >
+  Customer trust in the ordering and support experience is core to retention.
+  The organisation holds itself to using customer data only for the purpose
+  it was given, independent of what any specific regulation strictly
+  requires. No named enforcer and no stated pass/fail conformance test check
+  this beyond the organisation's own judgement — the discriminator that
+  makes it a PRINCIPLE rather than a POLICY or an INTERNAL_STANDARD
+  (14-codex.md §2.1).
+
+# established_by: intentionally omitted — no decision-log entry in
+# operations/decisions/ covers this principle. Absence is admissible
+# (CODEX-006, info-level review finding), not an error.

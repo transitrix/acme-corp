@@ -1,0 +1,32 @@
+# Compliance-impact view — acme_corp internal codex (PRINCIPLE / POLICY / INTERNAL_STANDARD).
+# Opens in Transitrix Studio; notation spec: notations/views/reports/21-compliance-impact.md.
+# Sibling to compliance-impact/eu-compliance.compliance-impact.transitrix.yaml, which covers
+# externally imposed obligations (GDPR, NIS2) — this view covers self-issued ones instead.
+
+notation: compliance-impact
+spec_version: "0.1"
+
+view:
+  report_type: product
+  id: COMPLIANCE_IMPACT-ACME-INTERNAL-1
+  name: "acme_corp — Internal Codex Compliance Impact"
+  description: >
+    Obligation x product matrix scoped to acme_corp's self-issued internal
+    codex artefacts under codex/internal/ — starting with the
+    PRINCIPLE-customer-data-purpose-limitation-1 worked example added
+    alongside methodology 3.7.0's PRINCIPLE codex TYPE. Shows which
+    requirements derived from those artefacts bind each product and the
+    current compliance status.
+  snapshot_at: "2026-08-23"
+
+  subjects:
+    products:
+      - PRODUCT-SUPPORT-1
+      - PRODUCT-ECOMM-1
+
+  obligations:
+    filter:
+      derived_from_codex:
+        - PRINCIPLE-customer-data-purpose-limitation-1
+
+  order_rows_by: id
