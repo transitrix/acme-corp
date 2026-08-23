@@ -1,0 +1,28 @@
+# Rules-in-force view — acme_corp, every admitted rule.
+# Opens in Transitrix Studio; notation spec: notations/views/reports/24-rules-in-force.md.
+
+notation: rules-in-force
+spec_version: "0.1"
+name: "acme_corp — Rules in force"
+generated_at: "2026-08-23"
+methodology_version: "3.7.0"
+
+view:
+  id: RULES_IN_FORCE-ACME-ALL-1
+  name: "acme_corp — Rules in force"
+  description: >
+    Every admitted LAW / REGULATION / POLICY / INTERNAL_STANDARD artefact in
+    acme_corp's codex zone, with the REQUIREMENTs drawn from each via
+    derived_from. PRINCIPLE artefacts (e.g. the customer-data
+    purpose-limitation principle) are out of scope by definition — a
+    self-held value, not a rule with an issuing authority or a conformance
+    test (notations/elements/14-codex.md §2.1).
+
+  grouping:
+    by: codex_type
+
+  order_by: effective_date
+
+  summary:
+    show_requirement_count: true
+    show_grand_total: true

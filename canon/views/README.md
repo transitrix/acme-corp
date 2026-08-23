@@ -24,6 +24,7 @@ See [`method/methodology.md` §6](../../../method/methodology.md) for the full n
 | [`action-card/`](action-card/) | Action card | `*.action-card.transitrix.yaml` | Single-project narrative card with milestones |
 | [`compliance-impact/`](compliance-impact/) | Compliance impact | `*.compliance-impact.transitrix.yaml` | Obligation × subject matrix with status |
 | [`coverage-metric/`](coverage-metric/) | Coverage metric | `*.coverage-metric.transitrix.yaml` | Assertion-coverage breakdown per regime |
+| [`rules-in-force/`](rules-in-force/) | Rules in force | `*.rules-in-force.transitrix.yaml` | Codex catalogue — every admitted LAW/REGULATION/POLICY/INTERNAL_STANDARD, with requirements drawn from each |
 | [`issues/`](issues/) | Issues register | `*.issues.transitrix.yaml` | Issue register with parent/child nesting |
 
 ## Naming
