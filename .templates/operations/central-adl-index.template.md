@@ -1,2 +1,2 @@
 <!-- Moved to methodology's onboard-skill templates:
-     https://github.com/transitrix/methodology/blob/main/transitrix/skills/onboard/templates/operations/central-adl-index.template.md -->
+     https://github.com/transitrix/methodology/blob/v3.7.0/transitrix/skills/onboard/templates/operations/central-adl-index.template.md -->
