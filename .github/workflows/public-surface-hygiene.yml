@@ -1,11 +1,11 @@
 name: Public-surface hygiene
 
-# acme-corp is a demo/reference adopter repo and legitimately SHIPS its own
-# CLAUDE.md / AGENTS.md publicly (adopter demo content) - unlike most repos in
-# this family, it does NOT get a filename-ban or gitignore treatment for
-# these files.
+# Agent operating instructions are maintainer-local in this public reference
+# repository. Root role guides and runtime pointers are rejected by filename;
+# the adopter model and methodology-facing product content remain public.
+# The guard is unconditional and does not depend on content classification.
 #
-# Instead: a full-tree content scan of every committed CLAUDE.md / AGENTS.md
+# In addition, a full-tree content scan of committed agent-document paths runs
 # against an internal-ops marker regex (private-repo refs, agent-role/roster
 # names, containment vocabulary), so if one of these files is ever edited to
 # include real internal-ops content later, CI catches it. Full-tree (not
@@ -143,6 +143,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Reject public root agent instructions
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git ls-files | grep -qiE '^(AGENTS|ANALYST|CLAUDE|FINDINGS|INGEST|MODELER|VALIDATOR)\.md$|^\.github/copilot-instructions\.md$'; then
+            echo "::error::agent operating instructions are maintainer-local and must not be committed on this public repository"
+            exit 1
+          fi
+          echo "OK - no public root agent instructions."
+
 
       - name: Scan public agent-docs for internal-ops markers
         shell: bash

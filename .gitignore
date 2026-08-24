@@ -1,0 +1,12 @@
+# Agent operating instructions are maintainer-local in this public repository.
+/AGENTS.md
+/ANALYST.md
+/CLAUDE.md
+/FINDINGS.md
+/INGEST.md
+/MODELER.md
+/VALIDATOR.md
+/.github/copilot-instructions.md
+
+# Local runtime configuration.
+/.claude/

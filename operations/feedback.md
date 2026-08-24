@@ -3,8 +3,7 @@
 Upstream feedback for the Transitrix methodology — a generic-limitation-only
 register of methodology-directed findings raised while working this repo. See
 [`method/02-team-operations.md`](https://github.com/transitrix/methodology/blob/main/method/02-team-operations.md)
-§3.3 for the record shape and [`FINDINGS.md`](../FINDINGS.md)'s
-`escalate-methodology` route. Submission to `hello@transitrix.com` is opt-in
+§3.3 for the record shape. Submission to `hello@transitrix.com` is opt-in
 and manual — nothing here is sent automatically.
 
 ## Register
