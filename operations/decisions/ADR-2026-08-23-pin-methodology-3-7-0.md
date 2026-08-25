@@ -8,7 +8,7 @@ source: ad-hoc
 relates_to:
   - ADR-0006
   - ADR-0007
-superseded_by: null
+superseded_by: ADR-2026-08-25-pin-methodology-4-0-0
 ---
 
 ## Context
