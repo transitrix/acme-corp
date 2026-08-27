@@ -1,0 +1,11 @@
+---
+notation: element
+type: RELEASE
+id: RELEASE-PRODUCT-ECOMM-2
+of: PRODUCT-ECOMM-1
+version: "3.0.1"
+released_at: "2026-08-27"
+predecessor: RELEASE-PRODUCT-ECOMM-1
+---
+
+E-commerce platform patch release 3.0.1. Demonstrates that a successor release has its own assembly environment and does not inherit the predecessor's assembled_on links.

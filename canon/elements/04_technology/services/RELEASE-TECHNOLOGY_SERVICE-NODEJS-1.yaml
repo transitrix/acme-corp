@@ -1,0 +1,10 @@
+---
+notation: element
+type: RELEASE
+id: RELEASE-TECHNOLOGY_SERVICE-NODEJS-1
+of: TECHNOLOGY_SERVICE-NODEJS
+version: "18.17.0"
+released_at: "2026-08-01"
+---
+
+Node.js runtime LTS release 18.17.0. This system release is referenced by RELEASE-PRODUCT-ECOMM-1 via an assembled_on relation.
