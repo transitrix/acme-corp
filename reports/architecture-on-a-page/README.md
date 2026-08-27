@@ -9,23 +9,23 @@ business-focused / IT-focused, columns are rules / structures / solutions.
 1191×842pt**, declared on the root `<svg width="1191pt" height="842pt" viewBox="0 0
 1191 842">` and verified on that produced attribute, not on any stylesheet.
 
-## Why this isn't a `canon/views/` file
+## Why this isn't a `views/` file
 
-Every file under `canon/views/` is a notation-conformant, schema-validated model
+Every file under `views/` is a notation-conformant, schema-validated model
 input. This page is the opposite direction: a rendered *output* assembled from
 several of those views plus codex and canon elements. It carries no model content of
 its own and is not re-admitted through the ingest gate, so it sits in its own
-top-level folder rather than inside `canon/`.
+top-level folder rather than inside `views/`.
 
 ## Cell → source mapping
 
 | Cell | Filled from |
 |---|---|
-| **Considerations** (business rules) | `POLICY` under `codex/internal/` (0 admitted) + DGCA driver→goal pairs: `canon/views/dgca/*`, `canon/elements/01_motivation/{factors,goals}/*` |
-| **Visions** (business structures) | `canon/views/capabilities/compliance-domain.capability-map.transitrix.yaml`; `canon/elements/05_implementation/target-states/*`; milestones (no dedicated activity-network view exists — carried on the Outlines-cell action card instead); `canon/views/process-blueprint/order-fulfilment.process-blueprint.transitrix.yaml` |
-| **Outlines** (business solutions) | `canon/views/scenarios/eu-go-live.scenarios.transitrix.yaml`; `canon/elements/05_implementation/changes/*`; `canon/views/action-card/eu-gdpr-remediation.action-card.transitrix.yaml` |
-| **Standards** (IT rules) | `INTERNAL_STANDARD` under `codex/internal/` (1 admitted) + `NODE`/`TECHNOLOGY_SERVICE` elements (0 instances — see note below) arranged in `blocks`: `canon/views/blocks/personal-data-landscape.blocks.transitrix.yaml` |
-| **Landscapes** (IT structures) | `canon/views/applications/eu-portfolio.applications.transitrix.yaml`; no dedicated integration-map view exists (0); `canon/elements/02_business/business-objects/*` |
+| **Considerations** (business rules) | `POLICY` under `codex/internal/` (0 admitted) + DGCA driver→goal pairs: `views/dgca/*`, `canon/elements/01_motivation/{factors,goals}/*` |
+| **Visions** (business structures) | `views/capabilities/compliance-domain.capability-map.transitrix.yaml`; `canon/elements/05_implementation/target-states/*`; milestones (no dedicated activity-network view exists — carried on the Outlines-cell action card instead); `views/process-blueprint/order-fulfilment.process-blueprint.transitrix.yaml` |
+| **Outlines** (business solutions) | `views/scenarios/eu-go-live.scenarios.transitrix.yaml`; `canon/elements/05_implementation/changes/*`; `views/action-card/eu-gdpr-remediation.action-card.transitrix.yaml` |
+| **Standards** (IT rules) | `INTERNAL_STANDARD` under `codex/internal/` (1 admitted) + `NODE`/`TECHNOLOGY_SERVICE` elements (0 instances — see note below) arranged in `blocks`: `views/blocks/personal-data-landscape.blocks.transitrix.yaml` |
+| **Landscapes** (IT structures) | `views/applications/eu-portfolio.applications.transitrix.yaml`; no dedicated integration-map view exists (0); `canon/elements/02_business/business-objects/*` |
 | **Designs** (IT solutions) | SRS/SDD document-views — 0 instances in this repo |
 
 The Considerations/Standards "rules in force" figures (`POLICY`: 0, `INTERNAL_STANDARD`:

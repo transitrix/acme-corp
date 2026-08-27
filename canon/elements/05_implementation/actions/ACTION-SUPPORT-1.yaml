@@ -1,6 +1,6 @@
 # Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
-# Arranged by the FGA view (canon/views/fga/).
+# Arranged by the FGA view (views/fga/).
 
 notation: action
 id: ACTION-SUPPORT-1

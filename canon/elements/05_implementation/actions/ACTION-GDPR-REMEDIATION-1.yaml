@@ -1,6 +1,6 @@
 # Programme-level Action — the project the GDPR remediation action-card binds to.
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
-# WBS parent of the project nodes in canon/views/action/gdpr-remediation.dgca.transitrix.yaml.
+# WBS parent of the project nodes in views/action/gdpr-remediation.dgca.transitrix.yaml.
 # Child projects remain in the action view until promoted to canon/elements/.
 
 notation: action

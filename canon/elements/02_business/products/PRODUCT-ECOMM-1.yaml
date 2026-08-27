@@ -1,6 +1,6 @@
 # Worked example — PRODUCT element primitive.
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.6 + envelope §3.
-# Arranged by the products-catalogue view (canon/views/products/).
+# Arranged by the products-catalogue view (views/products/).
 
 notation: product
 id: PRODUCT-ECOMM-1

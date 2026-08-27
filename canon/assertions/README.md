@@ -2,7 +2,7 @@
 
 Assertion artefacts — the canonical compliance claim that a subject (`PRODUCT` / `PROCESS` / `CAPABILITY`) satisfies a `REQUIREMENT`, with status and evidence. Each assertion is one file under this folder.
 
-Assertions are canon-zone artefacts but live **outside** the `elements/` tree: `canon/assertions/` is a flat directory at the canon-zone root, peer to `canon/elements/` and `canon/views/`. This reflects that an assertion is a *claim about* canonical elements rather than an element itself.
+Assertions are canon-zone artefacts but live **outside** the `elements/` tree: `canon/assertions/` is a flat directory at the canon-zone root, peer to `canon/elements/`. This reflects that an assertion is a *claim about* canonical elements rather than an element itself. Derived projections are stored at the repository root in `views/`, not within `canon/`.
 
 Schema and validation rules are defined in [`notations/elements/16-assertion.md`](../../../notations/elements/16-assertion.md). TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../notations/IDS_AND_REFERENCES.md) §3.6 (`ASSERTION`), §4 (uniqueness scope).
 
