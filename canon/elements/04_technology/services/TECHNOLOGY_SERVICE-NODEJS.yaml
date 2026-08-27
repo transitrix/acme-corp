@@ -1,0 +1,7 @@
+---
+notation: element
+type: TECHNOLOGY_SERVICE
+id: TECHNOLOGY_SERVICE-NODEJS
+---
+
+Node.js runtime platform. A system whose version is pinned at E-commerce platform build time.

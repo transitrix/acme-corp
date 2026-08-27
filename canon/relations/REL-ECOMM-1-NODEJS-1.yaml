@@ -1,0 +1,20 @@
+---
+notation: relation
+type: assembled_on
+id: REL-ECOMM-1-NODEJS-1
+from: RELEASE-PRODUCT-ECOMM-1
+to: RELEASE-TECHNOLOGY_SERVICE-NODEJS-1
+
+zone: canon
+admitted_at: "2026-08-26"
+admitted_by: "methodology-agent"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-08-26"
+valid_to: null
+---
+
+E-commerce platform 3.0.0 was assembled with Node.js runtime 18.17.0.
