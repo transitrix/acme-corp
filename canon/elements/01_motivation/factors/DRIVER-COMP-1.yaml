@@ -1,6 +1,6 @@
 # Worked example — DRIVER element primitive (internal driver).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.1 + envelope §3.
-# Referenced inline from the FGA view (canon/views/fga/).
+# Referenced inline from the FGA view (views/fga/).
 #
 # Neutral Driver — the standing internal force ("support response time" as a
 # performance dimension the organisation acts on), not a finding about it.

@@ -1,6 +1,6 @@
 # Worked example — GOAL element primitive (root strategy).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.2 + envelope §3.
-# Definition home; arranged by the goals-tree view (canon/views/goals/).
+# Definition home; arranged by the goals-tree view (views/goals/).
 
 notation: goal
 id: GOAL-REVENUE-1

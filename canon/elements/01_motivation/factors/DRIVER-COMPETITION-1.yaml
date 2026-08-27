@@ -1,7 +1,7 @@
 # Worked example — DRIVER element primitive (external driver, PESTLE: economic).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.1 + envelope §3.
 # Definition home for this driver; referenced inline from the DGCA view
-# (canon/views/dgca/eu-expansion.dgca.transitrix.yaml), which was its
+# (views/dgca/eu-expansion.dgca.transitrix.yaml), which was its
 # authoring surface until promotion.
 #
 # Neutral Driver — the standing external competitive force, not a finding

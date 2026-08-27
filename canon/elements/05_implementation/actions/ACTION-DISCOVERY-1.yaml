@@ -1,6 +1,6 @@
 # Worked example — ACTION element primitive (Work Package).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4 + envelope §3.
-# First node of the onboarding-delivery network (canon/views/action/).
+# First node of the onboarding-delivery network (views/action/).
 # `predecessors` stays inline/timeless per ELEMENT_PRIMITIVES.md §7.4.
 
 notation: action

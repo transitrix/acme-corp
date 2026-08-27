@@ -1,6 +1,6 @@
 # Initiative-level Action — parent of the GDPR remediation programme.
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.4. WBS root in
-# canon/views/action/gdpr-remediation.dgca.transitrix.yaml.
+# views/action/gdpr-remediation.dgca.transitrix.yaml.
 
 notation: action
 id: ACTION-EU-COMPLIANCE-1

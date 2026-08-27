@@ -26,7 +26,7 @@ window (`process_parent`, optional `DRIVER.falsifier` /
 not require this repository to grow new artefacts in order to pin.
 
 This model has no `*.fga.transitrix.yaml` file and no `.ttrs` recipe file.
-The `canon/views/fga/` folder is already a stub pointing at DGCA. No
+The `views/fga/` folder is already a stub pointing at DGCA. No
 middle-segment underscore IDs are in use. The migration recipe at
 `migrations/3.1-to-4.0/` therefore has nothing here to rewrite; the pin is
 the whole change.
@@ -50,4 +50,4 @@ an agent may never self-ratify.
   migration recipe is a no-op on this repository today.
 - Until ratified, `main` runs on a pin whose decision record is unratified —
   the same interim condition the 3.7.0 pin recorded.
-- The `canon/views/fga/` stub remains a pointer, not a live FGA document.
+- The `views/fga/` stub remains a pointer, not a live FGA document.

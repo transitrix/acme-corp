@@ -1,6 +1,6 @@
 # Programme-level change delivered by the GDPR remediation workstream.
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.3 + envelope §3.
-# Referenced by canon/views/action-card/eu-gdpr-remediation.action-card.transitrix.yaml milestones.
+# Referenced by views/action-card/eu-gdpr-remediation.action-card.transitrix.yaml milestones.
 
 notation: change
 id: CHANGE-GDPR-COMPLIANCE-1

@@ -1,6 +1,6 @@
 # Worked example — APPLICATION element primitive (stable fields only).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.7 + envelope §3.
-# Arranged by the applications-catalogue view (canon/views/applications/).
+# Arranged by the applications-catalogue view (views/applications/).
 #
 # Time-varying fields (owner_role, vendor, lifecycle_stage, maturity) are
 # sidecar-bound per CONTRACT.md §9 — kept out of this file (inline placement
