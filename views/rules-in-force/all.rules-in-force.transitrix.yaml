@@ -5,7 +5,7 @@ notation: rules-in-force
 spec_version: "0.1"
 name: "acme_corp — Rules in force"
 generated_at: "2026-08-23"
-methodology_version: "4.0.0"
+methodology_version: "4.2.0"
 
 view:
   id: RULES_IN_FORCE-ACME-ALL-1
