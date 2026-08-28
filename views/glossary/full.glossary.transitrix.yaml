@@ -1,0 +1,20 @@
+# Glossary view — acme_corp, all named elements.
+# Opens in Transitrix Studio; notation spec: notations/views/reports/32-glossary.md.
+
+notation: glossary
+spec_version: "0.1"
+methodology_version: "4.2.0"
+
+id: GLOSSARY-FULL-1
+name: "acme_corp — Full Glossary"
+description: >
+  Every admitted element across the catalogue (GOAL, ACTION, PROCESS,
+  CAPABILITY, APPLICATION, TERM, and all others), alphabetised lookup
+  surface for term resolution and onboarding reference.
+
+view_config:
+  scope:
+    types: []                           # Omit or [] to include every TYPE
+  display:
+    group_by: first_letter              # Entries grouped by first letter
+    show_type_badge: true               # Show source element TYPE per entry

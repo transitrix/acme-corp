@@ -1,0 +1,29 @@
+# Actions Tree view — acme_corp, full initiative portfolio.
+# Opens in Transitrix Studio; notation spec: notations/views/reports/23-actions-tree.md.
+
+notation: actions-tree
+spec_version: "0.1"
+methodology_version: "4.2.0"
+
+id: ATREE-PORTFOLIO-ALL-1
+name: "acme_corp — Full Initiative Portfolio"
+description: >
+  Complete action hierarchy from all Initiatives through Programmes, Projects,
+  and Tasks. Shows the strategic portfolio structure and execution breakdown.
+
+period: "2026"
+
+view_config:
+  scope:
+    # Render full portfolio from virtual root (implicit company node)
+    # Set to [] or omit to show all Initiatives
+    initiatives: []
+    # Omit to show actions at any lifecycle state
+    valid_at: null
+  display:
+    collapse_depth: 2                    # 1=Initiative, 2=Programme, 3=Project, 4=Task
+    show_dates: true
+    show_owner: true
+    show_type_badge: true
+    show_action_card_link: true
+    virtual_root_label: "acme_corp"
