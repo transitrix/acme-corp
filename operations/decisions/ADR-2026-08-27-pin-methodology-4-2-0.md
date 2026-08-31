@@ -10,7 +10,7 @@ relates_to:
   - ADR-2026-08-23-pin-methodology-3-7-0
   - ADR-0007
 supersedes: ADR-2026-08-25-pin-methodology-4-0-0
-superseded_by: null
+superseded_by: ADR-2026-08-31-pin-methodology-5-0-0
 ---
 
 ## Context

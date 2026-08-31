@@ -3,7 +3,7 @@
 
 notation: actions-tree
 spec_version: "0.1"
-methodology_version: "4.2.0"
+methodology_version: "5.0.0"
 
 id: ATREE-PORTFOLIO-ALL-1
 name: "acme_corp — Full Initiative Portfolio"
