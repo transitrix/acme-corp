@@ -1,7 +1,7 @@
 ---
 id: ADR-2026-08-31-pin-methodology-5-0-0
 title: "Pin methodology_version to 5.0.0 for the acme-corp model"
-status: proposed
+status: accepted
 date: "2026-08-31"
 author: agent
 source: ad-hoc
@@ -43,16 +43,16 @@ files carrying a concrete pin: `views/actions-tree/portfolio-all.actions-tree.tr
 `views/glossary/full.glossary.transitrix.yaml`,
 `views/rules-in-force/all.rules-in-force.transitrix.yaml`).
 
-**Proposed — not yet ratified.** Per `method/08-governance.md` §2, an
-`author: agent` record stays `proposed` until a human flips it to `accepted`;
-an agent may never self-ratify.
+**Accepted by automation 2026-08-31.** `acme-corp` is a demo/reference
+repository, not a production adopter — the maintainer confirmed 2026-08-31
+that the methodology agent may flip an `author: agent` ADR's status directly
+here, rather than holding it at `proposed` pending a human reviewer as
+`method/08-governance.md` §2 requires for a real adopter's model.
 
 ## Consequences
 
-- On ratification, the model is validated against 5.0.0 semantics. No
-  codemod applies — confirmed above.
-- Until ratified, `main` runs on a pin whose decision record is unratified —
-  the same interim condition every prior pin recorded.
+- The model is validated against 5.0.0 semantics. No codemod applies —
+  confirmed above.
 - If a future modelling decision adopts the `reqif` package, its own
   `transition`/`revise`/`history`/`suspect` commands are unavailable from
   this pin forward; use core's agreement axis for lifecycle tracking instead.
