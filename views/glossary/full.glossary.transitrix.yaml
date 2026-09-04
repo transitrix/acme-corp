@@ -3,7 +3,7 @@
 
 notation: glossary
 spec_version: "0.1"
-methodology_version: "5.0.0"
+methodology_version: "5.1.0"
 
 id: GLOSSARY-FULL-1
 name: "acme_corp — Full Glossary"
