@@ -1,7 +1,7 @@
 ---
 id: ADR-2027
 title: "Pin methodology_version to 6.0.0 for the acme-corp model"
-status: proposed
+status: accepted
 date: "2026-09-21"
 author: agent
 source: ad-hoc
@@ -20,7 +20,8 @@ decision for human ratification, not an unannounced edit.
 ## Decision
 
 Pin `methodology_version: "6.0.0"` in `transitrix.yaml`.
-(Proposed — not in force until a maintainer ratifies this record.)
+Accepted by the maintainer on 2026-09-26 following explicit ratification.
+The 6.0.0 migration and model repairs were verified and merged in PR #92.
 
 ## Consequences
 
