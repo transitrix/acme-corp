@@ -1,4 +1,3 @@
----
 notation: relation
 type: assembled_on
 id: REL-ECOMM-1-NODEJS-1
@@ -15,6 +14,5 @@ gate_checks:
 
 valid_from: "2026-08-26"
 valid_to: null
----
-
-E-commerce platform 3.0.0 was assembled with Node.js runtime 18.17.0.
+description: |
+  E-commerce platform 3.0.0 was assembled with Node.js runtime 18.17.0.

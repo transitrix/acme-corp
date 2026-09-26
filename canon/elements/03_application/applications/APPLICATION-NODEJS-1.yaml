@@ -1,0 +1,6 @@
+notation: application
+type: platform
+id: APPLICATION-NODEJS-1
+name: Node.js runtime
+description: |
+  Node.js runtime platform. A system whose version is pinned at E-commerce platform build time.

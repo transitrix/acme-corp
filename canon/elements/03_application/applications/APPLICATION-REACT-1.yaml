@@ -1,0 +1,6 @@
+notation: application
+type: application
+id: APPLICATION-REACT-1
+name: React
+description: |
+  React web framework. A dependency used in the E-commerce platform build, versioned and admitted to the model.
