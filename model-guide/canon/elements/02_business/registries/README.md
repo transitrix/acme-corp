@@ -4,7 +4,7 @@ Registry elements — curated, **org-authored operating configuration**. Each re
 
 A registry is the list the organisation maintains to drive an operating activity. The worked example is the **regulatory source registry** (`REGISTRY-REG-SOURCES-1.yaml`): which regulatory sources to watch, where each lives, whether and how each is monitored for change, and how often. A registry is model content the organisation *authors* — distinct from **codex** (`canon/../codex/`), which is *given to* the organisation from outside (`LAW` / `REGULATION` / `POLICY` / `INTERNAL_STANDARD`); from the **Field** zone, which is contradiction-tolerant evidence rather than curated truth; from a **rule** (`../rules/`), which is decision logic rather than a maintained list; and from the team `operations/` folder, which holds the team's working artefacts rather than model content.
 
-TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`REGISTRY`).
+TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`REGISTRY`).
 
 ## File convention
 
@@ -21,11 +21,11 @@ REGISTRY-<…>.yaml            # the registry — authored configuration only
 REGISTRY-<…>.runstate.yaml   # per-row operating state — machine-written, NOT canon
 ```
 
-See [`notations/CONTRACT.md`](../../../../../notations/CONTRACT.md) §9.6 (config/state boundary) and the full schema in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.19.
+See [`notations/CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §9.6 (config/state boundary) and the full schema in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.19.
 
 ## Element schema
 
-The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §3; the `REGISTRY` field set and the per-row schema are in §7.19.
+The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §3; the `REGISTRY` field set and the per-row schema are in §7.19.
 
 ### Required (element)
 
@@ -36,15 +36,15 @@ The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../not
 | `name` | one-line label |
 | `type` | registry kind — v1: `regulatory_source` |
 | `rows` | the registry entries (per-row schema depends on `type`) |
-| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §6 |
-| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §7 |
+| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6 |
+| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7 |
 
 ### Optional (element)
 
 | Field | Description |
 |---|---|
 | `description` | what the registry is for and how it is maintained |
-| `default_scan_frequency` | ISO 8601 duration; default cadence for rows that omit `scan_frequency`. Falls back to the manifest's `operating_parameters.default_scan_frequency` ([`MANIFEST.md`](../../../../../notations/MANIFEST.md) §2). |
+| `default_scan_frequency` | ISO 8601 duration; default cadence for rows that omit `scan_frequency`. Falls back to the manifest's `operating_parameters.default_scan_frequency` ([`MANIFEST.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/MANIFEST.md) §2). |
 
 ### Row schema — `type: regulatory_source`
 
@@ -72,6 +72,6 @@ Rows are **canonical-by-containment**: a row's `id` is addressable and is promot
 
 ## See also
 
-- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`REGISTRY`), §4 (uniqueness scope).
-- Config/state boundary: [`notations/CONTRACT.md`](../../../../../notations/CONTRACT.md) §9.6.
+- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`REGISTRY`), §4 (uniqueness scope).
+- Config/state boundary: [`notations/CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §9.6.
 - Sibling rules catalogue: [`../rules/`](../../../../../canon/elements/02_business/rules/).

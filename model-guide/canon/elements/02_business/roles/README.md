@@ -2,18 +2,18 @@
 
 Role element primitives — each file is one business role on the ArchiMate 3.2 **business** layer. Roles are the accountable parties referenced as `owner_role: ROLE-…` across the notations (processes, products, capabilities, applications, issues). This folder is their canonical home.
 
-TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`ROLE`).
+TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`ROLE`).
 
 ## File convention
 
-`<id>.yaml`, where `<id>` follows `ROLE-[<middle>-]<INTEGER>` from [`IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §1. Examples: `ROLE-OPS-1.yaml`.
+`<id>.yaml`, where `<id>` follows `ROLE-[<middle>-]<INTEGER>` from [`IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §1. Examples: `ROLE-OPS-1.yaml`.
 
 ## Schema
 
-Defined in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.9 over the common envelope §3:
+Defined in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.9 over the common envelope §3:
 
 - Identity + role fields: `notation: role`, `id`, `name`, `description`, optional `responsibility_area`, `unit: UNIT-…`.
-- Admission record ([`CONTRACT.md`](../../../../../notations/CONTRACT.md) §6) and primitive lifecycle ([`CONTRACT.md`](../../../../../notations/CONTRACT.md) §7).
+- Admission record ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6) and primitive lifecycle ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7).
 
 A `ROLE` names a position, not a person; named individuals are `EMPLOYEE` elements (§7.11).
 
@@ -30,5 +30,5 @@ A `ROLE` names a position, not a person; named individuals are `EMPLOYEE` elemen
 
 ## See also
 
-- Element-primitive schema: [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.9.
-- Cross-reference field `owner_role:` appears across the view notations under [`notations/views/`](../../../../../notations/views/).
+- Element-primitive schema: [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.9.
+- Cross-reference field `owner_role:` appears across the view notations under [`notations/views/`](https://github.com/transitrix/methodology/tree/v7.0.0/notations/views/diagrams).

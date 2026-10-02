@@ -2,7 +2,7 @@
 
 `VERIFICATION` element primitives. The folder sits at the canon-zone root alongside [`../assertions/`](../../../canon/assertions/), not under `canon/elements/`.
 
-Schema, vocabularies, and how verification relates to assertion: [`notations/elements/27-verification.md`](../../../notations/elements/27-verification.md).
+Schema, vocabularies, and how verification relates to assertion: [`notations/elements/27-verification.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/27-verification.md).
 
 ## What Acme carries here
 

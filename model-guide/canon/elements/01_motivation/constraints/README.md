@@ -4,7 +4,7 @@ Constraint elements — design / operating constraints that bind the organisatio
 
 Constraints are referenced by DGCA drivers via `references_constraint:` — the existence of a constraint is itself a driver for the organisation that acts on it. They may also be referenced from any other notation via `applies_to:` once a register-view notation lands; v1 ships the elements only.
 
-TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`CONSTRAINT`).
+TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`CONSTRAINT`).
 
 ## File convention
 
@@ -14,7 +14,7 @@ Examples: `CONSTRAINT-GDPR-1.yaml`, `CONSTRAINT-1.yaml`.
 
 ## Element schema
 
-The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (plus the ID prefix and folder placement) distinguishes them; folder placement mirrors the ArchiMate layer. See the common envelope in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §3 and the CONSTRAINT field set in §7.13.
+The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (plus the ID prefix and folder placement) distinguishes them; folder placement mirrors the ArchiMate layer. See the common envelope in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §3 and the CONSTRAINT field set in §7.13.
 
 ### Required
 
@@ -25,8 +25,8 @@ The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (pl
 | `name` | one-line statement |
 | `statement` | normative wording — `MUST` / `SHOULD` / `MUST NOT` recommended |
 | `status` | one of `active` / `proposed` / `deprecated` / `retired` |
-| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §6 |
-| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §7 |
+| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6 |
+| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7 |
 
 ### Optional
 
@@ -76,6 +76,6 @@ valid_to: null
 
 ## See also
 
-- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`CONSTRAINT`), §4 (uniqueness scope).
+- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`CONSTRAINT`), §4 (uniqueness scope).
 - Sibling rules catalogue: [`../../02_business/rules/`](../../../../../canon/elements/02_business/rules/).
-- DGCA cross-reference field `references_constraint:` on DRIVER: [`notations/views/02-dgca.md`](../../../../../notations/views/02-dgca.md) § Fields → `factors[]`.
+- DGCA cross-reference field `references_constraint:` on DRIVER: [`notations/views/02-dgca.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/views/diagrams/02-dgca.md) § Fields → `factors[]`.

@@ -1,6 +1,6 @@
 # `canon/elements/02_business/steps/`
 
-Promoted process-flow **step** elements. A step is a single node (task / event / gateway) in a `PROCESS` element's `flow` ([`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.5). Steps sit on the ArchiMate 3.2 **business** layer.
+Promoted process-flow **step** elements. A step is a single node (task / event / gateway) in a `PROCESS` element's `flow` ([`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.5). Steps sit on the ArchiMate 3.2 **business** layer.
 
 ## Steps are canonical-by-containment — this folder holds only *promoted* steps
 
@@ -10,7 +10,7 @@ A step's definition home is its `PROCESS` element, where it is authored inline i
 
 Every other flow step remains canonical-by-containment inside its process, because no second document references it.
 
-TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`STEP`), §4 (uniqueness scope). Full schema + promotion mechanic: [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.20.
+TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`STEP`), §4 (uniqueness scope). Full schema + promotion mechanic: [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.20.
 
 ## File convention
 
@@ -18,7 +18,7 @@ TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/
 
 ## Element schema (promoted form)
 
-The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §3; the `STEP` field set is §7.20 (it mirrors the inline `flow.steps[]` shape of §7.5).
+The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §3; the `STEP` field set is §7.20 (it mirrors the inline `flow.steps[]` shape of §7.5).
 
 ### Required
 
@@ -29,8 +29,8 @@ The common envelope is in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../not
 | `name` | step label (required for task / gateway; optional for event) |
 | `type` | node kind — `startEvent` / `endEvent` / `task` / `userTask` / `serviceTask` / `exclusiveGateway` / `parallelGateway` |
 | `process` | `PROCESS-…` the step belongs to (its container) |
-| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §6 |
-| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §7 |
+| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6 |
+| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7 |
 
 ### Optional
 
@@ -47,7 +47,7 @@ When `STEP-X` is first referenced from a second document:
 2. In the PROCESS element, reduce that `flow.steps[]` entry to a reference — `{ id: STEP-X }`.
 3. Leave `flow.sequence` untouched — the graph edges stay process-owned.
 
-The process behaviour stays fully reconstructable: nodes resolve via the promoted `STEP` files, edges via `PROCESS.flow.sequence` ([`ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §1.1).
+The process behaviour stays fully reconstructable: nodes resolve via the promoted `STEP` files, edges via `PROCESS.flow.sequence` ([`ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §1.1).
 
 ## Skeleton
 
@@ -80,6 +80,6 @@ valid_to: null
 
 ## See also
 
-- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`STEP`), §4.
-- Inline (unpromoted) shape and the canonical-by-containment rule: [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §7.5, §1.
+- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`STEP`), §4.
+- Inline (unpromoted) shape and the canonical-by-containment rule: [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.5, §1.
 - Home process: [`../processes/PROCESS-ORD-FULFILL-1.yaml`](../../../../../canon/elements/02_business/processes/PROCESS-ORD-FULFILL-1.yaml).

@@ -4,11 +4,11 @@ Assertion artefacts — the canonical compliance claim that a subject (`PRODUCT`
 
 Assertions are canon-zone artefacts but live **outside** the `elements/` tree: `canon/assertions/` is a flat directory at the canon-zone root, peer to `canon/elements/`. This reflects that an assertion is a *claim about* canonical elements rather than an element itself. Derived projections are stored at the repository root in `views/`, not within `canon/`.
 
-Schema and validation rules are defined in [`notations/elements/16-assertion.md`](../../../notations/elements/16-assertion.md). TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../notations/IDS_AND_REFERENCES.md) §3.6 (`ASSERTION`), §4 (uniqueness scope).
+Schema and validation rules are defined in [`notations/elements/16-assertion.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/16-assertion.md). TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.6 (`ASSERTION`), §4 (uniqueness scope).
 
 ## File convention
 
-`<id>.yaml`, where `<id>` follows the canonical grammar `ASSERTION-[<middle>-]<INTEGER>` from [`IDS_AND_REFERENCES.md`](../../../notations/IDS_AND_REFERENCES.md) §1. A typical middle-segment convention encodes the (subject, requirement) pair — e.g. `ASSERTION-MOBILE-DATA-ERASURE-1` for a claim by `PRODUCT-MOBILE-1` against `REQUIREMENT-DATA-ERASURE-1`. The grammar imposes only the prefix and the terminal integer; teams may pick a different middle-segment convention.
+`<id>.yaml`, where `<id>` follows the canonical grammar `ASSERTION-[<middle>-]<INTEGER>` from [`IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §1. A typical middle-segment convention encodes the (subject, requirement) pair — e.g. `ASSERTION-MOBILE-DATA-ERASURE-1` for a claim by `PRODUCT-MOBILE-1` against `REQUIREMENT-DATA-ERASURE-1`. The grammar imposes only the prefix and the terminal integer; teams may pick a different middle-segment convention.
 
 ## The (subject, requirement) pair
 
@@ -16,7 +16,7 @@ One assertion per `(subject, requirement)` pair. Multiple subjects against the s
 
 ## Status vocabulary
 
-`compliant` / `partial` / `non_compliant` / `under_review` / `n_a`. See [`notations/elements/16-assertion.md`](../../../notations/elements/16-assertion.md) §3 for semantics.
+`compliant` / `partial` / `non_compliant` / `under_review` / `n_a`. See [`notations/elements/16-assertion.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/16-assertion.md) §3 for semantics.
 
 ## Examples in this folder
 
@@ -28,10 +28,10 @@ One assertion per `(subject, requirement)` pair. Multiple subjects against the s
 
 Three subjects (one each of `PRODUCT`, `PROCESS`, `CAPABILITY`) all targeting the same requirement — the same regulatory obligation has different realisation footprints across the organisation, and each is asserted separately.
 
-`REQUIREMENT-AUDIT-LOG-RETENTION-1` deliberately has **no** assertion targeting it, to surface the planned `REQ-COVERAGE-001` warning (a requirement with no assertion is a compliance gap). See [`notations/elements/16-assertion.md`](../../../notations/elements/16-assertion.md) §7 Evolution.
+`REQUIREMENT-AUDIT-LOG-RETENTION-1` deliberately has **no** assertion targeting it, to surface the planned `REQ-COVERAGE-001` warning (a requirement with no assertion is a compliance gap). See [`notations/elements/16-assertion.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/16-assertion.md) §7 Evolution.
 
 ## See also
 
-- Assertion spec: [`notations/elements/16-assertion.md`](../../../notations/elements/16-assertion.md).
-- The requirements assertions are about: [`../elements/01_motivation/requirements/`](../../../canon/elements/01_motivation/requirements/) and [`notations/elements/15-requirement.md`](../../../notations/elements/15-requirement.md).
-- Zone model, admission record, primitive lifecycle: [`notations/CONTRACT.md`](../../../notations/CONTRACT.md) §5–7.
+- Assertion spec: [`notations/elements/16-assertion.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/16-assertion.md).
+- The requirements assertions are about: [`../elements/01_motivation/requirements/`](../../../canon/elements/01_motivation/requirements/) and [`notations/elements/15-requirement.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/15-requirement.md).
+- Zone model, admission record, primitive lifecycle: [`notations/CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §5–7.

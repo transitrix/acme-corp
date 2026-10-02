@@ -4,7 +4,7 @@ Rule elements — business rules an organisation enforces. Each rule is one file
 
 Rules describe operational policy (approval thresholds, segregation of duties, eligibility criteria, …). They may be referenced from any other notation via `applies_to:` once a register-view notation lands; v1 ships the elements only. Rules contrast with **constraints** (`canon/elements/01_motivation/constraints/`) — constraints are binding rules imposed from outside or above (regulation, contract); rules are the organisation's own operating policy.
 
-TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`RULE`).
+TYPE registry: see [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`RULE`).
 
 ## File convention
 
@@ -14,7 +14,7 @@ Examples: `RULE-DUAL-APPROVAL-1.yaml`, `RULE-1.yaml`.
 
 ## Element schema
 
-The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (plus the ID prefix and folder placement) distinguishes them; folder placement mirrors the ArchiMate layer. See the common envelope in [`notations/ELEMENT_PRIMITIVES.md`](../../../../../notations/ELEMENT_PRIMITIVES.md) §3 and the RULE field set in §7.12.
+The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (plus the ID prefix and folder placement) distinguishes them; folder placement mirrors the ArchiMate layer. See the common envelope in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §3 and the RULE field set in §7.12.
 
 ### Required
 
@@ -25,8 +25,8 @@ The schema is shared between `RULE` and `CONSTRAINT` elements — `notation` (pl
 | `name` | one-line statement |
 | `statement` | normative wording — `MUST` / `SHOULD` / `MUST NOT` recommended |
 | `status` | one of `active` / `proposed` / `deprecated` / `retired` |
-| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §6 |
-| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](../../../../../notations/CONTRACT.md) §7 |
+| admission record | `zone: canon`, `admitted_at`, `admitted_by`, `gate_checks` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6 |
+| lifecycle | `valid_from`, `valid_to` — [`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7 |
 
 ### Optional
 
@@ -76,5 +76,5 @@ valid_to: null
 
 ## See also
 
-- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](../../../../../notations/IDS_AND_REFERENCES.md) §3.1 (`RULE`), §4 (uniqueness scope).
+- TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`RULE`), §4 (uniqueness scope).
 - Sibling constraints catalogue: [`../../01_motivation/constraints/`](../../../../../canon/elements/01_motivation/constraints/).
