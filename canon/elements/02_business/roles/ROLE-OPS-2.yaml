@@ -1,0 +1,21 @@
+# ROLE element primitive for the owner introduced by the 2026-07
+# Order Management handover recorded in CAPABILITY-V1.history.yaml.
+
+notation: role
+id: ROLE-OPS-2
+name: "Order Management Lead"
+responsibility_area: "Order Management"
+description: >
+  Accountable for the Order Management capability after it became a
+  dedicated product unit outside the former Operations ownership.
+
+zone: canon
+admitted_at: "2026-07-01"
+admitted_by: "v.korobeinikov"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+valid_from: "2026-07-01"
+valid_to: null

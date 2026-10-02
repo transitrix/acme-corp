@@ -10,3 +10,10 @@ This repository is Acme Corp's own enterprise architecture — the goals, capabi
 ---
 
 This repository follows the [Transitrix methodology](https://github.com/transitrix/methodology).
+
+## Model guide
+
+Folder-level explanations and worked-example notes live under
+[`model-guide/`](model-guide/), mirroring the `canon/` and `field/` paths they
+describe. The model zones themselves contain only contract-admitted model
+artefacts, as required by Methodology 7.0.

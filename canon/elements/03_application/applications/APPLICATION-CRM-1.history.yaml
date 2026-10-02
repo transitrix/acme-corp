@@ -1,0 +1,12 @@
+# Versioned-attribute sidecar for APPLICATION-CRM-1.
+# Schema: notations/CONTRACT.md §9.1.
+
+target: APPLICATION-CRM-1
+
+attribute_versions:
+  owner_role:
+    - { valid_from: "2026-05-26", value: ROLE-SALES-1 }
+  vendor:
+    - { valid_from: "2026-05-26", value: "Salesforce" }
+  maturity:
+    - { valid_from: "2026-05-26", value: 2 }
