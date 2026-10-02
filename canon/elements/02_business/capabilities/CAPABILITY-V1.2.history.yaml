@@ -1,0 +1,12 @@
+# Versioned-attribute sidecar for CAPABILITY-V1.2.
+# Schema: notations/CONTRACT.md §9.1.
+
+target: CAPABILITY-V1.2
+
+attribute_versions:
+  current_maturity:
+    - { valid_from: "2026-05-26", value: 2 }
+  target_maturity:
+    - { valid_from: "2026-05-26", value: 3 }
+  target_date:
+    - { valid_from: "2026-05-26", value: "2026-09-30" }

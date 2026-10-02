@@ -1,0 +1,14 @@
+# Versioned-attribute sidecar for CAPABILITY-H1.
+# Schema: notations/CONTRACT.md §9.1.
+
+target: CAPABILITY-H1
+
+attribute_versions:
+  current_maturity:
+    - { valid_from: "2026-05-26", value: 1 }
+  target_maturity:
+    - { valid_from: "2026-05-26", value: 3 }
+  target_date:
+    - { valid_from: "2026-05-26", value: "2026-12-31" }
+  owner_role:
+    - { valid_from: "2026-05-26", value: ROLE-DPO-1 }

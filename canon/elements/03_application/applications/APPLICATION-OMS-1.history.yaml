@@ -1,0 +1,12 @@
+# Versioned-attribute sidecar for APPLICATION-OMS-1.
+# Schema: notations/CONTRACT.md §9.1.
+
+target: APPLICATION-OMS-1
+
+attribute_versions:
+  owner_role:
+    - { valid_from: "2026-05-26", value: ROLE-TECH-1 }
+  vendor:
+    - { valid_from: "2026-05-26", value: "Internal" }
+  maturity:
+    - { valid_from: "2026-05-26", value: 3 }

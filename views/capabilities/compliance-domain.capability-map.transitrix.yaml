@@ -20,10 +20,6 @@ capability_map:
     - id: V1
       name: "Order Management"
       type: domain
-      current_maturity: 2
-      target_maturity: 3
-      target_date: "2026-12-31"
-      owner_role: ROLE-OPS-1
       business_process: PROCESS-ORD-FULFILL-1
       applications:
         - APPLICATION-OMS-1
@@ -34,25 +30,17 @@ capability_map:
         - id: V1.1
           name: "Order Intake"
           type: domain
-          current_maturity: 3
-          target_maturity: 3
           valid_from: "2026-05-26"
           valid_to: null
         - id: V1.2
           name: "Order Fulfilment"
           type: domain
-          current_maturity: 2
-          target_maturity: 3
-          target_date: "2026-09-30"
           valid_from: "2026-05-26"
           valid_to: null
 
     - id: V2
       name: "Customer Relationship Management"
       type: domain
-      current_maturity: 2
-      target_maturity: 3
-      owner_role: ROLE-SALES-1
       applications:
         - APPLICATION-CRM-1
       valid_from: "2026-05-26"
@@ -65,10 +53,6 @@ capability_map:
         Cross-cutting capability covering GDPR/NIS2 obligations: data-subject
         rights, breach reporting, and data residency. Lowest current maturity —
         the focus of the 2026 remediation programme.
-      current_maturity: 1
-      target_maturity: 3
-      target_date: "2026-12-31"
-      owner_role: ROLE-DPO-1
       business_process: PROCESS-DSR-HANDLE-1
       valid_from: "2026-05-26"
       valid_to: null

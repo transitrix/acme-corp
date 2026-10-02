@@ -15,9 +15,6 @@ description: >
   fulfilment. The capability spans receiving, validating, routing, and
   closing out customer purchase requests across all channels.
 
-# Stable forward-looking aspiration — not time-varying
-target_maturity: 3
-
 # Relations — stay inline in v1 (Wave 3 may promote to first-class
 # time-aware relation files)
 business_process: PROCESS-ORD-FULFILL-1

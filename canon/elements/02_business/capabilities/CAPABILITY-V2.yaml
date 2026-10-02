@@ -16,8 +16,6 @@ description: >
   loyalty, communications, lifetime value. Sits parallel to Order
   Management (V1) in the post-2026-04 hierarchy.
 
-target_maturity: 4
-
 # Admission record (CONTRACT.md §6)
 zone: canon
 admitted_at: "2026-05-28"

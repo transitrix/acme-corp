@@ -1,0 +1,13 @@
+# Versioned-attribute sidecar for CAPABILITY-V2.
+# Schema: notations/CONTRACT.md §9.1.
+
+target: CAPABILITY-V2
+
+attribute_versions:
+  current_maturity:
+    - { valid_from: "2026-05-26", value: 2 }
+  target_maturity:
+    - { valid_from: "2024-01-01", value: 4 }
+    - { valid_from: "2026-05-26", value: 3 }
+  owner_role:
+    - { valid_from: "2026-05-26", value: ROLE-SALES-1 }
