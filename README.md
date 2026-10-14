@@ -5,7 +5,7 @@ Acme Corp is a growing e-commerce company — an online storefront and mobile sh
 This repository is Acme Corp's own enterprise architecture — the goals, capabilities, processes, applications, and obligations that make up how the company actually runs, kept as version-controlled text and updated as the company changes.
 
 
-**Tooling:** [Transitrix Studio](https://marketplace.visualstudio.com/items?itemName=transitrix.transitrix-studio) for live notation preview; [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) for the Mermaid-based views.
+**Tooling:** [Transitrix Studio](https://transitrix.com/install/) for live notation preview; [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) for the Mermaid-based views.
 
 ---
 
