@@ -51,8 +51,8 @@ therefore presented in Landscapes, not as a technical standard.
 
 The existing systems/stores panel is retained from the original
 `renderBlocksSvg()` output for `BLOCKS-PERSONAL-DATA-1`. The other cells are
-manually transcribed from the sources above. The renderer output has not been
-recomputed, and no current engine capability beyond that existing panel is
+manually transcribed from the sources above. Its two existing groups are stacked for legibility; their shapes and labels
+are retained without recomputing the renderer output, and no current engine capability beyond that existing panel is
 asserted. There is no committed composition CLI or automatic refresh.
 
 To refresh: choose a source revision and an effective date, re-read the named
