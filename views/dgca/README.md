@@ -86,6 +86,12 @@ actions:
 
 `valid_from` / `valid_to` are required on every inline element per [`notations/CONTRACT.md`](../../../../../notations/CONTRACT.md) §7. The DGCA document itself does not carry a lifecycle field — it is a view, not an element.
 
+## Shared changes and preview limits
+
+`CHANGE-ONBOARD-1` deliberately serves both `GOAL-CUST-1` and `GOAL-EU-1`. Its description explains the customer-experience and GDPR-consent reasons; both goal references are canonical data.
+
+Studio 3.8.1 reports `FGCA-009` for this multi-goal change because its tree layout places a change under the first goal. The warning describes that layout limitation, not an invalid second relationship. Do not remove a valid goal reference to make a preview warning disappear. The complete EU regulatory driver → market-entry goal → CRM change → CRM rollout chain is a separate, directly readable path in this same view. A tree preview is not a lossless display of every many-to-many relationship in the repository.
+
 ## See also
 
 - `method/methodology.md` §6.2 — DGCA notation

@@ -1,0 +1,19 @@
+# Goal hierarchy restored from the pre-projection Acme goals view.
+# Direction: child -> parent. Canonical data belongs here, not in views/.
+notation: relation
+id: REL-GOAL-EU-PARENT-1
+type: goal_parent
+from: GOAL-EU-1
+to: GOAL-REVENUE-1
+
+zone: canon
+admitted_at: "2026-10-25"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# The relationship already existed in the original worked example.
+valid_from: "2026-05-26"
+valid_to: null

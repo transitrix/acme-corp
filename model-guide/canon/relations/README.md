@@ -21,6 +21,10 @@ Every relation declares its kind via `type` (drawn from the closed enum in [`17-
 
 The two together encode the **re-parenting event**: Order Intake moved from Customer Relationship Management (V2) to Order Management (V1) on 2026-04-01. The history is preserved in `REL-…-PARENT-1.yaml`; the current state is in `REL-…-PARENT-2.yaml`.
 
+## Goal hierarchy
+
+The four `REL-GOAL-*-PARENT-1.yaml` records restore the original goal hierarchy after the inline-to-projection migration: `GOAL-EU-1`, `GOAL-CUST-1` and `GOAL-OPS-1` belong under `GOAL-REVENUE-1`; `GOAL-EU-COMPLIANCE-1` belongs under `GOAL-EU-1`. Their effective date is preserved from the original inline example; their admission date records the restoration. The Goals projection contains display configuration only.
+
 ## See also
 
 - Relations spec: [`notations/elements/17-relations.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/17-relations.md).

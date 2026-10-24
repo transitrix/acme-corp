@@ -15,7 +15,7 @@ Defined in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/met
 - Identity + goal fields: `notation: goal`, `id`, `name`, optional `type` (goal-type label), `level`, `factors: [DRIVER-…]`, `description`, `link`.
 - Admission record ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6) and primitive lifecycle ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7).
 
-A goal's **`parent`** (`GOAL → GOAL`) is a first-class time-aware relation (`goal_parent`, [`notations/elements/17-relations.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/17-relations.md) §3); it is carried inline by the goals-tree view in v0.x and is **not** stored on the element file.
+A goal's **`parent`** (`GOAL → GOAL`) is a first-class time-aware relation (`goal_parent`, [`notations/elements/17-relations.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/elements/17-relations.md) §3); it is stored in `canon/relations/REL-GOAL-*-PARENT-1.yaml` and is **not** stored on the element file or duplicated in the projection. The four links restore the original inline hierarchy from before the view-purity migration (`684edae`): EU, customer and operations goals under the revenue goal; EU compliance under the EU goal.
 
 ## Examples in this folder
 
