@@ -17,3 +17,14 @@ Folder-level explanations and worked-example notes live under
 [`model-guide/`](model-guide/), mirroring the `canon/` and `field/` paths they
 describe. The model zones themselves contain only contract-admitted model
 artefacts, as required by Methodology 7.0.
+
+## Work with sources
+
+Acme's team repository uses the ordinary `ingest` profile. To add a finance
+interview, attach `finance-interview.md` and ask Ingest to add it to Field, or
+paste the notes into chat with the same request. The
+[Field walkthrough](model-guide/field/README.md#add-an-interview) gives both
+prompts and shows what to include about the interview.
+
+The [Knowledge Store example](model-guide/knowledge-store/) shows how a separate
+workspace keeps source cards, uploaded originals, and curated findings.
