@@ -1,8 +1,21 @@
-notation: element
-type: RELEASE
+notation: release
 id: RELEASE-APPLICATION-REACT-1
+name: "React 18.2.0"
 of: APPLICATION-REACT-1
 version: "18.2.0"
 released_at: "2026-07-15"
 description: |
   React framework release 18.2.0. This system release is referenced by RELEASE-PRODUCT-ECOMM-1 via an assembled_on relation, demonstrating a cross-subject assembly link (PRODUCT assembled_on APPLICATION).
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-11-09"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-07-15"
+valid_to: null

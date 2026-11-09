@@ -1,0 +1,20 @@
+notation: role
+id: ROLE-FINANCE-LEAD-1
+name: "Finance Lead"
+responsibility_area: "Finance"
+description: >-
+  Owns the expense dual-approval rule and reviews claims above the policy
+  threshold before a payment instruction is issued.
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-11-09"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-01-15"
+valid_to: null

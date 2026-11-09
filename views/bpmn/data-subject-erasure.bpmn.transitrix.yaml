@@ -1,4 +1,4 @@
-# Detailed BPMN flow for PROCESS-DSR-HANDLE-1 — GDPR right-to-erasure (Art. 17).
+# BPMN projection of the PROCESS-DSR-HANDLE-1 erasure flow (GDPR Art. 17).
 # Compiled to BPMN 2.0 XML by Transitrix Studio. Node ids are file-local labels
 # (POOL-/LANE-/SE-/TASK-/GW-/EE-) per IDS_AND_REFERENCES.md §3.3 — not canonical
 # elements, so this file bears no primitive lifecycle.

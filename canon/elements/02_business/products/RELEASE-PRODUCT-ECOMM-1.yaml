@@ -1,9 +1,0 @@
-notation: element
-type: RELEASE
-id: RELEASE-PRODUCT-ECOMM-1
-of: PRODUCT-ECOMM-1
-version: "3.0.0"
-released_at: "2026-08-26"
-predecessor: null
-description: |
-  The E-commerce platform release 3.0.0, assembled on Node.js 18 LTS, PostgreSQL 15, and the React framework v18.2.

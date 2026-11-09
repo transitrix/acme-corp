@@ -1,0 +1,21 @@
+notation: release
+id: RELEASE-APPLICATION-NODEJS-1
+name: "Node.js 18.17.0"
+of: APPLICATION-NODEJS-1
+version: "18.17.0"
+released_at: "2026-08-01"
+description: |
+  Node.js runtime LTS release 18.17.0. This system release is referenced by RELEASE-PRODUCT-ECOMM-1 via an assembled_on relation.
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-11-09"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-08-01"
+valid_to: null

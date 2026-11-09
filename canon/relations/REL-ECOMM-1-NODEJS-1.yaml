@@ -2,7 +2,7 @@ notation: relation
 type: assembled_on
 id: REL-ECOMM-1-NODEJS-1
 from: RELEASE-PRODUCT-ECOMM-1
-to: RELEASE-TECHNOLOGY_SERVICE-NODEJS-1
+to: RELEASE-APPLICATION-NODEJS-1
 
 zone: canon
 admitted_at: "2026-08-26"
