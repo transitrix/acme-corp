@@ -17,7 +17,7 @@ capability_map:
   assessment_date: "2026-06-10"
 
   capabilities:
-    - id: V1
+    - id: CAPABILITY-V1
       name: "Order Management"
       type: domain
       business_process: PROCESS-ORD-FULFILL-1
@@ -27,18 +27,18 @@ capability_map:
       valid_from: "2026-05-26"
       valid_to: null
       children:
-        - id: V1.1
+        - id: CAPABILITY-V1.1
           name: "Order Intake"
           type: domain
           valid_from: "2026-05-26"
           valid_to: null
-        - id: V1.2
+        - id: CAPABILITY-V1.2
           name: "Order Fulfilment"
           type: domain
           valid_from: "2026-05-26"
           valid_to: null
 
-    - id: V2
+    - id: CAPABILITY-V2
       name: "Customer Relationship Management"
       type: domain
       applications:
@@ -46,7 +46,7 @@ capability_map:
       valid_from: "2026-05-26"
       valid_to: null
 
-    - id: H1
+    - id: CAPABILITY-H1
       name: "Compliance & Data Protection"
       type: supporting
       description: >

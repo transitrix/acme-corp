@@ -1,6 +1,6 @@
 # `canon/elements/02_business/processes/`
 
-Process element primitives — each file is one business process on the ArchiMate 3.2 **business** layer. The process-map view (`../../../views/processmap/`) catalogues them by Operating / Supporting / Management; detailed flows live in `../../../views/bpmn/`.
+Each file defines one business process on the ArchiMate 3.2 **business** layer. The process map groups them into operating, supporting, and management processes. A process's detailed flow lives in its Canon record and can be rendered as a BPMN view.
 
 TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/IDS_AND_REFERENCES.md) §3.1 (`PROCESS`).
 
@@ -12,7 +12,7 @@ TYPE registry: [`notations/IDS_AND_REFERENCES.md`](https://github.com/transitrix
 
 Defined in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/ELEMENT_PRIMITIVES.md) §7.5 over the common envelope §3:
 
-- Identity + process fields: `notation: process`, `id`, `name`, `owner_role: ROLE-…`, `capability: CAPABILITY-…`, `maturity` (CMM 1–5), `bpmn_file`, `description`.
+- Process fields include `notation: process`, `id`, `name`, `owner_role`, `capability`, `description`, `participants`, and `flow`. Time-varying maturity lives in the process's history sidecar.
 - Admission record ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §6) and primitive lifecycle ([`CONTRACT.md`](https://github.com/transitrix/methodology/blob/v7.0.0/notations/CONTRACT.md) §7).
 
 ## Examples in this folder
@@ -22,6 +22,7 @@ Defined in [`notations/ELEMENT_PRIMITIVES.md`](https://github.com/transitrix/met
 | `PROCESS-ORD-FULFILL-1.yaml` | Operating — realises `CAPABILITY-V1`, owned by `ROLE-OPS-1` |
 | `PROCESS-CUST-ONBOARD-1.yaml` | Operating — realises `CAPABILITY-V2` |
 | `PROCESS-CS-RESOLVE-1.yaml` | Supporting |
+| [`PROCESS-DSR-HANDLE-1.yaml`](../../../../../canon/elements/02_business/processes/PROCESS-DSR-HANDLE-1.yaml) | Management. Canonical erasure flow with a [BPMN projection](../../../../../views/bpmn/data-subject-erasure.bpmn.transitrix.yaml). |
 | `PROCESS-STRAT-PLAN-1.yaml` | Management |
 | `PROCESS-RETURNS-1.yaml` | Operating — realises `CAPABILITY-V1`, owned by `ROLE-OPS-1` |
 

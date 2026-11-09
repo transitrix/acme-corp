@@ -1,14 +1,13 @@
 # Worked example — PROCESS element primitive (compliance / management process).
 # Schema: notations/ELEMENT_PRIMITIVES.md §7.5 + envelope §3.
 # Data-subject-request handling: the GDPR Art. 15-22 rights workflow.
-# Detailed flow lives in views/bpmn/data-subject-erasure.bpmn.transitrix.yaml.
+# The erasure flow below is projected in views/bpmn/data-subject-erasure.bpmn.transitrix.yaml.
 
 notation: process
 id: PROCESS-DSR-HANDLE-1
 name: "Data Subject Request Handling"
 owner_role: ROLE-DPO-1
 # maturity — time-varying, see PROCESS-DSR-HANDLE-1.history.yaml (CONTRACT.md §9)
-bpmn_file: "views/bpmn/data-subject-erasure.bpmn.transitrix.yaml"
 description: >
   Receive, verify, and fulfil data-subject rights requests (access, erasure,
   portability) within the GDPR statutory window. Coordinates erasure across the
@@ -20,6 +19,83 @@ participants:
   - ROLE-CS-1
   - ROLE-DPO-1
   - ROLE-OPS-1
+
+flow:
+  steps:
+    - id: STEP-DSR-HANDLE-1
+      type: startEvent
+      name: "Erasure request received"
+      performed_by: ROLE-CS-1
+    - id: STEP-DSR-HANDLE-2
+      type: userTask
+      name: "Verify data-subject identity"
+      performed_by: ROLE-CS-1
+      supported_by_application: APPLICATION-CRM-1
+    - id: STEP-DSR-HANDLE-3
+      type: exclusiveGateway
+      name: "Identity verified?"
+      performed_by: ROLE-CS-1
+    - id: STEP-DSR-HANDLE-4
+      type: userTask
+      name: "Reject request & notify subject"
+      performed_by: ROLE-CS-1
+    - id: STEP-DSR-HANDLE-5
+      type: endEvent
+      name: "Request rejected"
+      performed_by: ROLE-CS-1
+    - id: STEP-DSR-HANDLE-6
+      type: userTask
+      name: "Confirm erasure & notify subject"
+      performed_by: ROLE-CS-1
+    - id: STEP-DSR-HANDLE-7
+      type: task
+      name: "Log request in DSR register"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-8
+      type: exclusiveGateway
+      name: "Personal data in cold-storage archive?"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-9
+      type: task
+      name: "Flag archive exception for manual review"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-10
+      type: exclusiveGateway
+      name: "Erasure path joined"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-11
+      type: task
+      name: "Record completion within 30-day window"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-12
+      type: endEvent
+      name: "Request closed & evidenced"
+      performed_by: ROLE-DPO-1
+    - id: STEP-DSR-HANDLE-13
+      type: task
+      name: "Locate personal data across systems"
+      performed_by: ROLE-OPS-1
+      supported_by_application: APPLICATION-OMS-1
+    - id: STEP-DSR-HANDLE-14
+      type: task
+      name: "Erase from active OMS & CRM"
+      performed_by: ROLE-OPS-1
+      supported_by_application: APPLICATION-OMS-1
+  sequence:
+    - { from: STEP-DSR-HANDLE-1, to: STEP-DSR-HANDLE-2 }
+    - { from: STEP-DSR-HANDLE-2, to: STEP-DSR-HANDLE-3 }
+    - { from: STEP-DSR-HANDLE-3, to: STEP-DSR-HANDLE-4, default: true }
+    - { from: STEP-DSR-HANDLE-4, to: STEP-DSR-HANDLE-5 }
+    - { from: STEP-DSR-HANDLE-3, to: STEP-DSR-HANDLE-7, condition: "identity verified" }
+    - { from: STEP-DSR-HANDLE-7, to: STEP-DSR-HANDLE-13 }
+    - { from: STEP-DSR-HANDLE-13, to: STEP-DSR-HANDLE-14 }
+    - { from: STEP-DSR-HANDLE-14, to: STEP-DSR-HANDLE-8 }
+    - { from: STEP-DSR-HANDLE-8, to: STEP-DSR-HANDLE-9, condition: "data present in 7-year archive (known gap)" }
+    - { from: STEP-DSR-HANDLE-8, to: STEP-DSR-HANDLE-10, default: true }
+    - { from: STEP-DSR-HANDLE-9, to: STEP-DSR-HANDLE-10 }
+    - { from: STEP-DSR-HANDLE-10, to: STEP-DSR-HANDLE-6 }
+    - { from: STEP-DSR-HANDLE-6, to: STEP-DSR-HANDLE-11 }
+    - { from: STEP-DSR-HANDLE-11, to: STEP-DSR-HANDLE-12 }
 
 # Admission record (CONTRACT.md §6)
 zone: canon

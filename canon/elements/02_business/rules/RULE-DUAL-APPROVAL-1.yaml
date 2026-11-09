@@ -7,9 +7,6 @@ statement: >
   payment instruction is issued.
 status: active
 
-applies_to:
-  - PROCESS-EXPENSE-APPROVAL-1
-
 source: "Internal Finance Policy §3.2 (Board decision 2026-01-15)"
 owner_role: ROLE-FINANCE-LEAD-1
 severity: mandatory

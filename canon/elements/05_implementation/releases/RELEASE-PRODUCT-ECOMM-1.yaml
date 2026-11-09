@@ -1,0 +1,21 @@
+notation: release
+id: RELEASE-PRODUCT-ECOMM-1
+name: "E-commerce Platform 3.0.0"
+of: PRODUCT-ECOMM-1
+version: "3.0.0"
+released_at: "2026-08-26"
+description: |
+  The E-commerce platform release 3.0.0, assembled on Node.js 18 LTS, PostgreSQL 15, and the React framework v18.2.
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-11-09"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-08-26"
+valid_to: null

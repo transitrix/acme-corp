@@ -1,9 +1,22 @@
-notation: element
-type: RELEASE
+notation: release
 id: RELEASE-PRODUCT-ECOMM-2
+name: "E-commerce Platform 3.0.1"
 of: PRODUCT-ECOMM-1
 version: "3.0.1"
 released_at: "2026-08-27"
 predecessor: RELEASE-PRODUCT-ECOMM-1
 description: |
   E-commerce platform patch release 3.0.1. Demonstrates that a successor release has its own assembly environment and does not inherit the predecessor's assembled_on links.
+
+# Admission record (CONTRACT.md §6)
+zone: canon
+admitted_at: "2026-11-09"
+admitted_by: "transitrix"
+gate_checks:
+  uniqueness: pass
+  consistency: pass
+  completeness: pass
+
+# Primitive lifecycle (CONTRACT.md §7)
+valid_from: "2026-08-27"
+valid_to: null
