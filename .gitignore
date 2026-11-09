@@ -10,3 +10,9 @@
 
 # Local runtime configuration.
 /.claude/
+
+# Ordinary Ingest keeps working files local.
+/_intake/inbox/*
+/_intake/processing/*
+/_intake/processed/*
+!/_intake/*/.gitkeep
